@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>DevOps&#91;Day17-1&#93; / [데이터베이스] | Teddy-woo's DevOps Challenge!</title>
+    <meta name="description" content="01. 데이터베이스 기초">
+    
+        <meta name="keywords" content="데이터베이스, RDBMS, NoSql, OLTP, OLAP, 스키마, 필드, 정규화, 배치작업, DevOps BootCamp">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DevOps&#91;Day17-1&#93; / [데이터베이스] | Teddy-woo's DevOps Challenge!">
+    <meta name="twitter:description" content="01. 데이터베이스 기초">
+
+    
+        <meta property="twitter:image" content="http://localhost:4000/db.png">
+    
+    
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://localhost:4000/day17-1/">
+    <meta property="og:title" content="DevOps&#91;Day17-1&#93; / [데이터베이스] | Teddy-woo's DevOps Challenge!">
+    <meta property="og:image" content="/db.png">
+    <meta property="og:description" content="01. 데이터베이스 기초">
+    <meta property="og:site_name" content="도현's Blog | 도현's 데브옵스 도전기!">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="Teddy-woo's DevOps Challenge!">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="http://localhost:4000/day17-1/">
+    <link rel="alternate" type="application/rss+xml" title="도현's Blog | 도현's 데브옵스 도전기!" href="http://localhost:4000/feed.xml" />
+
+    <!-- Include extra styles -->
+    
+
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+                Teddy-woo's DevOps Challenge! <span class="version">v3.1.2</span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/feed.xml">Feed</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2023-03-29T09:00:00+09:00">
+                            
+
+
+March 29, 2023
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>5 min to read</span>
+                </p>
+                <h1 class="post-title">DevOps&#91;Day17-1&#93; / [데이터베이스]</h1>
+                <p class="post-subtitle">01. 데이터베이스 기초</p>
+
+                
+                    <img src="/db.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <h1 id="-학습-목표"><strong># 학습 목표</strong></h1>
+
+<ul>
+  <li>RDBMS와 NoSQL의 차이와 각각의 장단점을 이해할 수 있다.</li>
+  <li>충분한 가용성이 확보되지 않은 다양한 문제 상황을 이해하고, 상황에 따른 솔루션이 무엇인지 이해할 수 있다.
+    <ul>
+      <li>다음 용어에 대한 간단한 정의를 내릴 수 있다: 인덱싱, 레플리카, 파티셔닝, 캐싱, 배치 작업, 스트림 처리</li>
+    </ul>
+  </li>
+  <li>이벤트 기반 아키텍처를 설명할 수 있다.</li>
+  <li>RDBMS에서 테이블을 만들 때 스키마(필드) 디자인을 할 수 있다.</li>
+  <li>데이터 파이프라인의 필요성을 이해할 수 있다.
+    <ul>
+      <li>OLTP와 OLAP의 차이를 이해할 수 있다.</li>
+      <li>ETL 과정을 설명할 수 있다.</li>
+      <li>MLOps와 DevOps의 차이를 이해할 수 있다.</li>
+    </ul>
+  </li>
+  <li>리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다.
+    <ul>
+      <li>간단한 수준의 SQL문을 사용할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="-학습-내용"><strong># 학습 내용</strong></h1>
+
+<h2 id="1-데이터베이스의필요성">1. 데이터베이스의 필요성</h2>
+
+<h3 id="데이터베이스의-필요성">데이터베이스의 필요성</h3>
+
+<p><strong>메모리에 임시 저장 (In-Memory)</strong></p>
+
+<p>메모리에 데이터가 저장될 경우 프로그램이 종료되면 함꼐 소멸</p>
+
+<p>데이터의 수명이 프로그램의 수명에 의존</p>
+
+<p><strong>파일 입/출력 (I/O)</strong></p>
+
+<p>파일을 읽는 방식으로 작동하는 형태</p>
+
+<p>데이터가 필요할 때마다 전체 파일을 매번 읽으므로 파일 크기가 클수록 부하가 크고 비효율적</p>
+
+<p>파일이 손상되거나 여러 파일을 동시에 다뤄야하는 등 복잡하고 데이터량이 많아질수록 데이터 불러들이는 작업이 힘들어짐</p>
+
+<p><strong>∴ 데이터베이스로 해결</strong></p>
+
+<h2 id="2-rdbmsvsnosql">2. RDBMS vs. NoSQL</h2>
+
+<h3 id="sql구조화쿼리언어vsnosql비구조화쿼리언어">SQL(구조화 쿼리 언어) vs. NoSQL(비구조화 쿼리 언어)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>관계형 데이터베이스</th>
+      <th>비관계형 데이터베이스</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>특징</td>
+      <td>SQL 기반, 스키마가 뚜렷</td>
+      <td>NoSQL, Schema-on-read</td>
+    </tr>
+    <tr>
+      <td>만들어진 방식</td>
+      <td>테이블, 행, 열로 구성</td>
+      <td>데이터가 고정되어있지 않은 데이터 베이스</td>
+    </tr>
+    <tr>
+      <td>저장하는 정보 종류</td>
+      <td>열: 속성행 : 각 열의 데이터 형식에 맞는 데이터</td>
+      <td>데이터의 입력 방식이 다양</td>
+    </tr>
+    <tr>
+      <td>저장하는 방법</td>
+      <td>특정한 데이터 형식으로 저장</td>
+      <td>입력 방식에 따라 데이터 읽어올 때 영향</td>
+    </tr>
+    <tr>
+      <td>대표적인 모델</td>
+      <td>https://www.mysql.com/, https://www.oracle.com/database/, https://www.sqlite.org/index.html, https://www.postgresql.org/, https://mariadb.org/</td>
+      <td>https://www.mongodb.com/, https://cassandra.apache.org/</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>NoSQL</strong></p>
+
+<p>NoSQL 기반 비관계형 데이터베이스 특징</p>
+
+<p><strong>Key-Value 타입</strong></p>
+<ul>
+  <li>속성을 Key-Value의 쌍으로 나타내는 데이터를 배열의 형태로 저장</li>
+  <li>Key: 속성 이름,  Value: 속성에 연결된 데이터 값을 의미</li>
+  <li>Redis, Dynamo 등이 대표적인 Key-Value 형식의 데이터베이스</li>
+</ul>
+
+<p><strong>문서형(Document) 데이터베이스</strong></p>
+<ul>
+  <li>데이터를 테이블이 아닌 문서처럼 저장하는 데이터베이스를 의미</li>
+  <li>많은 문서형 데이터베이스에서 JSON과 유사한 형식의 데이터를 문서화하여 저장</li>
+  <li>각각의 문서는 하나의 속성에 대한 데이터를 가지고 있고, 컬렉션이라고 하는 그룹으로 묶어서 관리</li>
+  <li>MongoDB가 대표적인 문서형 데이터베이스</li>
+</ul>
+
+<p><strong>Wide-Column 데이터베이스</strong></p>
+<ul>
+  <li>데이터베이스의 열(column)에 대한 데이터를 집중적으로 관리하는 데이터베이스</li>
+  <li>각 열에는 key-value 형식으로 데이터가 저장되고, 컬럼 패밀리(column families)라고 하는 열의 집합체 단위로 데이터를 처리</li>
+  <li>하나의 행에 많은 열을 포함할 수 있어서 유연성이 높음</li>
+  <li>데이터 처리에 필요한 열을 유연하게 선택할 수 있다는 점에서 규모가 큰 데이터 분석에 주로 사용되는 데이터베이스 형식</li>
+  <li>대표적인 wide-column 데이터베이스에는 Cassandra, HBase</li>
+</ul>
+
+<p><strong>그래프(Graph) 데이터베이스</strong></p>
+<ul>
+  <li>자료구조의 그래프와 비슷한 형식으로 데이터 간의 관계를 구성하는 데이터베이스</li>
+  <li>노드(nodes)에 속성별(entities)로 데이터를 저장</li>
+  <li>각 노드 간 관계는 선(edge)으로 표현</li>
+  <li>대표적인 그래프 데이터베이스에는 Neo4J, InfiniteGraph</li>
+</ul>
+
+<h3 id="sql-기반의-데이터베이스와-nosql-데이터베이스의-차이점">SQL 기반의 데이터베이스와 NoSQL 데이터베이스의 차이점</h3>
+
+<p><strong>데이터 저장(Storage)</strong></p>
+
+<p>NoSQL</p>
+
+<p>key-value, document, wide-column, graph 등의 방식으로 데이터를 저장</p>
+
+<p>관계형 데이터베이스</p>
+
+<p>SQL을 이용해서 데이터를 테이블에 저장
+미리 작성된 스키마를 기반으로 정해진 형식에 맞게 데이터를 저장해야 함</p>
+
+<p><strong>스키마(Schema)</strong></p>
+
+<p>NoSQL</p>
+
+<p>관계형 데이터베이스보다 동적으로 스키마의 형태를 관리
+행을 추가할 때 즉시 새로운 열을 추가할 수 있고, 개별 속성에 대해서 모든 열에 대한 데이터를 반드시 입력하지 않아도 됨</p>
+
+<p>관계형 데이터베이스</p>
+
+<p>SQL을 사용하려면, 고정된 형식의 스키마가 필요
+처리하려는 데이터 속성별로 열(column)에 대한 정보를 미리 정해두어야 함
+스키마는 나중에 변경할 수 있지만, 이 경우 데이터베이스 전체를 수정하거나 오프라인(down-time)으로 전환할 필요</p>
+
+<p><strong>쿼리(Querying) : DB에 대한 정보를 요청하는 질의문</strong></p>
+
+<p>NoSQL</p>
+
+<p>비관계형 데이터베이스의 쿼리는 데이터 그룹 자체를 조회하는 것에 초점
+구조화되지 않은 쿼리 언어로도 데이터 요청이 가능UnQL(UnStructured Query Language)</p>
+
+<p>관계형 데이터베이스</p>
+
+<p>테이블의 형식과 테이블 간의 관계에 맞춰 데이터를 요청
+정보를 요청할 때, SQL과 같이 구조화된 쿼리 언어를 사용</p>
+
+<p><strong>확장성(Scalability)</strong></p>
+
+<p>NoSQL</p>
+
+<p>수평적 확장
+보다 값싼 서버 증설, 또는 클라우드 서비스 이용하는 확장
+NoSQL 데이터베이스를 위한 서버를 추가적으로 구축하면, 많은 트래픽을 보다 편리하게 처리
+저렴한 범용 하드웨어나 클라우드 기반의 인스턴스에 NoSQL 데이터베이스를 호스팅할 수 있어서, 수직적 확장보다 상대적으로 비용이 저렴</p>
+
+<p>관계형 데이터베이스</p>
+
+<p>수직적 확장
+높은 메모리, CPU를 사용하는 확장
+데이터베이스가 구축된 하드웨어의 성능을 많이 이용하기 때문에 비용이 많이 듦
+여러 서버에 걸쳐서 데이터베이스의 관계를 정의할 수 있지만, 매우 복잡하고 시간이 많이 소모</p>
+
+<h3 id="sql과-nosql-중에서-어떤-것을-사용해야-하나요">SQL과 NoSQL 중에서 어떤 것을 사용해야 하나요?</h3>
+
+<p><strong>SQL 기반의 관계형 데이터베이스를 사용하는 케이스</strong></p>
+
+<ol>
+  <li>데이터베이스의 ACID 성질을 준수해야 하는 경우</li>
+</ol>
+
+<p>ACID는 Atomicity(원자성), Consistency(일관성), Isolation(격리성), Durability(지속성) 를 의미
+ &gt; 데이터베이스에서 실행되는 하나의 트랜잭션(Transaction)에 의한 상태의 변화를 수행하는 과정에서, 안전성을 보장하기 위해 필요한 성질
+SQL을 사용하면 데이터베이스와 상호 작용하는 방식을 정확하게 규정할 수 있기 때문에, 데이터베이스에서 데이터를 처리할 때 발생할 수 있는 예외적인 상황을 줄이고, 데이터베이스의 무결성을 보호 가능
+전자 상거래를 비롯한 모든 금융 서비스를 위한 소프트웨어 개발 에서는 반드시 데이터베이스의 ACID 성질을 준수해야 하므로 이런 경우에는 일반적으로 SQL을 이용한 관계형 데이터베이스를 사용</p>
+
+<ol>
+  <li>소프트웨어에 사용되는 데이터가 구조적이고 일관적인 경우</li>
+</ol>
+
+<p>소프트웨어(프로젝트)의 규모가 많은 서버를 필요로 하지 않고 일관된 데이터를 사용하는 경우, 관계형 데이터베이스를 사용하는 경우가 많음
+다양한 데이터 유형과 높은 트래픽을 지원하도록 설계된 NoSQL 데이터베이스를 사용해야만 하는 이유가 없기 때문</p>
+
+<p><strong>NoSQL 기반의 비관계형 데이터베이스를 사용하는 케이스</strong></p>
+
+<ol>
+  <li>데이터의 구조가 거의 또는 전혀 없는 대용량의 데이터를 저장하는 경우</li>
+</ol>
+
+<p>대부분의 NoSQL 데이터베이스는 저장할 수 있는 데이터의 유형에 제한이 없음
+필요에 따라, 언제든지 데이터의 새 유형을 추가 가능
+소프트웨어 개발에 정형화되지 않은 많은 양의 데이터가 필요한 경우, NoSQL을 적용하는 것이 더 효율적</p>
+
+<ol>
+  <li>클라우드 컴퓨팅 및 저장공간을 최대한 활용하는 경우</li>
+</ol>
+
+<p>클라우드 기반으로 데이터베이스 저장소를 구축하면, 저렴한 비용의 솔루션을 제공받을 수 있음
+소프트웨어에 데이터베이스의 확장성이 중요하다면, 별다른 번거로움 없이 확장할 수 있는 NoSQL 데이터베이스를 사용하는 것이 좋음</p>
+
+<ol>
+  <li>빠르게 서비스를 구축하는 과정에서 데이터 구조를 자주 업데이트 하는 경우</li>
+</ol>
+
+<p>NoSQL 데이터베이스의 경우 스키마를 미리 준비할 필요가 없기 때문에 빠르게 개발하는 과정에 매우 유리(시장에 빠르게 프로토타입을 출시해야 하는 경우)
+또한 소프트웨어 버전별로 많은 다운타임(데이터베이스 서버를 오프라인으로 전환하여 데이터 처리를 진행하는 작업 시간) 없이 데이터 구조를 자주 업데이트 해야 하는 경우, 스키마를 매번 수정해야 하는 관계형 데이터베이스 보다 NoSQL 기반의 비관계형 데이터베이스를 사용하는 게 더 적합</p>
+
+<h2 id="3-관계형데이터베이스의표준언어sql">3. 관계형 데이터베이스의 표준 언어 SQL</h2>
+
+<h3 id="sql소개">SQL 소개</h3>
+
+<p>Structured Query Language로 주로 RDB에서 사용</p>
+
+<p>데이터베이스용 프로그래밍 언어로 데이터베이스에 쿼리를 보내 원하는 데이터를 가져오거나 삽입 가능</p>
+
+<p>데이터가 구조화(structured)된 테이블을 사용하는 데이터베이스에서 활용</p>
+
+<p>vs. NoSQL은 데이터 구조가 고정되어있지 않아 테이블을 사용하지 않고 다른 형태로 저장하는 문서 지향 데이터베이스</p>
+
+<h3 id="쿼리란">쿼리란?</h3>
+
+<p>질의문</p>
+
+<p>검색을 할 때, 기존에 존재하는 데이터를 검색어로 필터링</p>
+
+<p>저장되어 있는 데이터를 필터하기 위한 질의문</p>
+
+<h3 id="sql-학습">SQL 학습</h3>
+
+<p><a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial을 활용해보기</a></p>
+
+<h1 id="-references"><strong># References</strong></h1>
+
+<ul>
+  <li><a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial</a></li>
+</ul>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/day9/">
+                                    
+                                        <img src="/net.png">
+                                    
+                                    <h3>DevOps&#91;Day9&#93; / [웹서비스 개발 기초]</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/day28-6/">
+                                    
+                                        <img src="/docker.png">
+                                    
+                                    <h3>DevOps&#91;Day28-6&#93; / [Docker]</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/day29-1/">
+                                    
+                                        <img src="/docker.png">
+                                    
+                                    <h3>DevOps&#91;Day29-1&#93; / [아마존 웹 서비스(AWS)]</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="5">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/day17-2/" class="post-preview">
+        <div class="image">
+            
+                <img src="/db.png">
+            
+        </div>
+        <h3 class="title">DevOps&#91;Day17-2&#93; / [데이터베이스]</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;01. 데이터베이스 기초&quot;%20http://localhost:4000/day17-1/%20via%20&#64;&hashtags=데이터베이스,RDBMS,NoSql,OLTP,OLAP,스키마,필드,정규화,배치작업,DevOps BootCamp"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/day17-1/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+</section>
+
+        
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'teddynote';
+        var disqus_title = '';
+        var disqus_url = '/day17-1/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+    <p>
+      
+        <a href="https://github.com/teddy-woo" title="Github">
+          <svg><use xlink:href="#icon-github"></use></svg>
+        </a>
+      
+      
+      
+      
+      
+      
+    </p>
+
+    <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/feed.xml">Feed</a>
+      </li>
+    
+  
+</ul>
+
+
+    <p>
+      <span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="https://rossener.com" target="_blank" class="creator">Thiago Rossener</a>
+    </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Teddy-woo's DevOps Challenge!",
+  "description": "도현's 데브옵스 도전기! is made by Teddy-woo.",
+  "url": "http://localhost:4000/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/teddy-woo"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YQQ2NQ44TG"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQQ2NQ44TG');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "DevOps&#91;Day17-1&#93; / [데이터베이스]",
+            "headline": "01. 데이터베이스 기초",
+            "description": "01. 데이터베이스 기초",
+            "image": "/db.png",
+            "url": "http://localhost:4000/day17-1/",
+            "articleBody": "# 학습 목표
+
+
+  RDBMS와 NoSQL의 차이와 각각의 장단점을 이해할 수 있다.
+  충분한 가용성이 확보되지 않은 다양한 문제 상황을 이해하고, 상황에 따른 솔루션이 무엇인지 이해할 수 있다.
+    
+      다음 용어에 대한 간단한 정의를 내릴 수 있다: 인덱싱, 레플리카, 파티셔닝, 캐싱, 배치 작업, 스트림 처리
+    
+  
+  이벤트 기반 아키텍처를 설명할 수 있다.
+  RDBMS에서 테이블을 만들 때 스키마(필드) 디자인을 할 수 있다.
+  데이터 파이프라인의 필요성을 이해할 수 있다.
+    
+      OLTP와 OLAP의 차이를 이해할 수 있다.
+      ETL 과정을 설명할 수 있다.
+      MLOps와 DevOps의 차이를 이해할 수 있다.
+    
+  
+  리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다.
+    
+      간단한 수준의 SQL문을 사용할 수 있다.
+    
+  
+
+
+# 학습 내용
+
+1. 데이터베이스의 필요성
+
+데이터베이스의 필요성
+
+메모리에 임시 저장 (In-Memory)
+
+메모리에 데이터가 저장될 경우 프로그램이 종료되면 함꼐 소멸
+
+데이터의 수명이 프로그램의 수명에 의존
+
+파일 입/출력 (I/O)
+
+파일을 읽는 방식으로 작동하는 형태
+
+데이터가 필요할 때마다 전체 파일을 매번 읽으므로 파일 크기가 클수록 부하가 크고 비효율적
+
+파일이 손상되거나 여러 파일을 동시에 다뤄야하는 등 복잡하고 데이터량이 많아질수록 데이터 불러들이는 작업이 힘들어짐
+
+∴ 데이터베이스로 해결
+
+2. RDBMS vs. NoSQL
+
+SQL(구조화 쿼리 언어) vs. NoSQL(비구조화 쿼리 언어)
+
+
+  
+    
+      구분
+      관계형 데이터베이스
+      비관계형 데이터베이스
+    
+  
+  
+    
+      특징
+      SQL 기반, 스키마가 뚜렷
+      NoSQL, Schema-on-read
+    
+    
+      만들어진 방식
+      테이블, 행, 열로 구성
+      데이터가 고정되어있지 않은 데이터 베이스
+    
+    
+      저장하는 정보 종류
+      열: 속성행 : 각 열의 데이터 형식에 맞는 데이터
+      데이터의 입력 방식이 다양
+    
+    
+      저장하는 방법
+      특정한 데이터 형식으로 저장
+      입력 방식에 따라 데이터 읽어올 때 영향
+    
+    
+      대표적인 모델
+      https://www.mysql.com/, https://www.oracle.com/database/, https://www.sqlite.org/index.html, https://www.postgresql.org/, https://mariadb.org/
+      https://www.mongodb.com/, https://cassandra.apache.org/
+    
+  
+
+
+NoSQL
+
+NoSQL 기반 비관계형 데이터베이스 특징
+
+Key-Value 타입
+
+  속성을 Key-Value의 쌍으로 나타내는 데이터를 배열의 형태로 저장
+  Key: 속성 이름,  Value: 속성에 연결된 데이터 값을 의미
+  Redis, Dynamo 등이 대표적인 Key-Value 형식의 데이터베이스
+
+
+문서형(Document) 데이터베이스
+
+  데이터를 테이블이 아닌 문서처럼 저장하는 데이터베이스를 의미
+  많은 문서형 데이터베이스에서 JSON과 유사한 형식의 데이터를 문서화하여 저장
+  각각의 문서는 하나의 속성에 대한 데이터를 가지고 있고, 컬렉션이라고 하는 그룹으로 묶어서 관리
+  MongoDB가 대표적인 문서형 데이터베이스
+
+
+Wide-Column 데이터베이스
+
+  데이터베이스의 열(column)에 대한 데이터를 집중적으로 관리하는 데이터베이스
+  각 열에는 key-value 형식으로 데이터가 저장되고, 컬럼 패밀리(column families)라고 하는 열의 집합체 단위로 데이터를 처리
+  하나의 행에 많은 열을 포함할 수 있어서 유연성이 높음
+  데이터 처리에 필요한 열을 유연하게 선택할 수 있다는 점에서 규모가 큰 데이터 분석에 주로 사용되는 데이터베이스 형식
+  대표적인 wide-column 데이터베이스에는 Cassandra, HBase
+
+
+그래프(Graph) 데이터베이스
+
+  자료구조의 그래프와 비슷한 형식으로 데이터 간의 관계를 구성하는 데이터베이스
+  노드(nodes)에 속성별(entities)로 데이터를 저장
+  각 노드 간 관계는 선(edge)으로 표현
+  대표적인 그래프 데이터베이스에는 Neo4J, InfiniteGraph
+
+
+SQL 기반의 데이터베이스와 NoSQL 데이터베이스의 차이점
+
+데이터 저장(Storage)
+
+NoSQL
+
+key-value, document, wide-column, graph 등의 방식으로 데이터를 저장
+
+관계형 데이터베이스
+
+SQL을 이용해서 데이터를 테이블에 저장
+미리 작성된 스키마를 기반으로 정해진 형식에 맞게 데이터를 저장해야 함
+
+스키마(Schema)
+
+NoSQL
+
+관계형 데이터베이스보다 동적으로 스키마의 형태를 관리
+행을 추가할 때 즉시 새로운 열을 추가할 수 있고, 개별 속성에 대해서 모든 열에 대한 데이터를 반드시 입력하지 않아도 됨
+
+관계형 데이터베이스
+
+SQL을 사용하려면, 고정된 형식의 스키마가 필요
+처리하려는 데이터 속성별로 열(column)에 대한 정보를 미리 정해두어야 함
+스키마는 나중에 변경할 수 있지만, 이 경우 데이터베이스 전체를 수정하거나 오프라인(down-time)으로 전환할 필요
+
+쿼리(Querying) : DB에 대한 정보를 요청하는 질의문
+
+NoSQL
+
+비관계형 데이터베이스의 쿼리는 데이터 그룹 자체를 조회하는 것에 초점
+구조화되지 않은 쿼리 언어로도 데이터 요청이 가능UnQL(UnStructured Query Language)
+
+관계형 데이터베이스
+
+테이블의 형식과 테이블 간의 관계에 맞춰 데이터를 요청
+정보를 요청할 때, SQL과 같이 구조화된 쿼리 언어를 사용
+
+확장성(Scalability)
+
+NoSQL
+
+수평적 확장
+보다 값싼 서버 증설, 또는 클라우드 서비스 이용하는 확장
+NoSQL 데이터베이스를 위한 서버를 추가적으로 구축하면, 많은 트래픽을 보다 편리하게 처리
+저렴한 범용 하드웨어나 클라우드 기반의 인스턴스에 NoSQL 데이터베이스를 호스팅할 수 있어서, 수직적 확장보다 상대적으로 비용이 저렴
+
+관계형 데이터베이스
+
+수직적 확장
+높은 메모리, CPU를 사용하는 확장
+데이터베이스가 구축된 하드웨어의 성능을 많이 이용하기 때문에 비용이 많이 듦
+여러 서버에 걸쳐서 데이터베이스의 관계를 정의할 수 있지만, 매우 복잡하고 시간이 많이 소모
+
+SQL과 NoSQL 중에서 어떤 것을 사용해야 하나요?
+
+SQL 기반의 관계형 데이터베이스를 사용하는 케이스
+
+
+  데이터베이스의 ACID 성질을 준수해야 하는 경우
+
+
+ACID는 Atomicity(원자성), Consistency(일관성), Isolation(격리성), Durability(지속성) 를 의미
+ &amp;gt; 데이터베이스에서 실행되는 하나의 트랜잭션(Transaction)에 의한 상태의 변화를 수행하는 과정에서, 안전성을 보장하기 위해 필요한 성질
+SQL을 사용하면 데이터베이스와 상호 작용하는 방식을 정확하게 규정할 수 있기 때문에, 데이터베이스에서 데이터를 처리할 때 발생할 수 있는 예외적인 상황을 줄이고, 데이터베이스의 무결성을 보호 가능
+전자 상거래를 비롯한 모든 금융 서비스를 위한 소프트웨어 개발 에서는 반드시 데이터베이스의 ACID 성질을 준수해야 하므로 이런 경우에는 일반적으로 SQL을 이용한 관계형 데이터베이스를 사용
+
+
+  소프트웨어에 사용되는 데이터가 구조적이고 일관적인 경우
+
+
+소프트웨어(프로젝트)의 규모가 많은 서버를 필요로 하지 않고 일관된 데이터를 사용하는 경우, 관계형 데이터베이스를 사용하는 경우가 많음
+다양한 데이터 유형과 높은 트래픽을 지원하도록 설계된 NoSQL 데이터베이스를 사용해야만 하는 이유가 없기 때문
+
+NoSQL 기반의 비관계형 데이터베이스를 사용하는 케이스
+
+
+  데이터의 구조가 거의 또는 전혀 없는 대용량의 데이터를 저장하는 경우
+
+
+대부분의 NoSQL 데이터베이스는 저장할 수 있는 데이터의 유형에 제한이 없음
+필요에 따라, 언제든지 데이터의 새 유형을 추가 가능
+소프트웨어 개발에 정형화되지 않은 많은 양의 데이터가 필요한 경우, NoSQL을 적용하는 것이 더 효율적
+
+
+  클라우드 컴퓨팅 및 저장공간을 최대한 활용하는 경우
+
+
+클라우드 기반으로 데이터베이스 저장소를 구축하면, 저렴한 비용의 솔루션을 제공받을 수 있음
+소프트웨어에 데이터베이스의 확장성이 중요하다면, 별다른 번거로움 없이 확장할 수 있는 NoSQL 데이터베이스를 사용하는 것이 좋음
+
+
+  빠르게 서비스를 구축하는 과정에서 데이터 구조를 자주 업데이트 하는 경우
+
+
+NoSQL 데이터베이스의 경우 스키마를 미리 준비할 필요가 없기 때문에 빠르게 개발하는 과정에 매우 유리(시장에 빠르게 프로토타입을 출시해야 하는 경우)
+또한 소프트웨어 버전별로 많은 다운타임(데이터베이스 서버를 오프라인으로 전환하여 데이터 처리를 진행하는 작업 시간) 없이 데이터 구조를 자주 업데이트 해야 하는 경우, 스키마를 매번 수정해야 하는 관계형 데이터베이스 보다 NoSQL 기반의 비관계형 데이터베이스를 사용하는 게 더 적합
+
+3. 관계형 데이터베이스의 표준 언어 SQL
+
+SQL 소개
+
+Structured Query Language로 주로 RDB에서 사용
+
+데이터베이스용 프로그래밍 언어로 데이터베이스에 쿼리를 보내 원하는 데이터를 가져오거나 삽입 가능
+
+데이터가 구조화(structured)된 테이블을 사용하는 데이터베이스에서 활용
+
+vs. NoSQL은 데이터 구조가 고정되어있지 않아 테이블을 사용하지 않고 다른 형태로 저장하는 문서 지향 데이터베이스
+
+쿼리란?
+
+질의문
+
+검색을 할 때, 기존에 존재하는 데이터를 검색어로 필터링
+
+저장되어 있는 데이터를 필터하기 위한 질의문
+
+SQL 학습
+
+SQL Tutorial을 활용해보기
+
+# References
+
+
+  SQL Tutorial
+
+",
+            "wordcount": "970",
+            "inLanguage": "ko",
+            "dateCreated": "2023-03-29/",
+            "datePublished": "2023-03-29/",
+            "dateModified": "2023-03-29/",
+            "author": {
+                "@type": "Person",
+                "name": "Mr. Anderson",
+                
+                "image": "/assets/img/uploads/profile.png",
+                
+                "jobTitle": "The One",
+                "url": "http://localhost:4000/authors/mranderson/",
+                "sameAs": [
+                    "https://github.com/github_username","https://www.facebook.com/facebook_username","https://twitter.com/twitter_username","https://medium.com/@medium_username","https://www.instagram.com/instagram_username","https://www.linkedin.com/in/linkedin_username"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Teddy-woo's DevOps Challenge!",
+                "url": "http://localhost:4000/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://localhost:4000/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "데이터베이스",
+            "articleSection": "데이터베이스",
+            "keywords": ["데이터베이스","RDBMS","NoSql","OLTP","OLAP","스키마","필드","정규화","배치작업","DevOps BootCamp"]
+        }
+        </script>
+    </body>
+</html>

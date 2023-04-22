@@ -1,0 +1,453 @@
+[
+  
+  
+  
+    {
+      "title"    : "DevOps&amp;#91;Day29-1&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, EC2, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day29-1/",
+      "date"     : "04/14/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-7&amp;#93; / [Docker]",
+      "tags"     : "docker, env, arg, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-7/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-6&amp;#93; / [Docker]",
+      "tags"     : "docker, network, docker netork, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-6/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-5&amp;#93; / [Docker]",
+      "tags"     : "docker, compose, 실습, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-5/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-4&amp;#93; / [Docker]",
+      "tags"     : "docker, volume, mount, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-4/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-3&amp;#93; / [Docker]",
+      "tags"     : "docker, Docker Hub, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-3/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-2&amp;#93; / [Docker]",
+      "tags"     : "docker, docker container, docker image, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-2/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day28-1&amp;#93; / [Docker]",
+      "tags"     : "docker, docker container, Attached mode, detached mode, docker image, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day28-1/",
+      "date"     : "04/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day27-3&amp;#93; / [Docker]",
+      "tags"     : "docker, Dockerfile, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day27-3/",
+      "date"     : "04/12/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day27-2&amp;#93; / [Docker]",
+      "tags"     : "docker, docker cmd, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day27-2/",
+      "date"     : "04/12/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day27-1&amp;#93; / [Docker]",
+      "tags"     : "docker, docker image, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day27-1/",
+      "date"     : "04/12/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day26-2&amp;#93; / [YAML과 JSON]",
+      "tags"     : "yaml, json, and DevOps BootCamp",
+      "categories" : "YAML과 JSON",
+      "url"      : "/day26-2/",
+      "date"     : "04/11/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day26-1&amp;#93; / [YAML과 JSON]",
+      "tags"     : "yaml, json, and DevOps BootCamp",
+      "categories" : "YAML과 JSON",
+      "url"      : "/day26-1/",
+      "date"     : "04/11/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day25&amp;#93; / [웹 서버 프로그램]",
+      "tags"     : "네트워크, HTTP, Apache, Nginx, 웹 호스팅, POSTMAN, and DevOps BootCamp",
+      "categories" : "웹 서버 프로그램",
+      "url"      : "/day25/",
+      "date"     : "04/10/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day24 발표자료&amp;#93; / [네트워크 기초]",
+      "tags"     : "네트워크, HTTPS, HTTP, Header, POSTMAN, 발표자료, and DevOps BootCamp",
+      "categories" : "네트워크 기초",
+      "url"      : "/day24-3/",
+      "date"     : "04/07/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day24-2&amp;#93; / [네트워크 기초]",
+      "tags"     : "네트워크, Proxy, Load Balancer, HTTPS, HTTP, 아키텍쳐, POSTMAN, and DevOps BootCamp",
+      "categories" : "네트워크 기초",
+      "url"      : "/day24-2/",
+      "date"     : "04/07/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day24-1&amp;#93; / [네트워크 기초]",
+      "tags"     : "네트워크, Proxy, HTTPS, HTTP, 아키텍쳐, POSTMAN, and DevOps BootCamp",
+      "categories" : "네트워크 기초",
+      "url"      : "/day24-1/",
+      "date"     : "04/07/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day23 발표자료(2)&amp;#93; / [네트워크 기초]",
+      "tags"     : "네트워크, HTTPS, HTTP, HTTP/0.9, HTTP/1.0, HTTP/1.1, HTTP/2, HTTP/3, Header, POSTMAN, 발표자료, and DevOps BootCamp",
+      "categories" : "네트워크 기초",
+      "url"      : "/day23-2/",
+      "date"     : "04/06/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day23 발표자료(1)&amp;#93; / [네트워크 기초]",
+      "tags"     : "네트워크, 소켓, 포트, HTTPS, HTTP, POSTMAN, 발표자료, and DevOps BootCamp",
+      "categories" : "네트워크 기초",
+      "url"      : "/day23-1/",
+      "date"     : "04/06/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day22&amp;#93; / [회고. 프로젝트1]",
+      "tags"     : "데이터베이스, 프로젝트1, 쇼핑몰, RDBMS, NoSql, HTTPS, HTTP, POSTMAN, 회고, and DevOps BootCamp",
+      "categories" : "프로젝트 회고",
+      "url"      : "/day22/",
+      "date"     : "04/05/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day18&amp;#93; / [데이터베이스]",
+      "tags"     : "데이터베이스, 파이프라인, RDBMS, NoSql, OLTP, OLAP, 배치작업, and DevOps BootCamp",
+      "categories" : "데이터베이스",
+      "url"      : "/day18/",
+      "date"     : "03/30/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day17 발표자료(2)&amp;#93; / [데이터베이스]",
+      "tags"     : "데이터베이스, RDBMS, NoSql, OLTP, OLAP, 배치작업, 발표자료, and DevOps BootCamp",
+      "categories" : "데이터베이스",
+      "url"      : "/day17-4/",
+      "date"     : "03/29/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day17 발표자료(1)&amp;#93; / [데이터베이스]",
+      "tags"     : "데이터베이스, RDBMS, NoSql, OLTP, OLAP, 스키마, 필드, 정규화, 발표자료, and DevOps BootCamp",
+      "categories" : "데이터베이스",
+      "url"      : "/day17-3/",
+      "date"     : "03/29/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day17-2&amp;#93; / [데이터베이스]",
+      "tags"     : "데이터베이스, RDBMS, NoSql, OLTP, OLAP, 스키마, 필드, 정규화, 배치작업, and DevOps BootCamp",
+      "categories" : "데이터베이스",
+      "url"      : "/day17-2/",
+      "date"     : "03/29/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day17-1&amp;#93; / [데이터베이스]",
+      "tags"     : "데이터베이스, RDBMS, NoSql, OLTP, OLAP, 스키마, 필드, 정규화, 배치작업, and DevOps BootCamp",
+      "categories" : "데이터베이스",
+      "url"      : "/day17-1/",
+      "date"     : "03/29/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day15&amp;#93; / [WAS와 Web Server]",
+      "tags"     : "nginx, CozStory, Cors, 호스팅, WAS, Web Server, Web Application Server, 2-Tier, 3-Tier, 동적 웹사이트, 정적 웹사이트, and DevOps BootCamp",
+      "categories" : "WAS와 Web Server",
+      "url"      : "/day15/",
+      "date"     : "03/27/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day14-3&amp;#93; / [WAS와 Web Server]",
+      "tags"     : "nginx, 호스팅, WAS, Web Server, Web Application Server, 2-Tier, 3-Tier, 동적 웹사이트, 정적 웹사이트, and DevOps BootCamp",
+      "categories" : "WAS와 Web Server",
+      "url"      : "/day14-3/",
+      "date"     : "03/24/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day14-2&amp;#93; / [WAS와 Web Server]",
+      "tags"     : "WAS, Web Server, Web Application Server, 2-Tier, 3-Tier, 동적 웹사이트, 정적 웹사이트, and DevOps BootCamp",
+      "categories" : "WAS와 Web Server",
+      "url"      : "/day14-2/",
+      "date"     : "03/24/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day14-1&amp;#93; / [WAS와 Web Server]",
+      "tags"     : "WAS, Web Server, Web Application Server, 3-Tier, and DevOps BootCamp",
+      "categories" : "WAS와 Web Server",
+      "url"      : "/day14-1/",
+      "date"     : "03/24/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day13 발표준비&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, HTTPS, CRUD, REST API, Create, Post, Read, Get, Update, Put, Delete, 개발환경, JavaScript, 발표자료, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day13-3/",
+      "date"     : "03/23/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day13-2&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, HTTPS, CRUD, REST API, Create, Post, Read, Get, Update, Put, Delete, 개발환경, JavaScript, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day13-2/",
+      "date"     : "03/23/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day13-1&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, CRUD, REST API, Create, Post, Read, Get, Update, Put, Delete, 개발환경, JavaScript, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day13-1/",
+      "date"     : "03/23/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day12 발표 준비&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, CRUD, REST API, Create, Post, Read, Get, Update, Put, Delete, 개발환경, JavaScript, 발표자료, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day12-6/",
+      "date"     : "03/22/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day12-5&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, CRUD, REST API, Create, Post, Read, Get, Update, Put, Delete, 개발환경, JavaScript, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day12-5/",
+      "date"     : "03/22/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day12-4&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, Header, Cookie, 개발환경, Runtime, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day12-4/",
+      "date"     : "03/22/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day12-3&amp;#93; / [HTTP]",
+      "tags"     : "HTTP, Cookie, 개발환경, Runtime, and DevOps BootCamp",
+      "categories" : "HTTP",
+      "url"      : "/day12-3/",
+      "date"     : "03/22/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day12-2&amp;#93; / [(사전준비) 개발 환경 구축]",
+      "tags"     : "Docker, node.js, nvm, 개발환경, JavaScript, Runtime, and DevOps BootCamp",
+      "categories" : "(사전준비) 개발 환경 구축",
+      "url"      : "/day12-2/",
+      "date"     : "03/22/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day12-1&amp;#93; / [(사전준비) 개발 환경 구축]",
+      "tags"     : "Node, node.js, 개발환경, JavaScript, Runtime, and DevOps BootCamp",
+      "categories" : "(사전준비) 개발 환경 구축",
+      "url"      : "/day12-1/",
+      "date"     : "03/22/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day11&amp;#93; / [Git과 버전 관리 시스템]",
+      "tags"     : "Github, Git, Branch, 버전관리, and DevOps BootCamp",
+      "categories" : "Git과 버전 관리 시스템",
+      "url"      : "/day11/",
+      "date"     : "03/21/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day10-2&amp;#93; / [Git과 버전 관리 시스템]",
+      "tags"     : "Github, Git, 버전관리, Fork, clone, status, restore, add, commit, reset, log, pull, push, init, remote add, remote -v, and DevOps BootCamp",
+      "categories" : "Git과 버전 관리 시스템",
+      "url"      : "/day10-2/",
+      "date"     : "03/20/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day10-1&amp;#93; / [Git과 버전 관리 시스템]",
+      "tags"     : "Github, Git, 버전관리, and DevOps BootCamp",
+      "categories" : "Git과 버전 관리 시스템",
+      "url"      : "/day10-1/",
+      "date"     : "03/20/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day9&amp;#93; / [웹서비스 개발 기초]",
+      "tags"     : "HTTP, Requests, Responses, Get, POST, PUT, DELETE, and DevOps BootCamp",
+      "categories" : "웹서비스 개발 기초",
+      "url"      : "/day9/",
+      "date"     : "03/17/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day8&amp;#93; / [웹서비스 개발 기초]",
+      "tags"     : "HTTP, Requests, Responses, Connectionless, Stateless, and DevOps BootCamp",
+      "categories" : "웹서비스 개발 기초",
+      "url"      : "/day8/",
+      "date"     : "03/16/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day7-2&amp;#93; / [웹서비스 개발 기초]",
+      "tags"     : "URL, URI, DNS, IP, PORT, 도메인, and DevOps BootCamp",
+      "categories" : "웹서비스 개발 기초",
+      "url"      : "/day7-2/",
+      "date"     : "03/15/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day7-1&amp;#93; / [웹서비스 개발 기초]",
+      "tags"     : "2-Tier, 3-Tier, 아키텍쳐, and DevOps BootCamp",
+      "categories" : "웹서비스 개발 기초",
+      "url"      : "/day7-1/",
+      "date"     : "03/15/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day6&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day6/",
+      "date"     : "03/14/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day5-3&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day5-3/",
+      "date"     : "03/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day5-2&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day5-2/",
+      "date"     : "03/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day5-1&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day5-1/",
+      "date"     : "03/13/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day4-2&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day4-2/",
+      "date"     : "03/10/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day4-1&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day4-1/",
+      "date"     : "03/10/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day3-3&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day3-3/",
+      "date"     : "03/09/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day3-2&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day3-2/",
+      "date"     : "03/09/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day3-1&amp;#93; / [리눅스 운영체제]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "리눅스 운영체제",
+      "url"      : "/day3-1/",
+      "date"     : "03/09/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day2&amp;#93; / [개발 프로세스와 DevOps 업무 개요]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "개발 프로세스와 DevOps 업무 개요",
+      "url"      : "/day2/",
+      "date"     : "03/08/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day1&amp;#93; / [개발 프로세스와 DevOps 업무 개요]",
+      "tags"     : "linux and DevOps BootCamp",
+      "categories" : "개발 프로세스와 DevOps 업무 개요",
+      "url"      : "/day1/",
+      "date"     : "03/07/2023"
+    } 
+  
+]

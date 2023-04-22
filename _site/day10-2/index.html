@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>DevOps&#91;Day10-2&#93; / [Git과 버전 관리 시스템] | Teddy-woo's DevOps Challenge!</title>
+    <meta name="description" content="02. Git">
+    
+        <meta name="keywords" content="Github, Git, 버전관리, Fork, clone, status, restore, add, commit, reset, log, pull, push, init, remote add, remote -v, DevOps BootCamp">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DevOps&#91;Day10-2&#93; / [Git과 버전 관리 시스템] | Teddy-woo's DevOps Challenge!">
+    <meta name="twitter:description" content="02. Git">
+
+    
+        <meta property="twitter:image" content="http://localhost:4000/git.png">
+    
+    
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://localhost:4000/day10-2/">
+    <meta property="og:title" content="DevOps&#91;Day10-2&#93; / [Git과 버전 관리 시스템] | Teddy-woo's DevOps Challenge!">
+    <meta property="og:image" content="/git.png">
+    <meta property="og:description" content="02. Git">
+    <meta property="og:site_name" content="도현's Blog | 도현's 데브옵스 도전기!">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="Teddy-woo's DevOps Challenge!">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="http://localhost:4000/day10-2/">
+    <link rel="alternate" type="application/rss+xml" title="도현's Blog | 도현's 데브옵스 도전기!" href="http://localhost:4000/feed.xml" />
+
+    <!-- Include extra styles -->
+    
+
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+                Teddy-woo's DevOps Challenge! <span class="version">v3.1.2</span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/feed.xml">Feed</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2023-03-20T09:00:00+09:00">
+                            
+
+
+March 20, 2023
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>9 min to read</span>
+                </p>
+                <h1 class="post-title">DevOps&#91;Day10-2&#93; / [Git과 버전 관리 시스템]</h1>
+                <p class="post-subtitle">02. Git</p>
+
+                
+                    <img src="/git.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <h2 id="-학습-목표"><strong># 학습 목표</strong></h2>
+
+<ul>
+  <li>Git의 환경설정을 할 수 있다.
+    <ul>
+      <li>버전 관리 시스템의 필요성을 이해할 수 있다.</li>
+      <li>Github과 Git의 관계에 대해 이해할 수 있다.</li>
+      <li>Repository에 대해 이해할 수 있다.</li>
+      <li>Local Repository와 Remote Repository의 차이를 이해할 수 있다.</li>
+    </ul>
+  </li>
+  <li>상황에 따라 Github의 기능과 Git 명령어를 사용할 수 있다.
+    <ul>
+      <li>Fork</li>
+      <li>clone</li>
+      <li>status</li>
+      <li>restore</li>
+      <li>add</li>
+      <li>commit</li>
+      <li>reset</li>
+      <li>log</li>
+      <li>pull</li>
+      <li>push</li>
+      <li>init</li>
+      <li>remote add</li>
+      <li>remote -v</li>
+    </ul>
+  </li>
+  <li>Git의 세 가지 영역 및 상태를 이해할 수 있다. (Committed, modified, staged)</li>
+  <li>Remote Repository를 페어와 공유하며 협업을 할 수 있다.</li>
+  <li>충돌이 발생했을 경우 해결할 수 있다.</li>
+  <li>Git Repository의 commit되지 않은 변경 사항을 취소할 수 있다.
+    <ul>
+      <li>reset HEAD <file></file></li>
+      <li>checkout – <file></file></li>
+    </ul>
+  </li>
+  <li>협업을 위한 git 개념을 이해할 수 있다.
+    <ul>
+      <li>branch, merge의 개념</li>
+      <li>remote repository에서 origin과 upstream의 차이점</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-학습-내용"><strong># 학습 내용</strong></h2>
+
+<h3 id="1-git-intro"><strong>1. Git intro</strong></h3>
+
+<ul>
+  <li><strong>버전 관리 시스템의 필요성과 사용 이유</strong>
+    <ul>
+      <li>파일이 변경되면 변경 이력 저장 가능</li>
+      <li>이전 버전으로 돌아갈 수 있음</li>
+      <li>어떤 변경사항이 발생했는지 알아보기 쉬움</li>
+      <li>협업하기 좋음</li>
+      <li>백업 가능</li>
+    </ul>
+  </li>
+  <li><strong>Git</strong>
+    <ul>
+      <li>가장 강력하고 대중적인 버전 관리 시스템</li>
+      <li>분산형 버전 관리 시스템</li>
+      <li>소스 코드 기록을 관리하고 추적할 수 있는 버전 관리 시스템</li>
+    </ul>
+  </li>
+  <li><strong>Github</strong>
+    <ul>
+      <li>Git Repository를 관리할 수 있는 클라우드 기반 서비스</li>
+    </ul>
+  </li>
+  <li><strong>Git Repository</strong>
+    <ul>
+      <li>저장소, 파일이나 폴더를 저장해두는 곳</li>
+      <li>분류
+        <ul>
+          <li>Remote Repository : 원격 온라인 서버 상의 저장소, 여러사람이 함께 공유 가능</li>
+          <li>Local Repository : 내 컴퓨터의 저장소 (개인 전용 저장소)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Contributor</strong>
+    <ul>
+      <li>fork, clone, push, pull를 통해 contribute
+        <ul>
+          <li>fork : Remote Repository에 저장된 원격 저장소를 내 원격 저장소로 가져오는 작업</li>
+          <li>clone : 내 원격 저장소에 fork한 파일을 내 로컬 저장소에 clone</li>
+          <li>commit : 내 로컬 저장소에서 수정한 소스 코드를 저장</li>
+          <li>push : commit한 소스코드를 Remote Repository에 업로드</li>
+          <li>pull : Remote Repository에서 변경사항이 있을 경우 가져오는 작업</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://blog.kakaocdn.net/dn/nkxzL/btr4ykne7Qj/yFFzjjPLnApKDKLIQNVvdk/img.png" alt="https://blog.kakaocdn.net/dn/nkxzL/btr4ykne7Qj/yFFzjjPLnApKDKLIQNVvdk/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/bBQErr/btr4wMxPqyh/U3EXMf6kLf8c2RmIy6zjIK/img.png" alt="https://blog.kakaocdn.net/dn/bBQErr/btr4wMxPqyh/U3EXMf6kLf8c2RmIy6zjIK/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/C11OV/btr4G78yKm9/7sYk40sAfuw67DvINFtk0K/img.png" alt="https://blog.kakaocdn.net/dn/C11OV/btr4G78yKm9/7sYk40sAfuw67DvINFtk0K/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/uWiSC/btr4RAhXGqG/zdDBNkvfSBazfFWka0oxrK/img.png" alt="https://blog.kakaocdn.net/dn/uWiSC/btr4RAhXGqG/zdDBNkvfSBazfFWka0oxrK/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/eahkZa/btr4LIgl3aE/m71UaCBVyXkxZh7p16kJ01/img.png" alt="https://blog.kakaocdn.net/dn/eahkZa/btr4LIgl3aE/m71UaCBVyXkxZh7p16kJ01/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/cOnROZ/btr4zcbw1Vb/8wzNk9iTzJJ8kCvORHAaO0/img.png" alt="https://blog.kakaocdn.net/dn/cOnROZ/btr4zcbw1Vb/8wzNk9iTzJJ8kCvORHAaO0/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<p><img src="https://blog.kakaocdn.net/dn/cQCIOn/btr4RA3lRTd/vepTnUWEzRGUOSV2ZlYqgK/img.png" alt="https://blog.kakaocdn.net/dn/cQCIOn/btr4RA3lRTd/vepTnUWEzRGUOSV2ZlYqgK/img.png" /></p>
+
+<p>출처 : 코드스테이츠 DevOps 과정</p>
+
+<h3 id="2-혼자-작업-workflow"><strong>2. 혼자 작업 workflow</strong></h3>
+
+<ul>
+  <li><strong>나만의 오픈소스 제작하기 workflow overview</strong>
+    <ul>
+      <li>git init : 오픈소스 코드를 저장할 디렉토리를 만들고 해당 디렉토리를 local Git repository로 만듦</li>
+      <li>git add : 코드를 작성하고 저장하는 공간, 작업 공간(work space)의 파일 및 디렉토리를 git의 관리 하에 있는 상태로 올려 staging area로 만듦</li>
+      <li>git commit : staging area의 파일은 commit이 가능 (local Git repository에 내 오픈소스 코드 기록)</li>
+      <li>git push : local repository에 기록한 내역을 remote repository에 push</li>
+      <li>git clone, fork : 해당 Github repository에 방문한 다른 개발자가 해당 오픈소스 코드를 이용하고 개선 가능</li>
+    </ul>
+  </li>
+  <li><strong>git init</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># git init : 현재 위치한 디렉토리를 local repository로 생성</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git init
+/home/roheerumi/devops/git_study/.git/ 안의 빈 깃 저장소를 다시 초기화했습니다
+
+<span class="c"># 숨김 파일 확인</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-al</span>
+합계 12
+drwxrwxr-x 3 roheerumi roheerumi 4096  3월 20 11:55 <span class="nb">.</span>
+drwxrwxr-x 5 roheerumi roheerumi 4096  3월 20 11:55 ..
+drwxrwxr-x 7 roheerumi roheerumi 4096  3월 20 11:55 .git
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>git status</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/ehwvb7/btr4wMrkjIT/pwEnKEzGtRd5ZZKt6S0dZk/img.png" alt="https://blog.kakaocdn.net/dn/ehwvb7/btr4wMrkjIT/pwEnKEzGtRd5ZZKt6S0dZk/img.png" /></p>
+
+    <ul>
+      <li>staging area (tracked)
+        <ul>
+          <li>Git에서 변경된 파일들이 일시적으로 저장되는 공간으로 커밋(commit)할 파일들을 선택하고 변경 사항을 검토(review)하는 데 사용</li>
+        </ul>
+      </li>
+      <li>work space (untracked)
+        <ul>
+          <li>추적되지 않은 파일(untracked files)은 Git이 아직 추적하고 있지 않은 파일을 의미</li>
+          <li>새로 생성된 파일 / .gitignore 파일에 명시된 파일</li>
+          <li>스테이징 영역으로 추가되기 전에 git add 명령어를 사용하여 Git이 추적하도록 설정해야</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># git status : 내 로컬의 staging area, untracked files 확인</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git status
+현재 브랜치 master
+
+아직 커밋이 없습니다
+
+커밋할 사항 없음 <span class="o">(</span>파일을 만들거나 복사하고 <span class="s2">"git add"</span>를 사용하면 추적합니다<span class="o">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>git restore</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/cO96q9/btr4xicq4mq/rB6fx9n1pQDLNfrAFM23AK/img.png" alt="https://blog.kakaocdn.net/dn/cO96q9/btr4xicq4mq/rB6fx9n1pQDLNfrAFM23AK/img.png" /></p>
+
+    <ul>
+      <li>commit 혹은 staged되지 않은 Local Repository의 변경 사항 폐기 (처음 clone 받아왔던 상태로 복원)</li>
+      <li>명령어 사용법 : git restore <파일명></파일명></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>git add</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/mgr3T/btr4w5RNQ0n/rDUgzKLJpHqehveLkcRWY0/img.png" alt="https://blog.kakaocdn.net/dn/mgr3T/btr4w5RNQ0n/rDUgzKLJpHqehveLkcRWY0/img.png" /></p>
+
+    <ul>
+      <li>untracked files를 staging area로 추가해서 git의 관리하에 둠</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git add<파일명> : 내 로컬의 untracked file을 명시하여 staging area로 추가</파일명></li>
+          <li>git add . : staging area에 모든 파일을 한 번에 추가</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>git commit</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/byGDOl/btr4wL0l1EH/5Q12wxK0Qdlq7v2EpeJhRK/img.png" alt="https://blog.kakaocdn.net/dn/byGDOl/btr4wL0l1EH/5Q12wxK0Qdlq7v2EpeJhRK/img.png" /></p>
+
+    <ul>
+      <li>수정 작업이 끝났을 때 변경 사항을 저장</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git commit -m “커밋 메시지” : 커밋할 내용의 코멘트 작성 (코멘트 컨벤션 참조 : <a href="https://chris.beams.io/posts/git-commit/">https://chris.beams.io/posts/git-commit/</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Git의 세가지 영역 및 상태</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/bO5REO/btr4YtXBsty/PiUvpMUkxHvK20G7TrKTK0/img.png" alt="https://blog.kakaocdn.net/dn/bO5REO/btr4YtXBsty/PiUvpMUkxHvK20G7TrKTK0/img.png" /></p>
+
+    <ul>
+      <li>영역
+        <ul>
+          <li>untracked area : Git이 관리하고 있지 않은 영역</li>
+          <li>tracked area : Git의 관리 하에 있는 영역으로, Tracked area 내부에서도 세 가지 상태 분류
+            <ul>
+              <li>Commited : 기존에 Commit했던 파일을 수정하지 않은 상태</li>
+              <li>Modified : 기존에 Commit했던 파일을 수정한 상태 (빨간)</li>
+              <li>Staged : commit이 가능한 상태 수정한 파일을 commit 하기 위해서는 staged area에 add 하는 작업이 필요 (초록색)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>git reset</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/QUVNw/btr4xLMB9tf/4o4S18ySLmFw8ofgkN0ytK/img.png" alt="https://blog.kakaocdn.net/dn/QUVNw/btr4xLMB9tf/4o4S18ySLmFw8ofgkN0ytK/img.png" /></p>
+
+    <ul>
+      <li>local에서 commit한 내용을 취소할 경우 상숑</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git reset HEAD^ == git reset HEAD~1: 가장 최신 commit 취소</li>
+          <li>git reset HEAD3 == git reset HEAD^^^</li>
+        </ul>
+      </li>
+      <li>명령어 옵션
+        <ul>
+          <li>-hard</li>
+          <li>-soft</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>git push</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/JBdlx/btr41IGzG39/kduRr77UYk0y5S7QGsMAn0/img.png" alt="https://blog.kakaocdn.net/dn/JBdlx/btr41IGzG39/kduRr77UYk0y5S7QGsMAn0/img.png" /></p>
+
+    <ul>
+      <li>local에서 변경, commit된 사항을 remote repository에 업로드</li>
+      <li>원격 github repository가 존재해야 push 가능 (github.com에서 생성하고, 롤컬 리포지토리 디렉토리명과 동일하게 설정하는 것 권고)
+        <ul>
+          <li>public : 오픈 소스</li>
+          <li>private : 비공개</li>
+        </ul>
+      </li>
+      <li>원격 github repository 생성 후, local repository와 remote repository를 연결</li>
+      <li>연결이 끝나고 나면, <code class="language-plaintext highlighter-rouge">git push</code> 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 새 레파지토리 생성</span>
+…or create a new repository on the <span class="nb">command </span>line
+<span class="nb">echo</span> <span class="s2">"# git_study"</span> <span class="o">&gt;&gt;</span> README.md
+git init
+git add README.md
+git commit <span class="nt">-m</span> <span class="s2">"first commit"</span>
+git branch <span class="nt">-M</span> main
+git remote add origin https://github.com/username/git_study.git
+git push <span class="nt">-u</span> origin main
+
+<span class="c"># 존재하는 레파지토리를 푸시</span>
+…or push an existing repository from the <span class="nb">command </span>line
+git remote add origin https://github.com/username/git_study.git
+git branch <span class="nt">-M</span> main
+git push <span class="nt">-u</span> origin main
+
+<span class="c"># 다른 레파지토리를 import</span>
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># local git repository에 git@~ 경로의 origin remote repository를 추가</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git remote add origin git@github.com:username/git_study.git
+
+<span class="c"># stage 상태로 파일 추가 후 커밋</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git add test.js
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"첫 커밋 테스트"</span>
+<span class="o">[</span>master <span class="o">(</span>최상위-커밋<span class="o">)</span> 4b2cb25] 첫 커밋 테스트
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
+ create mode 100644 test.js
+
+<span class="c"># 브랜치 이름을 main으로 변경</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git branch <span class="nt">-M</span> main
+
+<span class="c"># origin remote repository의 main branch로 현재 local git repository를 push</span>
+roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git push <span class="nt">-u</span> origin main
+오브젝트 나열하는 중: 3, 완료.
+오브젝트 개수 세는 중: 100% <span class="o">(</span>3/3<span class="o">)</span>, 완료.
+오브젝트 쓰는 중: 100% <span class="o">(</span>3/3<span class="o">)</span>, 237 바이트 | 237.00 KiB/s, 완료.
+Total 3 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To github.com:username/git_study.git
+ <span class="k">*</span> <span class="o">[</span>new branch]      main -&gt; main
+<span class="s1">'main'</span> 브랜치가 리모트의 <span class="s1">'main'</span> 브랜치를 <span class="o">(</span><span class="s1">'origin'</span>에서<span class="o">)</span> 따라가도록 설정되었습니다.
+</code></pre></div></div>
+
+<ul>
+  <li><strong>git</strong> <strong>log</strong>
+    <ul>
+      <li>현재까지 commit된 내역들을 터미널 창에서 확인 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git log
+commit 4b2cb25d2f9f2ebd1f376e072dd9cff50d614b2e <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span>
+Author: roheerumi &lt;username@gmail.com&gt;
+Date:   Mon Mar 20 14:28:11 2023 +0900
+
+    첫 커밋 테스트
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>github workflow overview</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/DkMFC/btr4yk9qgjW/CkED0YcOX6pPI5P685vqp1/img.png" alt="https://blog.kakaocdn.net/dn/DkMFC/btr4yk9qgjW/CkED0YcOX6pPI5P685vqp1/img.png" /></p>
+
+    <ul>
+      <li>과정
+        <ul>
+          <li>Remote에 있는 다른 Repository에서 Fork를 해서 Remote에 있는 내 Repository에 가지고 옴</li>
+          <li>해당 코드를 내 컴퓨터에서 작업을 하기 위해서 clone</li>
+          <li>내 컴퓨터의 작업 공간 (work space) 에서 작업에 들어간 파일들을 git의 관리 하에 있는 staging area로 올림</li>
+          <li>staging area의 파일을 commit해 내 remote repository에 push 해서 commit 기록을 remote 에도 남길 수 있음</li>
+          <li>push를 완료한 후 remote의 원래 레파지토리에 pull request를 보내면 Remote Repository로 내가 수정한 코드를 업로드</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>fork</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/Drrx5/btr4Pq8r8LX/ONjBHOA101r8hU5dx42gOK/img.png" alt="https://blog.kakaocdn.net/dn/Drrx5/btr4Pq8r8LX/ONjBHOA101r8hU5dx42gOK/img.png" /></p>
+
+    <ul>
+      <li>다른 계정의 remote repository를 내 계정으로 가져올 때 사용</li>
+      <li>브라우저에서 github.com 접속하여 포크할 레파지토리를 포크해 옴</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>git clone</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/nrq4x/btr40RYm9lF/Vn4NtYj6k3XkJpFQsf7gOK/img.png" alt="https://blog.kakaocdn.net/dn/nrq4x/btr40RYm9lF/Vn4NtYj6k3XkJpFQsf7gOK/img.png" /></p>
+
+    <ul>
+      <li>원격 repository를 내 로컬에서 이용할 수 있도록 복사</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git clone <레파지토리 주소=""></레파지토리></li>
+        </ul>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># 내 원격 저장소에 저장한 레파지토리를 SSH 코드로 해서 내 로컬 저장소로 복사</span>
+  roheerumi@devops:~/devops/git_study<span class="nv">$ </span>git clone git@github.com:username/serverless-patterns-lambda-dynamodb.git
+  <span class="s1">'serverless-patterns-lambda-dynamodb'</span>에 복제합니다...
+  remote: Enumerating objects: 18, <span class="k">done</span><span class="nb">.</span>
+  remote: Counting objects: 100% <span class="o">(</span>18/18<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+  remote: Compressing objects: 100% <span class="o">(</span>15/15<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+  remote: Total 18 <span class="o">(</span>delta 0<span class="o">)</span>, reused 18 <span class="o">(</span>delta 0<span class="o">)</span>, pack-reused 0
+  오브젝트를 받는 중: 100% <span class="o">(</span>18/18<span class="o">)</span>, 9.17 KiB | 9.17 MiB/s, 완료.
+        
+  <span class="c"># 해당 레파지토리 디렉토리로 이동</span>
+  roheerumi@devops:~/devops/git_study<span class="nv">$ </span><span class="nb">cd </span>serverless-patterns-lambda-dynamodb/
+        
+  <span class="c"># 현재 상태 확인</span>
+  roheerumi@devops:~/devops/git_study/serverless-patterns-lambda-dynamodb<span class="nv">$ </span>git status
+  현재 브랜치 main
+  브랜치가 <span class="s1">'origin/main'</span>에 맞게 업데이트된 상태입니다.
+        
+  커밋할 사항 없음, 작업 폴더 깨끗함
+  roheerumi@devops:~/devops/git_study/serverless-patterns-lambda-dynamodb<span class="nv">$ </span>git remote <span class="nt">-v</span>
+  origin	git@github.com:username/serverless-patterns-lambda-dynamodb.git <span class="o">(</span>fetch<span class="o">)</span>
+  origin	git@github.com:username/serverless-patterns-lambda-dynamodb.git <span class="o">(</span>push<span class="o">)</span>
+  roheerumi@devops:~/devops/git_study/serverless-patterns-lambda-dynamodb<span class="err">$</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>pull request(PR)</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/2LAtD/btr4yk2EOF3/r8ZAimzoNoaOgv8JYjugl1/img.png" alt="https://blog.kakaocdn.net/dn/2LAtD/btr4yk2EOF3/r8ZAimzoNoaOgv8JYjugl1/img.png" /></p>
+  </li>
+  <li>내가 push한 변경 사항에 대해 다른 사람들에게 알리는 것</li>
+  <li>변경 사항 push 후 github.com 접속하면 compare &amp; pull request 버튼 생성</li>
+</ul>
+
+<h3 id="3-함께작업-workflow"><strong>3. 함께 작업 workflow</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>github workflow overview</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/pznut/btr4WGiD9lz/OYp08z3JITrqbbU3bsSQg1/img.png" alt="https://blog.kakaocdn.net/dn/pznut/btr4WGiD9lz/OYp08z3JITrqbbU3bsSQg1/img.png" /></p>
+
+    <ul>
+      <li>과정
+        <ul>
+          <li>로컬 저장소에서 생성한 디렉토리를 init 명령어를 통해 Git의 관리하에 들어가게 만듦</li>
+          <li>로컬 저장소의 Git 디렉토리를 Remote Repository와 연결</li>
+          <li>pair의 변경 사항과 나의 변경 사항을 Remote Repository를 통해서 공유</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>init</strong>
+    <ul>
+      <li>기존 디렉토리를 git repository로 변환</li>
+      <li>명령어 사용법 : git init</li>
+    </ul>
+  </li>
+  <li><strong>remote add origin</strong>
+    <ul>
+      <li>내 remote repository를 github에서 생성한 후 local repository와 연결</li>
+      <li>명령어 사용법 : git remote add origin <나의 repository="" 주소=""></나의></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>remote add pair</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/oQcBm/btr4FnECfwo/4C1Ht9L1zSZZ3TrLlJYCNK/img.png" alt="https://blog.kakaocdn.net/dn/oQcBm/btr4FnECfwo/4C1Ht9L1zSZZ3TrLlJYCNK/img.png" /></p>
+
+    <ul>
+      <li>다른 사람의 repository와 연결하여 github repository를 공유</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git remote add pair <다른 사람의="" repository="" 주소=""></다른></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>remote -v</strong>
+    <ul>
+      <li>현재 local repository와 연결된 모든 remote repository 목록 확인 가능</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git remote -v</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>pull</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/bVk7pc/btr4FlNujmK/6OyV0wLDU3FLO58clcMJkk/img.png" alt="https://blog.kakaocdn.net/dn/bVk7pc/btr4FlNujmK/6OyV0wLDU3FLO58clcMJkk/img.png" /></p>
+
+    <ul>
+      <li>remote repository의 작업 내용 가져오기, 받아오는 내용은 자동으로 병합</li>
+      <li>명령어 사용법
+        <ul>
+          <li>git pull <shortname> <branch명></branch명></shortname></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>충돌 해결하기</strong>
+    <ul>
+      <li>같은 부분을 변경한 내용이 존재해 자동으로 병합할 수 없는 경우로 터미널 화면에 merge conflict, automatic merge failed로 확인 가능</li>
+      <li>git status 명령어를 통해 충돌 파일 확인 가능</li>
+      <li>변경 방법
+        <ul>
+          <li>accept current change : 내가 수정한 내용으로 파일 반영</li>
+          <li>accept incoming change : remote repository 내용으로 파일 반영</li>
+          <li>accept both changes : 변경사항 모두 반영</li>
+          <li>직접 파일 수정 반영</li>
+        </ul>
+      </li>
+      <li>수정을 마치면 병합 커밋을 위해 파일을 staging area로 추가(git add) 커밋(git commit), 이후 로컬 레파지토리에 푸시(git push origin master)</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>사진 출처 : 코드스테이츠 DevOps 과정</p>
+
+</blockquote>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/day5-1/">
+                                    
+                                        <img src="/linux.png">
+                                    
+                                    <h3>DevOps&#91;Day5-1&#93; / [리눅스 운영체제]</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/day13-2/">
+                                    
+                                        <img src="/net.png">
+                                    
+                                    <h3>DevOps&#91;Day13-2&#93; / [HTTP]</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/day24-1/">
+                                    
+                                        <img src="/net.png">
+                                    
+                                    <h3>DevOps&#91;Day24-1&#93; / [네트워크 기초]</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="9">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/day11/" class="post-preview">
+        <div class="image">
+            
+                <img src="/git.png">
+            
+        </div>
+        <h3 class="title">DevOps&#91;Day11&#93; / [Git과 버전 관리 시스템]</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;02. Git&quot;%20http://localhost:4000/day10-2/%20via%20&#64;&hashtags=Github,Git,버전관리,Fork,clone,status,restore,add,commit,reset,log,pull,push,init,remote add,remote -v,DevOps BootCamp"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/day10-2/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+</section>
+
+        
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'teddynote';
+        var disqus_title = '';
+        var disqus_url = '/day10-2/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+    <p>
+      
+        <a href="https://github.com/teddy-woo" title="Github">
+          <svg><use xlink:href="#icon-github"></use></svg>
+        </a>
+      
+      
+      
+      
+      
+      
+    </p>
+
+    <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/feed.xml">Feed</a>
+      </li>
+    
+  
+</ul>
+
+
+    <p>
+      <span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="https://rossener.com" target="_blank" class="creator">Thiago Rossener</a>
+    </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Teddy-woo's DevOps Challenge!",
+  "description": "도현's 데브옵스 도전기! is made by Teddy-woo.",
+  "url": "http://localhost:4000/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/teddy-woo"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YQQ2NQ44TG"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQQ2NQ44TG');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "DevOps&#91;Day10-2&#93; / [Git과 버전 관리 시스템]",
+            "headline": "02. Git",
+            "description": "02. Git",
+            "image": "/git.png",
+            "url": "http://localhost:4000/day10-2/",
+            "articleBody": "# 학습 목표
+
+
+  Git의 환경설정을 할 수 있다.
+    
+      버전 관리 시스템의 필요성을 이해할 수 있다.
+      Github과 Git의 관계에 대해 이해할 수 있다.
+      Repository에 대해 이해할 수 있다.
+      Local Repository와 Remote Repository의 차이를 이해할 수 있다.
+    
+  
+  상황에 따라 Github의 기능과 Git 명령어를 사용할 수 있다.
+    
+      Fork
+      clone
+      status
+      restore
+      add
+      commit
+      reset
+      log
+      pull
+      push
+      init
+      remote add
+      remote -v
+    
+  
+  Git의 세 가지 영역 및 상태를 이해할 수 있다. (Committed, modified, staged)
+  Remote Repository를 페어와 공유하며 협업을 할 수 있다.
+  충돌이 발생했을 경우 해결할 수 있다.
+  Git Repository의 commit되지 않은 변경 사항을 취소할 수 있다.
+    
+      reset HEAD 
+      checkout – 
+    
+  
+  협업을 위한 git 개념을 이해할 수 있다.
+    
+      branch, merge의 개념
+      remote repository에서 origin과 upstream의 차이점
+    
+  
+
+
+
+
+# 학습 내용
+
+1. Git intro
+
+
+  버전 관리 시스템의 필요성과 사용 이유
+    
+      파일이 변경되면 변경 이력 저장 가능
+      이전 버전으로 돌아갈 수 있음
+      어떤 변경사항이 발생했는지 알아보기 쉬움
+      협업하기 좋음
+      백업 가능
+    
+  
+  Git
+    
+      가장 강력하고 대중적인 버전 관리 시스템
+      분산형 버전 관리 시스템
+      소스 코드 기록을 관리하고 추적할 수 있는 버전 관리 시스템
+    
+  
+  Github
+    
+      Git Repository를 관리할 수 있는 클라우드 기반 서비스
+    
+  
+  Git Repository
+    
+      저장소, 파일이나 폴더를 저장해두는 곳
+      분류
+        
+          Remote Repository : 원격 온라인 서버 상의 저장소, 여러사람이 함께 공유 가능
+          Local Repository : 내 컴퓨터의 저장소 (개인 전용 저장소)
+        
+      
+    
+  
+  Contributor
+    
+      fork, clone, push, pull를 통해 contribute
+        
+          fork : Remote Repository에 저장된 원격 저장소를 내 원격 저장소로 가져오는 작업
+          clone : 내 원격 저장소에 fork한 파일을 내 로컬 저장소에 clone
+          commit : 내 로컬 저장소에서 수정한 소스 코드를 저장
+          push : commit한 소스코드를 Remote Repository에 업로드
+          pull : Remote Repository에서 변경사항이 있을 경우 가져오는 작업
+        
+      
+    
+  
+
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+
+
+출처 : 코드스테이츠 DevOps 과정
+
+2. 혼자 작업 workflow
+
+
+  나만의 오픈소스 제작하기 workflow overview
+    
+      git init : 오픈소스 코드를 저장할 디렉토리를 만들고 해당 디렉토리를 local Git repository로 만듦
+      git add : 코드를 작성하고 저장하는 공간, 작업 공간(work space)의 파일 및 디렉토리를 git의 관리 하에 있는 상태로 올려 staging area로 만듦
+      git commit : staging area의 파일은 commit이 가능 (local Git repository에 내 오픈소스 코드 기록)
+      git push : local repository에 기록한 내역을 remote repository에 push
+      git clone, fork : 해당 Github repository에 방문한 다른 개발자가 해당 오픈소스 코드를 이용하고 개선 가능
+    
+  
+  git init
+
+
+# git init : 현재 위치한 디렉토리를 local repository로 생성
+roheerumi@devops:~/devops/git_study$ git init
+/home/roheerumi/devops/git_study/.git/ 안의 빈 깃 저장소를 다시 초기화했습니다
+
+# 숨김 파일 확인
+roheerumi@devops:~/devops/git_study$ ls -al
+합계 12
+drwxrwxr-x 3 roheerumi roheerumi 4096  3월 20 11:55 .
+drwxrwxr-x 5 roheerumi roheerumi 4096  3월 20 11:55 ..
+drwxrwxr-x 7 roheerumi roheerumi 4096  3월 20 11:55 .git
+
+
+
+  
+    git status
+
+    
+
+    
+      staging area (tracked)
+        
+          Git에서 변경된 파일들이 일시적으로 저장되는 공간으로 커밋(commit)할 파일들을 선택하고 변경 사항을 검토(review)하는 데 사용
+        
+      
+      work space (untracked)
+        
+          추적되지 않은 파일(untracked files)은 Git이 아직 추적하고 있지 않은 파일을 의미
+          새로 생성된 파일 / .gitignore 파일에 명시된 파일
+          스테이징 영역으로 추가되기 전에 git add 명령어를 사용하여 Git이 추적하도록 설정해야
+        
+      
+    
+  
+
+
+# git status : 내 로컬의 staging area, untracked files 확인
+roheerumi@devops:~/devops/git_study$ git status
+현재 브랜치 master
+
+아직 커밋이 없습니다
+
+커밋할 사항 없음 (파일을 만들거나 복사하고 &quot;git add&quot;를 사용하면 추적합니다)
+
+
+
+  
+    git restore
+
+    
+
+    
+      commit 혹은 staged되지 않은 Local Repository의 변경 사항 폐기 (처음 clone 받아왔던 상태로 복원)
+      명령어 사용법 : git restore 
+    
+  
+  
+    git add
+
+    
+
+    
+      untracked files를 staging area로 추가해서 git의 관리하에 둠
+      명령어 사용법
+        
+          git add : 내 로컬의 untracked file을 명시하여 staging area로 추가
+          git add . : staging area에 모든 파일을 한 번에 추가
+        
+      
+    
+  
+  
+    git commit
+
+    
+
+    
+      수정 작업이 끝났을 때 변경 사항을 저장
+      명령어 사용법
+        
+          git commit -m “커밋 메시지” : 커밋할 내용의 코멘트 작성 (코멘트 컨벤션 참조 : https://chris.beams.io/posts/git-commit/)
+        
+      
+    
+  
+  
+    Git의 세가지 영역 및 상태
+
+    
+
+    
+      영역
+        
+          untracked area : Git이 관리하고 있지 않은 영역
+          tracked area : Git의 관리 하에 있는 영역으로, Tracked area 내부에서도 세 가지 상태 분류
+            
+              Commited : 기존에 Commit했던 파일을 수정하지 않은 상태
+              Modified : 기존에 Commit했던 파일을 수정한 상태 (빨간)
+              Staged : commit이 가능한 상태 수정한 파일을 commit 하기 위해서는 staged area에 add 하는 작업이 필요 (초록색)
+            
+          
+        
+      
+    
+  
+  
+    git reset
+
+    
+
+    
+      local에서 commit한 내용을 취소할 경우 상숑
+      명령어 사용법
+        
+          git reset HEAD^ == git reset HEAD~1: 가장 최신 commit 취소
+          git reset HEAD3 == git reset HEAD^^^
+        
+      
+      명령어 옵션
+        
+          -hard
+          -soft
+        
+      
+    
+  
+  
+    git push
+
+    
+
+    
+      local에서 변경, commit된 사항을 remote repository에 업로드
+      원격 github repository가 존재해야 push 가능 (github.com에서 생성하고, 롤컬 리포지토리 디렉토리명과 동일하게 설정하는 것 권고)
+        
+          public : 오픈 소스
+          private : 비공개
+        
+      
+      원격 github repository 생성 후, local repository와 remote repository를 연결
+      연결이 끝나고 나면, git push 가능
+    
+  
+
+
+# 새 레파지토리 생성
+…or create a new repository on the command line
+echo &quot;# git_study&quot; &amp;gt;&amp;gt; README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git branch -M main
+git remote add origin https://github.com/username/git_study.git
+git push -u origin main
+
+# 존재하는 레파지토리를 푸시
+…or push an existing repository from the command line
+git remote add origin https://github.com/username/git_study.git
+git branch -M main
+git push -u origin main
+
+# 다른 레파지토리를 import
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+# local git repository에 git@~ 경로의 origin remote repository를 추가
+roheerumi@devops:~/devops/git_study$ git remote add origin git@github.com:username/git_study.git
+
+# stage 상태로 파일 추가 후 커밋
+roheerumi@devops:~/devops/git_study$ git add test.js
+roheerumi@devops:~/devops/git_study$ git commit -m &quot;첫 커밋 테스트&quot;
+[master (최상위-커밋) 4b2cb25] 첫 커밋 테스트
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.js
+
+# 브랜치 이름을 main으로 변경
+roheerumi@devops:~/devops/git_study$ git branch -M main
+
+# origin remote repository의 main branch로 현재 local git repository를 push
+roheerumi@devops:~/devops/git_study$ git push -u origin main
+오브젝트 나열하는 중: 3, 완료.
+오브젝트 개수 세는 중: 100% (3/3), 완료.
+오브젝트 쓰는 중: 100% (3/3), 237 바이트 | 237.00 KiB/s, 완료.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:username/git_study.git
+ * [new branch]      main -&amp;gt; main
+&apos;main&apos; 브랜치가 리모트의 &apos;main&apos; 브랜치를 (&apos;origin&apos;에서) 따라가도록 설정되었습니다.
+
+
+
+  git log
+    
+      현재까지 commit된 내역들을 터미널 창에서 확인 가능
+    
+  
+
+
+roheerumi@devops:~/devops/git_study$ git log
+commit 4b2cb25d2f9f2ebd1f376e072dd9cff50d614b2e (HEAD -&amp;gt; main, origin/main)
+Author: roheerumi &amp;lt;username@gmail.com&amp;gt;
+Date:   Mon Mar 20 14:28:11 2023 +0900
+
+    첫 커밋 테스트
+
+
+
+  
+    github workflow overview
+
+    
+
+    
+      과정
+        
+          Remote에 있는 다른 Repository에서 Fork를 해서 Remote에 있는 내 Repository에 가지고 옴
+          해당 코드를 내 컴퓨터에서 작업을 하기 위해서 clone
+          내 컴퓨터의 작업 공간 (work space) 에서 작업에 들어간 파일들을 git의 관리 하에 있는 staging area로 올림
+          staging area의 파일을 commit해 내 remote repository에 push 해서 commit 기록을 remote 에도 남길 수 있음
+          push를 완료한 후 remote의 원래 레파지토리에 pull request를 보내면 Remote Repository로 내가 수정한 코드를 업로드
+        
+      
+    
+  
+  
+    fork
+
+    
+
+    
+      다른 계정의 remote repository를 내 계정으로 가져올 때 사용
+      브라우저에서 github.com 접속하여 포크할 레파지토리를 포크해 옴
+    
+  
+  
+    git clone
+
+    
+
+    
+      원격 repository를 내 로컬에서 이용할 수 있도록 복사
+      명령어 사용법
+        
+          git clone 
+        
+
+          # 내 원격 저장소에 저장한 레파지토리를 SSH 코드로 해서 내 로컬 저장소로 복사
+  roheerumi@devops:~/devops/git_study$ git clone git@github.com:username/serverless-patterns-lambda-dynamodb.git
+  &apos;serverless-patterns-lambda-dynamodb&apos;에 복제합니다...
+  remote: Enumerating objects: 18, done.
+  remote: Counting objects: 100% (18/18), done.
+  remote: Compressing objects: 100% (15/15), done.
+  remote: Total 18 (delta 0), reused 18 (delta 0), pack-reused 0
+  오브젝트를 받는 중: 100% (18/18), 9.17 KiB | 9.17 MiB/s, 완료.
+        
+  # 해당 레파지토리 디렉토리로 이동
+  roheerumi@devops:~/devops/git_study$ cd serverless-patterns-lambda-dynamodb/
+        
+  # 현재 상태 확인
+  roheerumi@devops:~/devops/git_study/serverless-patterns-lambda-dynamodb$ git status
+  현재 브랜치 main
+  브랜치가 &apos;origin/main&apos;에 맞게 업데이트된 상태입니다.
+        
+  커밋할 사항 없음, 작업 폴더 깨끗함
+  roheerumi@devops:~/devops/git_study/serverless-patterns-lambda-dynamodb$ git remote -v
+  origin	git@github.com:username/serverless-patterns-lambda-dynamodb.git (fetch)
+  origin	git@github.com:username/serverless-patterns-lambda-dynamodb.git (push)
+  roheerumi@devops:~/devops/git_study/serverless-patterns-lambda-dynamodb$
+        
+      
+    
+  
+  
+    pull request(PR)
+
+    
+  
+  내가 push한 변경 사항에 대해 다른 사람들에게 알리는 것
+  변경 사항 push 후 github.com 접속하면 compare &amp;amp; pull request 버튼 생성
+
+
+3. 함께 작업 workflow
+
+
+  
+    github workflow overview
+
+    
+
+    
+      과정
+        
+          로컬 저장소에서 생성한 디렉토리를 init 명령어를 통해 Git의 관리하에 들어가게 만듦
+          로컬 저장소의 Git 디렉토리를 Remote Repository와 연결
+          pair의 변경 사항과 나의 변경 사항을 Remote Repository를 통해서 공유
+        
+      
+    
+  
+  init
+    
+      기존 디렉토리를 git repository로 변환
+      명령어 사용법 : git init
+    
+  
+  remote add origin
+    
+      내 remote repository를 github에서 생성한 후 local repository와 연결
+      명령어 사용법 : git remote add origin 
+    
+  
+  
+    remote add pair
+
+    
+
+    
+      다른 사람의 repository와 연결하여 github repository를 공유
+      명령어 사용법
+        
+          git remote add pair 
+        
+      
+    
+  
+  remote -v
+    
+      현재 local repository와 연결된 모든 remote repository 목록 확인 가능
+      명령어 사용법
+        
+          git remote -v
+        
+      
+    
+  
+  
+    pull
+
+    
+
+    
+      remote repository의 작업 내용 가져오기, 받아오는 내용은 자동으로 병합
+      명령어 사용법
+        
+          git pull  
+        
+      
+    
+  
+  충돌 해결하기
+    
+      같은 부분을 변경한 내용이 존재해 자동으로 병합할 수 없는 경우로 터미널 화면에 merge conflict, automatic merge failed로 확인 가능
+      git status 명령어를 통해 충돌 파일 확인 가능
+      변경 방법
+        
+          accept current change : 내가 수정한 내용으로 파일 반영
+          accept incoming change : remote repository 내용으로 파일 반영
+          accept both changes : 변경사항 모두 반영
+          직접 파일 수정 반영
+        
+      
+      수정을 마치면 병합 커밋을 위해 파일을 staging area로 추가(git add) 커밋(git commit), 이후 로컬 레파지토리에 푸시(git push origin master)
+    
+  
+
+
+
+  사진 출처 : 코드스테이츠 DevOps 과정
+
+
+",
+            "wordcount": "1795",
+            "inLanguage": "ko",
+            "dateCreated": "2023-03-20/",
+            "datePublished": "2023-03-20/",
+            "dateModified": "2023-03-20/",
+            "author": {
+                "@type": "Person",
+                "name": "Mr. Anderson",
+                
+                "image": "/assets/img/uploads/profile.png",
+                
+                "jobTitle": "The One",
+                "url": "http://localhost:4000/authors/mranderson/",
+                "sameAs": [
+                    "https://github.com/github_username","https://www.facebook.com/facebook_username","https://twitter.com/twitter_username","https://medium.com/@medium_username","https://www.instagram.com/instagram_username","https://www.linkedin.com/in/linkedin_username"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Teddy-woo's DevOps Challenge!",
+                "url": "http://localhost:4000/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://localhost:4000/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "Git과 버전 관리 시스템",
+            "articleSection": "Git과 버전 관리 시스템",
+            "keywords": ["Github","Git","버전관리","Fork","clone","status","restore","add","commit","reset","log","pull","push","init","remote add","remote -v","DevOps BootCamp"]
+        }
+        </script>
+    </body>
+</html>

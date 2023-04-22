@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>도현&apos;s Blog | 도현&apos;s 데브옵스 도전기!</title>
+    <description>도현&apos;s 데브옵스 도전기! is made by Teddy-woo.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 22 Apr 2023 22:40:15 +0900</pubDate>
+    <lastBuildDate>Sat, 22 Apr 2023 22:40:15 +0900</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>DevOps&amp;#91;Day29-1&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;ec2&quot;&gt;EC2&lt;/h2&gt; &lt;p&gt;EC2란 아마존 웹 서비스에서 제공하는 클라우드 컴퓨팅 서비스입니다. 클라우드 컴퓨팅은 인터넷(클라우드)을 통해 서버, 스토리지, 데이터베이스 등의 컴퓨팅 서비스를 제공하는 서비스입니다. 정리하면 아마존에서 가상의 컴퓨터를 한 대 빌리는 것과 같습니다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/ea2039cd-b3bf-414f-a42e-6e1ab5e7a47d/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;AWS에서 제공하는 Elastic Compute Cloud 서비스 앞에 붙은 Elastic이라는 단어는 어떤 의미일까요?&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;해당 단어는 고사양 게임을 플레이하는 것에 비유하여 설명하면 이해하기 편합니다.&lt;/p&gt; &lt;p&gt;집에서 고사양 게임을 하기 위해서는 게임을 1시간을 하든지 10시간을 하든지 간에 기본적으로 지출해야 하는 돈이 있습니다.&lt;/p&gt; &lt;p&gt;그런데 후불제 PC방에 간다면 집에서 게임을 하기 위해서 기본적으로 지출해야 하는 비용 대신, PC방을 사용한 시간에 대해서만 비용을 지불하면 됩니다.&lt;/p&gt; &lt;p&gt;EC2 서비스도 이런 후불제 PC방과...</description>
+        <pubDate>Fri, 14 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day29-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day29-1/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>EC2</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-7&amp;#93; / [Docker]</title>
+        <description>&lt;h2 id=&quot;env&quot;&gt;ENV&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;환경변수 지정&lt;/li&gt; &lt;li&gt;$변수 혹은 ${변수} 형태로 표현 가능&lt;/li&gt; &lt;li&gt;또한, ${변수:-값}으로 값을 기본값으로 표현 가능&lt;/li&gt; &lt;li&gt;${변수:+값}의 경우는 반대에 경우인데 사용할 일이 있을까 싶다.&lt;/li&gt; &lt;li&gt;docker run 시에 –e 옵션을 활용하여 오버라이딩 할 수 있다. &lt;h2 id=&quot;arg&quot;&gt;ARG&lt;/h2&gt; &lt;/li&gt; &lt;li&gt;build 시점에만 사용되는 변수&lt;/li&gt; &lt;li&gt;ARG 변수 혹은 ARG 변수=값 형태로 표현 가능&lt;/li&gt; &lt;li&gt;ENV처럼 ${변수:+값}, ${변수:-값}으로도 표현 가능&lt;/li&gt; &lt;li&gt;docker build 시에 –build-arg 옵션을 활용하여 오버라이딩 할 수 있다. ``` #example &lt;h1 id=&quot;expect-a-build-time-variable이미지-빌드-시-build-arg-파라미터로-변수-값-전달하기&quot;&gt;expect a build-time variable(이미지 빌드 시 –build-arg 파라미터로 변수 값 전달하기)&lt;/h1&gt; &lt;p&gt;ARG SOME_VALUE&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;set-default-env-value-from-arg&quot;&gt;set default ENV value from ARG&lt;/h1&gt; &lt;p&gt;ENV env_var=$SOME_VALUE&lt;/p&gt; &lt;h1 id=&quot;if-not-overridden-that-value-of-env_var-will-be-available-to-your-containers&quot;&gt;if not overridden, that value of env_var...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-7/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-7/</guid>
+        
+        <category>docker</category>
+        
+        <category>env</category>
+        
+        <category>arg</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-6&amp;#93; / [Docker]</title>
+        <description>&lt;h2 id=&quot;도커-네트워크-구조&quot;&gt;도커 네트워크 구조&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/8f034405-c3e5-45e4-a004-99672daac3ed/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;기본적으로 도커를 호스트 운영체제에 설치하면 여러가지 네트워크 드라이버들이 설치되며 IP 주소를 순차적으로 할당하고 도커 컨테이너를 실행할 때 사용하고 싶은 네트워크 드라이버를 선택할 수 있습니다.&lt;/p&gt; &lt;p&gt;기본적으로 도커는 컨테이너에 172.17.0.x의 IP를 순차적으로 할당합니다. 확인해보기 위해 아래의 명령어로 컨테이너를 생성해줍니다.&lt;/p&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -it ubuntu:focal &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;그리고 컨테이너 내부에서 ifconfig 명령어로 컨테이너의 네트워크 인터페이스를 확인합니다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/aa7b8596-92a5-40f3-9d9e-f39ceba376df/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;위 스크린샷을 보면 lo 네트워크 인터페이스와 eth0 네트워크 인터페이스가 각각 172.17.0.1과 172.17.0.2가 할당된 것을 확인할 수 있습니다. 이 IP들은 내부 IP로 아무런 설정을 하지 않았다면 이 컨테이너는 외부에서 접근할 수 없으며 &lt;strong&gt;도커가 설치된...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-6/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-6/</guid>
+        
+        <category>docker</category>
+        
+        <category>network</category>
+        
+        <category>docker netork</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-5&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;docker-compose실습&quot;&gt;Docker compose실습&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/6fb1b1ec-48bf-4b00-b665-9cbb98b84e36/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;frontend-directory에-있는-files이-image로-build되어야함&quot;&gt;frontend directory에 있는 files이 image로 build되어야함&lt;/h3&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Apache HTTP Server (httpd:2.4)를 base image로 함&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;컨테이너 내 80으로 접속하면 index.html이 표시 됨&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;backend-directory에-있는-files이-image로-build되어야함&quot;&gt;backend directory에 있는 files이 image로 build되어야함&lt;/h3&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Node.js image (node:16-alpine)를 base image로 함&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;컨테이너 내 80으로 접속하면 hello from server가 응답으로 표시 됨&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;두-images가-동시에-실행-되어야함-docker-composeyml-사용&quot;&gt;두 images가 동시에 실행 되어야함 (docker-compose.yml 사용)&lt;/h3&gt; &lt;h2 id=&quot;1-image를-생성-하기위한-dockerfile을-각-frontend와-backend에-생성&quot;&gt;1. image를 생성 하기위한 dockerfile을 각 /frontend와 /backend에 생성&lt;/h2&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[frontend dockerfile] FROM httpd:2.4 //httpd:2.4이미지를 기반으로 하는 Apache 웹 서버 성 WORKDIR /usr/local/apache2/htdocs/ // 작업...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-5/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-5/</guid>
+        
+        <category>docker</category>
+        
+        <category>compose</category>
+        
+        <category>실습</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-4&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;docker---volume-mount&quot;&gt;Docker - volume, mount&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/bc8551a2-1b4e-4768-bd20-1433c988bbbe/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;도커 컨테이너는 컨테이너마다 기본적으로 독립적인 저장소를 가지고 있다. 하나의 이미지로 여러 컨테이너를 만든다면 해당 컨테이너마다 독립적인 볼륨(하나의 파일 시스템을 갖춘 접근 가능한 저장 공간)이 할당되고, 컨테이너가 삭제되면 해당 볼륨 또한 삭제된다. 문제는 컨테이너 내부에 저장된 데이터는 컨테이너가 삭제되었을 경우 같이 삭제된다.&lt;/p&gt; &lt;/blockquote&gt; &lt;blockquote&gt; &lt;p&gt;그래서 도커에서는 데이터의 영속성을 보장하기 위하여 볼륨과 바인드 마운트를 이용한다. 볼륨과 바인드 마운트는 영속성을 보장하며 파일 시스템과 컨테이너를 분리하여 관리한다. 즉 컨테이너를 지웠다가 다시 실행해도 도커 볼륨과 연결한다면 데이터는 그대로 유지된다.&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;마운트mount&quot;&gt;마운트(Mount)&lt;/h2&gt; &lt;p&gt;물리적인 장치를 특정한 디렉토리 위치에 연결시켜 주는 과정&lt;/p&gt; &lt;p&gt;리눅스에서는 하드디스크의 파티션, CD/DVD, USB메모리...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-4/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-4/</guid>
+        
+        <category>docker</category>
+        
+        <category>volume</category>
+        
+        <category>mount</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-3&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;docker---docker-hub&quot;&gt;Docker - Docker Hub&lt;/h1&gt; &lt;h2 id=&quot;docker-hub란&quot;&gt;Docker Hub란?&lt;/h2&gt; &lt;p&gt;Docker Hub는 사용자가 Docker 컨테이너 이미지를 저장, 공유 및 관리할 수 있는 클라우드 기반 레지스트리 서비스입니다. 개발자와 IT 전문가가 미리 빌드된 Docker 이미지에 액세스하고 협업할 수 있는 중앙 리포지토리 역할을 하므로 Docker 환경에서 애플리케이션을 더 쉽게 빌드, 배포 및 실행할 수 있습니다.&lt;/p&gt; &lt;p&gt;Docker Hub를 통해 사용자는 다른 개발자가 만든 이미지를 검색하고 다운로드할 수 있을 뿐만 아니라 자신의 이미지를 저장하고 관리할 수 있습니다. 또한 사용자는 자동 빌드를 생성하여 소스 코드가 변경될 때마다 이미지를 자동으로 빌드하고 테스트할 수 있습니다.&lt;/p&gt; &lt;p&gt;Docker Hub는 공용 및 개인 리포지토리를 모두 제공하여 사용자가 이미지를 커뮤니티와 공유하거나 내부용으로 비공개로 유지할...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-3/</guid>
+        
+        <category>docker</category>
+        
+        <category>Docker Hub</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-2&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;docker---컨테이너와-이미지-관리&quot;&gt;Docker - 컨테이너와 이미지 관리&lt;/h1&gt; &lt;h2 id=&quot;이미지와-컨테이너-삭제하기&quot;&gt;이미지와 컨테이너 삭제하기&lt;/h2&gt; &lt;h3 id=&quot;도커-컨테이너를-삭제한다&quot;&gt;도커 컨테이너를 삭제한다.&lt;/h3&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm &amp;lt;컨테이너&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h3 id=&quot;중지된-모든-컨테이너를-삭제한다&quot;&gt;중지된 모든 컨테이너를 삭제한다.&lt;/h3&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker container prune &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h3 id=&quot;도커-이미지를-삭제한다&quot;&gt;도커 이미지를 삭제한다.&lt;/h3&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rmi &amp;lt;이미지&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h3 id=&quot;사용중이-아니고-태그가-존재하지-않는-모든-이미지를-삭제한다-태그가-존재하는-이미지도-삭제하려면-뒤에--a-옵션을-붙여준다&quot;&gt;사용중이 아니고 태그가 존재하지 않는 모든 이미지를 삭제한다. 태그가 존재하는 이미지도 삭제하려면 뒤에 -a 옵션을 붙여준다.&lt;/h3&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker image prune &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;이미지를 삭제 할 때, 해당 이미지를 포함하고 있는 컨테이너가 존재한다면 컨테이너의 실행 유무와 상관없이 삭제가 불가능하다.&lt;/p&gt; &lt;h3 id=&quot;컨테이너가-멈추면-자동으로-삭제하기&quot;&gt;컨테이너가 멈추면 자동으로 삭제하기&lt;/h3&gt; &lt;p&gt;docker run 명령어를 통해 도커를 실행할 때에는...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-2/</guid>
+        
+        <category>docker</category>
+        
+        <category>docker container</category>
+        
+        <category>docker image</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day28-1&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;docker---attach-and-detach&quot;&gt;Docker - Attach and Detach&lt;/h1&gt; &lt;h2 id=&quot;포그라운드-실행attached-mode-run&quot;&gt;포그라운드 실행(Attached mode), run&lt;/h2&gt; &lt;p&gt;포그라운드 실행은 현재 실행하는 터미널(콘솔)에 컨테이너의 동작 상태를 출력하는 모드라고 할 수 있다.&lt;/p&gt; &lt;p&gt;이렇게 실행할 경우, 컨테이너의 동작상태를 볼 수 있어서 유용하다.&lt;/p&gt; &lt;p&gt;다만 터미널과 프로세스가 함께 부모, 자식으로 연결되므로, 터미널이 끊어질 경우 컨테이너가 종료되게 된다.&lt;/p&gt; &lt;p&gt;따라서 테스트시 이용하는 것이 바람직하다.&lt;/p&gt; &lt;p&gt;다만 일반적인 터미널 프로그램과 다르게 터미널에서 Ctrl + C 를 눌려서도 강제로 종료할 수 없고,&lt;/p&gt; &lt;p&gt;터미널을 닫으면 종료된다. 따라서 만약 포그라운드로 실행한다면, 따로 터미널을 실행해서 관리해야 한다.&lt;/p&gt; &lt;p&gt;Docker Compose 역시 기본적으로 포그라운드로 실행된다.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;docker run 명령을 사용하면 기본적으로 포그라운드로 실행된다.&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;백그라운드-실행detached-mode-start&quot;&gt;백그라운드 실행(detached mode) start&lt;/h2&gt; &lt;p&gt;도커를 서비스형태로...</description>
+        <pubDate>Thu, 13 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day28-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day28-1/</guid>
+        
+        <category>docker</category>
+        
+        <category>docker container</category>
+        
+        <category>Attached mode</category>
+        
+        <category>detached mode</category>
+        
+        <category>docker image</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day27-3&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;dockerfile-이란&quot;&gt;Dockerfile 이란?&lt;/h1&gt; &lt;p&gt;도커파일은 docker 에서 이미지를 생성하기 위한 용도로 작성하는 파일이다.&lt;/p&gt; &lt;p&gt;만들 이미지에 대한 정보를 기술해 둔 템플릿(template) 이라고 보면 된다.&lt;/p&gt; &lt;p&gt;도커 이미지를 만들 때&lt;/p&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build [옵션] [작성한 dockerfile 경로] &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;위와 같이 명령어를 입력하면 작성한 도커파일의 내용을 기반으로 이미지 빌드가 시작된다.&lt;/p&gt; &lt;h1 id=&quot;도커파일-예시&quot;&gt;도커파일 예시&lt;/h1&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM ubuntu:18.04 COPY . /app RUN make /app CMD python /app/app.py &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;도커파일은 위와 같이 명령어들이 나열된 형태로 작성한다.&lt;/p&gt; &lt;p&gt;그리고 각 line 의 맨 앞은 대문자로 이루어진 지시어(Instruction) 로 시작한다.&lt;/p&gt; &lt;h2 id=&quot;도커파일-instructions-종류타입&quot;&gt;도커파일 Instructions 종류(타입)&lt;/h2&gt; &lt;h3 id=&quot;1-from&quot;&gt;1) FROM&lt;/h3&gt; &lt;p&gt;도커파일에서 FROM 은 베이스 이미지(Base image)를 지정하는 지시어다.&lt;/p&gt;...</description>
+        <pubDate>Wed, 12 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day27-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day27-3/</guid>
+        
+        <category>docker</category>
+        
+        <category>Dockerfile</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day27-2&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;도커-명령어&quot;&gt;도커 명령어&lt;/h1&gt; &lt;h2 id=&quot;컨테이너-제어-명령어&quot;&gt;컨테이너 제어 명령어&lt;/h2&gt; &lt;h3 id=&quot;컨테이너-내려받기&quot;&gt;컨테이너 내려받기&lt;/h3&gt; &lt;p&gt;예시로 nginx 컨테이너를 받는다면 다음과 같이 적을 수 있다. latest 태그는 가장 최신 버전의 컨테이너 이미지를 가져온다.&lt;/p&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker pull NAME[:TAG] $ docker pull nginx:latest &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h3 id=&quot;컨테이너-실행&quot;&gt;컨테이너 실행&lt;/h3&gt; &lt;p&gt;컨테이너 실행은 일반적으로 docker run 명령어를 사용하며 다음과 같은 형식을 가진다. ubuntu:16.04 컨테이너를 실행한다면 다음과 같이 실행할 수 있다.&lt;/p&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker run [OPTION] IMAGE [COMMAND] $ docker run -i -t imagename /bin/bash &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h3 id=&quot;포어그라운드fore-ground-실행&quot;&gt;포어그라운드(fore-ground) 실행&lt;/h3&gt; &lt;p&gt;t 옵션은 tty를 할당하고 i옵션은 표준 입출력을 사용한다. 예시로 ubuntu 16.04 버전의 컨테이너를 -i, -t 옵션을 주어...</description>
+        <pubDate>Wed, 12 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day27-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day27-2/</guid>
+        
+        <category>docker</category>
+        
+        <category>docker cmd</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day27-1&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;docker-image란&quot;&gt;Docker image란?&lt;/h1&gt; &lt;p&gt;Application을 포장 및 전송하기 위해 도커는 “docker image”를 사용한다.&lt;/p&gt; &lt;p&gt;Docker image는 파일로 어플리케이션 실행에 필요한 독립적인 환경을 포함하며, 런타임 환경을 위한 일종의 템플릿이다.&lt;/p&gt; &lt;p&gt;도커 이미지는 소스 코드, 라이브러리, 종속성, 도구 및 응용 프로그램을 실행하는데 필요한 기타 파일을 포함하는 &lt;strong&gt;불변(변경 불가)&lt;/strong&gt; 파일이다.&lt;/p&gt; &lt;p&gt;이미지는 읽기 전용이므로 스냅샷이라고도 하며, 특정 시점의 애플리케이션과 가상 환경을 나타낸다.&lt;/p&gt; &lt;p&gt;이러한 일관성은 도커의 큰 특징 중 하나로 개발자가 안정적이고 균일한 조건에서 소프트웨어를 테스트하고 실험할 수 있도록 한다.&lt;/p&gt; &lt;p&gt;이미지는 템플릿일 뿐이므로 시작하거나 실행할 수 없다. 컨테이너는 실행 중인 이미지일 뿐이기 때문이다.&lt;/p&gt; &lt;p&gt;컨테이너를 생성하면 쓰기 가능한 레이어가 immutable image(불변 이미지) 위에 추가된다. 즉, 컨테이너는 수정이 가능하다.&lt;/p&gt; &lt;p&gt;컨테이너를...</description>
+        <pubDate>Wed, 12 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day27-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day27-1/</guid>
+        
+        <category>docker</category>
+        
+        <category>docker image</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day26-2&amp;#93; / [YAML과 JSON]</title>
+        <description>&lt;h1 id=&quot;대표적인-데이터-교환-포맷-json&quot;&gt;대표적인 데이터 교환 포맷 JSON&lt;/h1&gt; &lt;h2 id=&quot;json의-탄생-배경&quot;&gt;JSON의 탄생 배경&lt;/h2&gt; &lt;p&gt;JSON은 JavaScript Object Notation의 줄임말로, 데이터 교환을 위해 만들어진 객체 형태의 포맷입니다. 네트워크를 통해, 어떤 객체 내용을 다른 프로그램에게 전송한다고 가정하겠습니다. 이 객체 내용을 일종의 메신저 혹은 채팅 프로그램에서 쓰는 하나의 메시지라고 한다면, 다음 객체를 어떻게 전송할 수 있을까요?&lt;/p&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;sender:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;김코딩&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;receiver:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;박해커&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;message:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;해커야 오늘 저녁 같이 먹을래?&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;createdAt:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;2021-01-12 10:10:10&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;메시지 객체가 전송 가능하려면, 메시지를 보내는 발신자와 메시지를 받는 수신자가 같은 프로그램을...</description>
+        <pubDate>Tue, 11 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day26-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day26-2/</guid>
+        
+        <category>yaml</category>
+        
+        <category>json</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>YAML과 JSON</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day26-1&amp;#93; / [YAML과 JSON]</title>
+        <description>&lt;h1 id=&quot;yaml-yaml-aint-markup-language&quot;&gt;YAML: YAML Ain’t Markup Language&lt;/h1&gt; &lt;p&gt;YAML은 구조를 가진 데이터 표현 양식의 한 종류입니다. 데이터는 다양한 형태로 표현될 수 있는데 일반적으로 사용하는 JSON이나 XML도 표현 양식의 한 종류입니다. 이렇게 데이터를 형식에 맞춰 사용하는 이유는 데이터를 전달 주고 받을 때 서로 쉽게 이해하게 하기 위해서 입니다.&lt;/p&gt; &lt;p&gt;YAML은 최근 들어 많이 활용되고 있는 데이터 형식이며, 사람이 읽고 이해하기 쉬운 형태를 가지고 있습니다. DevOps 직군에서는 다양한 설정 파일들을 YAML 형식으로 작성하는 경우가 많습니다. 이때 파일 확장자는 .yml 또는 .yaml 을 사용합니다.&lt;/p&gt; &lt;h2 id=&quot;yaml-문법&quot;&gt;YAML 문법&lt;/h2&gt; &lt;h3 id=&quot;1-데이터-정의&quot;&gt;1. 데이터 정의&lt;/h3&gt; &lt;p&gt;YAML은 기본적으로 데이터를 정의 할 때, key: value 형태로 데이터를 정의합니다. 이때 콜론 : 뒤에는...</description>
+        <pubDate>Tue, 11 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day26-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day26-1/</guid>
+        
+        <category>yaml</category>
+        
+        <category>json</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>YAML과 JSON</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day25&amp;#93; / [웹 서버 프로그램]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/80c4d30e-3bf1-4f5d-a3ca-18bc4baee551/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;apache-http-server&quot;&gt;Apache HTTP Server&lt;/h2&gt; &lt;p&gt;Apache는 Apache Software Foundation에서 만든 웹 서버 프로그램이다. 거의 모든 OS에서 실행되고, 다른 유명한 소프트웨어 프로젝트와의 문서화가 잘 되어있고 통합 지원 등의 이점이 있습니다.&lt;/p&gt; &lt;h2 id=&quot;주요-특징&quot;&gt;주요 특징&lt;/h2&gt; &lt;p&gt;동적 컨텐츠 처리&lt;/p&gt; &lt;p&gt;다양한 모듈&lt;/p&gt; &lt;p&gt;스레드 / 프로세스 기반 구조 &lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/ecf41a0a-61bb-4ad1-8959-aabe07e8ad80/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Apache는 클라이언트 요청당 하나의 스레드가 처리하는 구조입니다.&lt;/li&gt; &lt;li&gt;사용자가 많으면 스레드 생성, 메모리 및 CPU 낭비가 심합니다.&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;mpm-multi-process-module&quot;&gt;MPM (Multi-Process Module)&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;MPM은 크게 두 가지 방식이 있습니다. PreFork 방식 / Worker 방식&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/6df9748c-0fea-4b9f-9d13-ed6b59a22916/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;prefork-mpm-다중-프로세스&quot;&gt;PreFork MPM (다중 프로세스)&lt;/h3&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Client 요청에 대해 Apache 자식...</description>
+        <pubDate>Mon, 10 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day25/</link>
+        <guid isPermaLink="true">http://localhost:4000/day25/</guid>
+        
+        <category>네트워크</category>
+        
+        <category>HTTP</category>
+        
+        <category>Apache</category>
+        
+        <category>Nginx</category>
+        
+        <category>웹 호스팅</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>웹 서버 프로그램</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day24 발표자료&amp;#93; / [네트워크 기초]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/c452944e-394b-4f9e-83f0-f7b86530aec7/image.jpg&quot; alt=&quot;발료자료-1&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;다음의-헤더를-보고-유추할-수-있는-내용을-모두-작성하세요&quot;&gt;다음의 헤더를 보고 유추할 수 있는 내용을 모두 작성하세요.&lt;/h1&gt; &lt;h2 id=&quot;response-header&quot;&gt;Response header&lt;/h2&gt; &lt;ul&gt; &lt;li&gt; &lt;h3 id=&quot;http11-200-ok-server-nginx&quot;&gt;HTTP/1.1 200 OK Server: nginx&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;응답은 HTTP/1.1 응답이며, 상태 코드는 200 OK 입니다. 응답을 보내는 서버는 nginx를 실행하고 있습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;date-tue-06-dec-2022-044109-gmt&quot;&gt;Date: Tue, 06 Dec 2022 04:41:09 GMT&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;응답은 Tue, 06 Dec 2022 04:41:09 GMT 에 생성되었습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;content-type-texthtml-charsetutf-8&quot;&gt;Content-Type: text/html; charset=utf-8&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;응답의 내용은 text/html 형식이며, utf-8로 인코딩되어 있습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;transfer-encoding-chunked&quot;&gt;Transfer-Encoding: chunked&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;chunked 전송 인코딩을 사용하여 보내집니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;connection-keep-alive&quot;&gt;Connection: keep-alive&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;연결은 keep-alive되어 있습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt;...</description>
+        <pubDate>Fri, 07 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day24-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day24-3/</guid>
+        
+        <category>네트워크</category>
+        
+        <category>HTTPS</category>
+        
+        <category>HTTP</category>
+        
+        <category>Header</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>발표자료</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>네트워크 기초</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day24-2&amp;#93; / [네트워크 기초]</title>
+        <description>&lt;h2 id=&quot;chapter-아키텍처를-구성하는-요소들--load-balancer&quot;&gt;[Chapter] 아키텍처를 구성하는 요소들 : Load Balancer&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;단일 서버로 구성할 경우 해당 서버에 장애가 발생했을 때 정상적인 서비스 제공 불가능&lt;/li&gt; &lt;li&gt;가용성을 높이기 위하여 두 대 이상의 서버로 구성하는 경우가 있는데 IP가 다르기 때문에 사용자가 서비스를 호출할 때 어떤 IP로 서비스를 요청할 지 결정해야 함&lt;/li&gt; &lt;li&gt;로드밸런서에는 동일한 서비스를 제공하는 다수의 서버가 등록되고 사용자로부터 서비스 요청이 오면 로드밸런서가 받아 사용자별로 다수의 서버에 요청을 분산시켜 부하를 분산&lt;/li&gt; &lt;li&gt;사용자는 개별 IP를 통해 각 서버로 접근&lt;/li&gt; &lt;li&gt;로드밸런서는 서비스가 가능한 서버로만 사용자 요청을 분산하므로 서버에서 장애가 발생하더라도 다른 서버에서 서비스 제공 가능&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;계층별-load-balancer&quot;&gt;계층별 Load Balancer&lt;/h1&gt; &lt;h2 id=&quot;l4-load-balancer&quot;&gt;L4 Load Balancer&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;OSI 4계층&lt;/li&gt;...</description>
+        <pubDate>Fri, 07 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day24-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day24-2/</guid>
+        
+        <category>네트워크</category>
+        
+        <category>Proxy</category>
+        
+        <category>Load Balancer</category>
+        
+        <category>HTTPS</category>
+        
+        <category>HTTP</category>
+        
+        <category>아키텍쳐</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>네트워크 기초</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day24-1&amp;#93; / [네트워크 기초]</title>
+        <description>&lt;h2 id=&quot;chapter-아키텍처를-구성하는-요소들--proxy&quot;&gt;[Chapter] 아키텍처를 구성하는 요소들 : Proxy&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;원 서버를 대리하여 통신하며 캐시, 로브밸런서, 보안 등 중계 역할을 하는 서버&lt;/li&gt; &lt;li&gt;중간에 위치하고 있기 때문에 클라이언트는 프록시 서버를 서버로 인식하고 서버는 클라이언트로 인식&lt;/li&gt; &lt;li&gt;보안, 안정성, 서비스 성능 개선하는 데 사용&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/7b71ab32-f7be-47e0-ac79-dcce07e0ce95/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;foward-proxy&quot;&gt;Foward Proxy&lt;/h1&gt; &lt;hr /&gt; &lt;ul&gt; &lt;li&gt;일반적인 프록시 서버&lt;/li&gt; &lt;li&gt;클라이언트-서버 구조에서 클라이언트 쪽을 대리&lt;/li&gt; &lt;li&gt;클라이언트에서 서버로 리소스를 요청할 때 프록시 서버를 거쳐서 요청&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;foward-proxy-특징&quot;&gt;Foward Proxy 특징&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;프라이버시 강화 &lt;ul&gt; &lt;li&gt;웹 서버에서 클라이언트의 IP를 숨기는 데 사용&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;암호화 &lt;ul&gt; &lt;li&gt;웹 사이트에 대한 SSL과 같은 암호화 구현&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;압축 &lt;ul&gt; &lt;li&gt;네트워크 대역폭을...</description>
+        <pubDate>Fri, 07 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day24-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day24-1/</guid>
+        
+        <category>네트워크</category>
+        
+        <category>Proxy</category>
+        
+        <category>HTTPS</category>
+        
+        <category>HTTP</category>
+        
+        <category>아키텍쳐</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>네트워크 기초</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day23 발표자료(2)&amp;#93; / [네트워크 기초]</title>
+        <description>&lt;h1 id=&quot;http-버전별-특징과-차이점을-설명하세요&quot;&gt;HTTP 버전별 특징과 차이점을 설명하세요.&lt;/h1&gt; &lt;h2 id=&quot;http09&quot;&gt;HTTP/0.9:&lt;/h2&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;1991년에 출시된 HTTP의 첫 번째 버전입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;클라이언트가 서버에서 HTML 문서를 검색할 수 있게 해주는 매우 간단한 프로토콜이었습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;헤더를 지원하지 않아 요청이나 응답에 메타데이터나 추가 정보를 포함할 방법이 없었습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;1996년에 HTTP/1.0으로 대체되었습니다.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;http10&quot;&gt;HTTP/1.0:&lt;/h2&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;1996년에 출시된 HTTP/1.0은 헤더를 지원하는 최초의 버전입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;또한 캐싱 지원, 단일 연결을 통해 여러 요청을 보내는 기능, 요청 결과를 나타내는 상태 코드 사용 등 여러 가지 새로운 기능을 도입했습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;그러나 여전히 각 요청이 서버에 대한 새로운 연결을 열어야 한다는 사실과 같은 몇 가지...</description>
+        <pubDate>Thu, 06 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day23-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day23-2/</guid>
+        
+        <category>네트워크</category>
+        
+        <category>HTTPS</category>
+        
+        <category>HTTP</category>
+        
+        <category>HTTP/0.9</category>
+        
+        <category>HTTP/1.0</category>
+        
+        <category>HTTP/1.1</category>
+        
+        <category>HTTP/2</category>
+        
+        <category>HTTP/3</category>
+        
+        <category>Header</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>발표자료</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>네트워크 기초</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day23 발표자료(1)&amp;#93; / [네트워크 기초]</title>
+        <description>&lt;h1 id=&quot;소켓-및-포트의-특성&quot;&gt;소켓 및 포트의 특성:&lt;/h1&gt; &lt;p&gt;소켓과 포트는 모두 네트워킹 영역에서 중요한 구성 요소입니다. 네트워크를 통해 컴퓨터 간의 통신을 용이하게 하기 위해 함께 작동합니다. 다음은 소켓 및 포트의 주요 특성 중 일부입니다.&lt;/p&gt; &lt;h1 id=&quot;소켓&quot;&gt;소켓:&lt;/h1&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;소켓은 네트워크에서 실행되는 두 프로그램 간의 양방향 통신 링크의 끝점(엔드포인트)입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;IP 주소와 포트 번호의 고유한 조합으로 식별됩니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;소켓은 연결 지향적이거나 비연결적일 수 있습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;연결 지향 소켓은 두 끝점 간에 안정적이고 순서가 있으며 오류가 확인된 연결을 제공합니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;비연결적인 소켓은 덜 안정적이지만 끝점(엔드포인트) 간에 메시지를 교환하는 더 간단한 방법을 제공합니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;소켓은 응용 프로그램에서 네트워크를 통해 데이터를 보내고...</description>
+        <pubDate>Thu, 06 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day23-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day23-1/</guid>
+        
+        <category>네트워크</category>
+        
+        <category>소켓</category>
+        
+        <category>포트</category>
+        
+        <category>HTTPS</category>
+        
+        <category>HTTP</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>발표자료</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>네트워크 기초</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day22&amp;#93; / [회고. 프로젝트1]</title>
+        <description>&lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;Start&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt; 먼저 요구사항에 맞는 ERD 제작과 API 문서 작성으로 시작되었다.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;요구사항&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;ul&gt; &lt;li&gt;[✔] 사용자는 모든 상품을 조회할 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 특정 분류의 상품을 조회할 수 있다. (상품분류, 브랜드명, 가격, 상품명)&lt;/li&gt; &lt;li&gt;[✔] 사용자의 타입이 판매자인 경우 자신의 상품을 등록할 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 상품을 장바구니에 담을 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 자신의 장바구니를 조회할 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 자신의 장바구니에 있는 상품의 수량을 변경시킬 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 상품을 자신의 장바구니에서 제외할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;hr /&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;TABLE&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;a href=&quot;https://dbdiagram.io/d/642a34ae5758ac5f172625c3&quot;&gt;&amp;gt;&amp;gt; ERD Link «&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;strong&gt;필요한 테이블은 users, items, cart 세 가지 테이블입니다.&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;users 테이블&lt;/strong&gt;은 프라이머리 키로 지정한 고유한 user_id 그리고&lt;br /&gt; username과...</description>
+        <pubDate>Wed, 05 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day22/</link>
+        <guid isPermaLink="true">http://localhost:4000/day22/</guid>
+        
+        <category>데이터베이스</category>
+        
+        <category>프로젝트1</category>
+        
+        <category>쇼핑몰</category>
+        
+        <category>RDBMS</category>
+        
+        <category>NoSql</category>
+        
+        <category>HTTPS</category>
+        
+        <category>HTTP</category>
+        
+        <category>POSTMAN</category>
+        
+        <category>회고</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>프로젝트 회고</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day18&amp;#93; / [데이터베이스]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;데이터 파이프라인의 필요성을 이해할 수 있다. &lt;ul&gt; &lt;li&gt;OLTP와 OLAP의 차이를 이해할 수 있다.&lt;/li&gt; &lt;li&gt;ETL 과정을 설명할 수 있다.&lt;/li&gt; &lt;li&gt;MLOps와 DevOps의 차이를 이해할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다. &lt;ul&gt; &lt;li&gt;간단한 수준의 SQL문을 사용할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-데이터파이프라인과oltpvsolap&quot;&gt;1. 데이터 파이프라인과 OLTP vs. OLAP&lt;/h1&gt; &lt;h1 id=&quot;데이터파이프라인&quot;&gt;데이터 파이프라인&lt;/h1&gt; &lt;p&gt;개념&lt;/p&gt; &lt;ul&gt; &lt;li&gt;다양한 데이터 소스로부터 원시 데이터를 수집해 분석을 위해 데이터 웨어하우스와 같은 별도데이터 저장소로 이전하는 과정&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;목적&lt;/p&gt; &lt;p&gt;1) 다양한 경로로 수집되는 데이터를 DW(Data Warehouse)에 적재한 후 적재한 데이터를 바탕으로 효과적으로 분석하기 용이하게 만들기 위해서&lt;/p&gt; &lt;p&gt;2) MLOps를 실천하기 위해 사전에 준비되어야할...</description>
+        <pubDate>Thu, 30 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day18/</link>
+        <guid isPermaLink="true">http://localhost:4000/day18/</guid>
+        
+        <category>데이터베이스</category>
+        
+        <category>파이프라인</category>
+        
+        <category>RDBMS</category>
+        
+        <category>NoSql</category>
+        
+        <category>OLTP</category>
+        
+        <category>OLAP</category>
+        
+        <category>배치작업</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>데이터베이스</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day17 발표자료(2)&amp;#93; / [데이터베이스]</title>
+        <description>&lt;h2 id=&quot;주제-2-배치-작업의-예로는-어떤-것들이-있나요-거래트랜잭션-리포트-요금-계산은-배치-작업의-대표적인-예입니다-이-키워드를-사용해-배치-작업을-설명해보세요&quot;&gt;[주제 2] 배치 작업의 예로는 어떤 것들이 있나요? 거래(트랜잭션), 리포트, 요금 계산은 배치 작업의 대표적인 예입니다. 이 키워드를 사용해 배치 작업을 설명해보세요.&lt;/h2&gt; &lt;p&gt;배치 작업은 일반적으로 사용자 상호 작용 없이 대량의 데이터에 대해 일련의 작업을 수행하는 자동화된 컴퓨터 프로그램입니다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;거래(트랜잭션): 배치 처리는 일반적으로 신용 카드 처리와 같이 대량의 거래가 단일 배치 실행으로 처리되는 거래에 사용됩니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;리포트: 일괄 처리는 여러 소스의 데이터를 수집하고 분석해야 하는 재무제표 또는 판매 보고서와 같은 보고서를 생성하는 데 사용됩니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;요금 계산: 배치 처리는 일정 기간 동안 데이터를 수집한 다음 단일 배치 실행으로 처리하는 월별 공과금 청구서와 같은 청구서를 생성하는 데...</description>
+        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day17-4/</link>
+        <guid isPermaLink="true">http://localhost:4000/day17-4/</guid>
+        
+        <category>데이터베이스</category>
+        
+        <category>RDBMS</category>
+        
+        <category>NoSql</category>
+        
+        <category>OLTP</category>
+        
+        <category>OLAP</category>
+        
+        <category>배치작업</category>
+        
+        <category>발표자료</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>데이터베이스</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day17 발표자료(1)&amp;#93; / [데이터베이스]</title>
+        <description>&lt;h3 id=&quot;주제-1-rdbms에서-스키마-디자인-중-필드값으로-배열을-넣어야-하는-경우가-발생했습니다-선배-개발자에게-물어보니-이-경우에는-정규화가-필요하다고-조언해줍니다-유어클래스의-user-테이블-사례를-통해-어떻게-테이블을-정규화할지-고민해보세요&quot;&gt;[주제 1] RDBMS에서 스키마 디자인 중 필드값으로 배열을 넣어야 하는 경우가 발생했습니다. 선배 개발자에게 물어보니, 이 경우에는 정규화가 필요하다고 조언해줍니다. 유어클래스의 user 테이블 사례를 통해 어떻게 테이블을 정규화할지 고민해보세요.&lt;/h3&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/a2da9161-4f0a-4a36-ad2f-af8e533e9642/image.png&quot; alt=&quot;주제 1&quot; /&gt;&lt;/p&gt; &lt;p&gt;위 테이블은 제1정규화(1NF)를 위반하고 있습니다. 이 경우 정규화를 수행하여 효율적인 데이터 저장 및 검색을 위해 새로운 테이블을 만들어 배열을 나타내야 합니다.&lt;/p&gt; &lt;h3 id=&quot;hobbies-필드가-배열-형태이므로-별도의-테이블user--hobby로-분리하여-다음과-같이-변경합니다&quot;&gt;hobbies 필드가 배열 형태이므로, 별도의 테이블(user / hobby)로 분리하여 다음과 같이 변경합니다.&lt;/h3&gt; &lt;hr /&gt; &lt;p&gt;*User 테이블: &lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/a92489ac-4c62-4ebb-abdb-e99fa2f62e70/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;center&gt;||&lt;/center&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/9dc5b341-6acc-4641-b2a0-206598b52df0/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;Hobby 테이블: &lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/6776b8c3-0304-49e2-9d7a-e77551c392d3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;center&gt;||&lt;/center&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/5d4a589a-c7a5-443b-958f-0eb978b050aa/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;UserHobby 테이블: &lt;img...</description>
+        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day17-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day17-3/</guid>
+        
+        <category>데이터베이스</category>
+        
+        <category>RDBMS</category>
+        
+        <category>NoSql</category>
+        
+        <category>OLTP</category>
+        
+        <category>OLAP</category>
+        
+        <category>스키마</category>
+        
+        <category>필드</category>
+        
+        <category>정규화</category>
+        
+        <category>발표자료</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>데이터베이스</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day17-2&amp;#93; / [데이터베이스]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;RDBMS와 NoSQL의 차이와 각각의 장단점을 이해할 수 있다.&lt;/li&gt; &lt;li&gt;충분한 가용성이 확보되지 않은 다양한 문제 상황을 이해하고, 상황에 따른 솔루션이 무엇인지 이해할 수 있다. &lt;ul&gt; &lt;li&gt;다음 용어에 대한 간단한 정의를 내릴 수 있다: 인덱싱, 레플리카, 파티셔닝, 캐싱, 배치 작업, 스트림 처리&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;이벤트 기반 아키텍처를 설명할 수 있다.&lt;/li&gt; &lt;li&gt;RDBMS에서 테이블을 만들 때 스키마(필드) 디자인을 할 수 있다.&lt;/li&gt; &lt;li&gt;데이터 파이프라인의 필요성을 이해할 수 있다. &lt;ul&gt; &lt;li&gt;OLTP와 OLAP의 차이를 이해할 수 있다.&lt;/li&gt; &lt;li&gt;ETL 과정을 설명할 수 있다.&lt;/li&gt; &lt;li&gt;MLOps와 DevOps의 차이를 이해할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다. &lt;ul&gt;...</description>
+        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day17-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day17-2/</guid>
+        
+        <category>데이터베이스</category>
+        
+        <category>RDBMS</category>
+        
+        <category>NoSql</category>
+        
+        <category>OLTP</category>
+        
+        <category>OLAP</category>
+        
+        <category>스키마</category>
+        
+        <category>필드</category>
+        
+        <category>정규화</category>
+        
+        <category>배치작업</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>데이터베이스</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day17-1&amp;#93; / [데이터베이스]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;RDBMS와 NoSQL의 차이와 각각의 장단점을 이해할 수 있다.&lt;/li&gt; &lt;li&gt;충분한 가용성이 확보되지 않은 다양한 문제 상황을 이해하고, 상황에 따른 솔루션이 무엇인지 이해할 수 있다. &lt;ul&gt; &lt;li&gt;다음 용어에 대한 간단한 정의를 내릴 수 있다: 인덱싱, 레플리카, 파티셔닝, 캐싱, 배치 작업, 스트림 처리&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;이벤트 기반 아키텍처를 설명할 수 있다.&lt;/li&gt; &lt;li&gt;RDBMS에서 테이블을 만들 때 스키마(필드) 디자인을 할 수 있다.&lt;/li&gt; &lt;li&gt;데이터 파이프라인의 필요성을 이해할 수 있다. &lt;ul&gt; &lt;li&gt;OLTP와 OLAP의 차이를 이해할 수 있다.&lt;/li&gt; &lt;li&gt;ETL 과정을 설명할 수 있다.&lt;/li&gt; &lt;li&gt;MLOps와 DevOps의 차이를 이해할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다. &lt;ul&gt;...</description>
+        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day17-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day17-1/</guid>
+        
+        <category>데이터베이스</category>
+        
+        <category>RDBMS</category>
+        
+        <category>NoSql</category>
+        
+        <category>OLTP</category>
+        
+        <category>OLAP</category>
+        
+        <category>스키마</category>
+        
+        <category>필드</category>
+        
+        <category>정규화</category>
+        
+        <category>배치작업</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>데이터베이스</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day15&amp;#93; / [WAS와 Web Server]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;HTTP 기반의 서버를 생성하는 소프트웨어인 nginx를 사용하여, 웹 서버(Web Server)를 생성하여 정적 웹페이지 호스팅을 따라 해보세요.&lt;/li&gt; &lt;li&gt;다음과 같은 구조 중에서, 정적 웹페이지 호스팅의 경우에는 HTML, CSS등의 정적 파일만 전달하면 되기 때문에, 보다 단순한 구조인 Client - Web Server의 구조를 가집니다.&lt;/li&gt; &lt;li&gt;nginx 샘플 정적 파일을 호스팅 하는 과정을 따라해보며, 환경 설정 파일을 작성하는 방법과 지시어에 대해서 학습하세요.&lt;/li&gt; &lt;/ul&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-cors-개념&quot;&gt;1. CORS 개념&lt;/h1&gt; &lt;h1 id=&quot;1-cors&quot;&gt;1) CORS&lt;/h1&gt; &lt;p&gt;cross origin resource sharing&lt;/p&gt; &lt;ul&gt; &lt;li&gt;웹 어플리케이션에서 다른 도메인 간에 자원을 공유하기 위한 보안 메커니즘&lt;/li&gt; &lt;li&gt;기본적으로 브라우저는...</description>
+        <pubDate>Mon, 27 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day15/</link>
+        <guid isPermaLink="true">http://localhost:4000/day15/</guid>
+        
+        <category>nginx</category>
+        
+        <category>CozStory</category>
+        
+        <category>Cors</category>
+        
+        <category>호스팅</category>
+        
+        <category>WAS</category>
+        
+        <category>Web Server</category>
+        
+        <category>Web Application Server</category>
+        
+        <category>2-Tier</category>
+        
+        <category>3-Tier</category>
+        
+        <category>동적 웹사이트</category>
+        
+        <category>정적 웹사이트</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>WAS와 Web Server</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day14-3&amp;#93; / [WAS와 Web Server]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;HTTP 기반의 서버를 생성하는 소프트웨어인 nginx를 사용하여, 웹 서버(Web Server)를 생성하여 정적 웹페이지 호스팅을 따라 해보세요.&lt;/li&gt; &lt;li&gt;다음과 같은 구조 중에서, 정적 웹페이지 호스팅의 경우에는 HTML, CSS등의 정적 파일만 전달하면 되기 때문에, 보다 단순한 구조인 Client - Web Server의 구조를 가집니다.&lt;/li&gt; &lt;li&gt;nginx 샘플 정적 파일을 호스팅 하는 과정을 따라해보며, 환경 설정 파일을 작성하는 방법과 지시어에 대해서 학습하세요.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/bvl4zy/btr5BMJCE9E/ysMsM34RtSQ0i0mmQL0ig0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/bvl4zy/btr5BMJCE9E/ysMsM34RtSQ0i0mmQL0ig0/img.png&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-nginx-web-server-hands-on&quot;&gt;1. nginx Web Server Hands-on&lt;/h1&gt; &lt;h1 id=&quot;1-nginx-설치&quot;&gt;1) nginx 설치&lt;/h1&gt; &lt;p&gt;&lt;a href=&quot;https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source&quot;&gt;nginx 설치 레퍼런스&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://formulae.brew.sh/formula/nginx&quot;&gt;homebrew를 이용한 Mac용 nginx 설치...</description>
+        <pubDate>Fri, 24 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day14-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day14-3/</guid>
+        
+        <category>nginx</category>
+        
+        <category>호스팅</category>
+        
+        <category>WAS</category>
+        
+        <category>Web Server</category>
+        
+        <category>Web Application Server</category>
+        
+        <category>2-Tier</category>
+        
+        <category>3-Tier</category>
+        
+        <category>동적 웹사이트</category>
+        
+        <category>정적 웹사이트</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>WAS와 Web Server</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day14-2&amp;#93; / [WAS와 Web Server]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;서버의 종류와 역할에 대해서 이해합니다.&lt;/li&gt; &lt;li&gt;웹서버와 웹 애플리케이션 서버의 차이점을 이해합니다.&lt;/li&gt; &lt;li&gt;정적, 동적이라는 단어를 이해하고, 정적 웹 사이트와 동적 웹 사이트의 차이점을 학습합니다.&lt;/li&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;nginx를 이용해 정적 웹사이트를 제공하고, Mini WAS를 개발하면서 위의 그림에서 2와 5번에 해당하는 구조를 이해합니다.&lt;/li&gt; &lt;li&gt;express, fastify를 통해 API 서버를 만들면서 WAS의 구조와 해당 서버에 대한 모듈을 이해합니다.&lt;/li&gt; &lt;li&gt;웹 서버와 WAS의 전체적인 구조를 이해하고, 기본적인 CRUD가 있는 블로그 서버를 개발하며, 전체 아키텍처를 이해합니다.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/LyBv1/btr5AO2bf03/Yxni8xdGjdNJRXTsHALOe0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/LyBv1/btr5AO2bf03/Yxni8xdGjdNJRXTsHALOe0/img.png&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-정적웹사이트vs동적웹사이트&quot;&gt;&lt;strong&gt;1. 정적 웹사이트 vs. 동적 웹사이트&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;정적 웹사이트와 동적 웹사이트&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;정적 웹사이트: HTML 파일(코드) 자체로 배포되는 사이트 (CSR, Client Side Rendering)&lt;/li&gt; &lt;li&gt;동적 웹사이트: 서버에 의해 HTML 파일이 동적으로 생성되는 사이트 (SSR, Server Side Rendering)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;...</description>
+        <pubDate>Fri, 24 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day14-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day14-2/</guid>
+        
+        <category>WAS</category>
+        
+        <category>Web Server</category>
+        
+        <category>Web Application Server</category>
+        
+        <category>2-Tier</category>
+        
+        <category>3-Tier</category>
+        
+        <category>동적 웹사이트</category>
+        
+        <category>정적 웹사이트</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>WAS와 Web Server</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day14-1&amp;#93; / [WAS와 Web Server]</title>
+        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;서버의 종류와 역할에 대해서 이해합니다.&lt;/li&gt; &lt;li&gt;웹서버와 웹 애플리케이션 서버의 차이점을 이해합니다.&lt;/li&gt; &lt;li&gt;정적, 동적이라는 단어를 이해하고, 정적 웹 사이트와 동적 웹 사이트의 차이점을 학습합니다.&lt;/li&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;nginx를 이용해 정적 웹사이트를 제공하고, Mini WAS를 개발하면서 위의 그림에서 2와 5번에 해당하는 구조를 이해합니다.&lt;/li&gt; &lt;li&gt;express, fastify를 통해 API 서버를 만들면서 WAS의 구조와 해당 서버에 대한 모듈을 이해합니다.웹 서버와 WAS의 전체적인 구조를 이해하고, 기본적인 CRUD가 있는 블로그 서버를 개발하며, 전체 아키텍처를 이해합니다.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/yg413/btr5zQ6320F/EjuKDeNL1ZwKjkId8r4GT1/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/yg413/btr5zQ6320F/EjuKDeNL1ZwKjkId8r4GT1/img.png&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1서버&quot;&gt;&lt;strong&gt;1. 서버&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;서버&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;개요&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;컴퓨터의 역할을 의미&lt;/li&gt; &lt;li&gt;사용자의 요청을 받고, 이에 따른 응답과 데이터를 보내주는 역할을 수행함&lt;/li&gt; &lt;li&gt;서비스를 제공하는 컴퓨터 내의 프로그램을 의미하 프로그램(소프트웨어)이 실행되는 컴퓨터(하드웨어) 역시 서버라고 불림&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;strong&gt;구성&lt;/strong&gt;...</description>
+        <pubDate>Fri, 24 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day14-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day14-1/</guid>
+        
+        <category>WAS</category>
+        
+        <category>Web Server</category>
+        
+        <category>Web Application Server</category>
+        
+        <category>3-Tier</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>WAS와 Web Server</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day13 발표준비&amp;#93; / [HTTP]</title>
+        <description>&lt;h1 id=&quot;rest-api-모범-사례를-연구해서-제출하세요&quot;&gt;REST API 모범 사례를 연구해서 제출하세요.&lt;/h1&gt; &lt;h2 id=&quot;조회&quot;&gt;조회&lt;/h2&gt; &lt;h4 id=&quot;1-특정-블로그-게시물에-대한-댓글-검색&quot;&gt;1. 특정 블로그 게시물에 대한 댓글 검색:&lt;/h4&gt; &lt;ul&gt; &lt;li&gt;GET HTTP 메서드를 사용하여 특정 블로그 게시물에 대한 댓글을 검색합니다.&lt;/li&gt; &lt;li&gt;“/posts/{postID}/comments”와 같은 “/comments” 엔드포인트를 포함하는 URL을 사용합니다.&lt;/li&gt; &lt;li&gt;댓글 ID, 작성자, 날짜 및 콘텐츠와 같은 메타데이터를 포함하여 댓글을 JSON 형식으로 반환합니다. &lt;h2 id=&quot;기타&quot;&gt;기타&lt;/h2&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;1-블로그-게시물-좋아요-누르기&quot;&gt;1. 블로그 게시물 좋아요 누르기:&lt;/h4&gt; &lt;ul&gt; &lt;li&gt;POST HTTP 메서드를 사용하여 블로그 게시물에 좋아요 기능을 작동합니다.&lt;/li&gt; &lt;li&gt;“/posts/{postID}/like”와 같은 “/like” 엔드포인트를 포함하는 URL을 사용합니다.&lt;/li&gt; &lt;li&gt;권한 부여를 사용하여 인증된 사용자만 게시물에 좋아요를 표시할 수 있도록 합니다.&lt;/li&gt; &lt;li&gt;새로운 좋아요 수를 포함하여 게시물에 좋아요가 표시되었음을 나타내는 응답을 반환합니다.&lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;2-블로그-게시물과-좋아요-취소하기&quot;&gt;2. 블로그...</description>
+        <pubDate>Thu, 23 Mar 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day13-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day13-3/</guid>
+        
+        <category>HTTP</category>
+        
+        <category>HTTPS</category>
+        
+        <category>CRUD</category>
+        
+        <category>REST API</category>
+        
+        <category>Create</category>
+        
+        <category>Post</category>
+        
+        <category>Read</category>
+        
+        <category>Get</category>
+        
+        <category>Update</category>
+        
+        <category>Put</category>
+        
+        <category>Delete</category>
+        
+        <category>개발환경</category>
+        
+        <category>JavaScript</category>
+        
+        <category>발표자료</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>HTTP</category>
+      </item>
+    
+  </channel>
+</rss>

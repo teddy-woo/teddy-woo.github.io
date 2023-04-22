@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+            <loc>http://localhost:4000/404.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/about/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/blog/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/code/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/contact/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/css/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/diet/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/feed.xml</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/life/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/contact/message-sent/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/music/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/assets/css/preview.css</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/search.json</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/sitemap.xml</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/staff/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/assets/css/styles.css</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/tags/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/tips/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/travel/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/tutorial/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/work/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+    
+        <url>
+            <loc>http://localhost:4000/day29-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-14</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-7/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-6/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-5/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-4/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day28-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day27-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day27-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day27-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day26-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-11</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day26-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-11</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day25/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-10</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day24-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-07</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day24-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-07</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day24-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-07</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day23-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-06</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day23-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-06</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day22/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-04-05</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day18/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-30</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day17-4/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-29</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day17-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-29</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day17-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-29</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day17-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-29</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day15/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-27</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day14-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-24</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day14-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-24</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day14-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-24</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day13-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-23</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day13-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-23</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day13-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-23</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day12-6/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-22</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day12-5/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-22</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day12-4/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-22</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day12-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-22</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day12-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-22</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day12-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-22</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day11/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-21</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day10-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-20</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day10-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-20</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day9/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-17</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day8/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-16</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day7-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-15</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day7-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-15</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day6/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-14</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day5-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day5-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day5-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-13</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day4-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-10</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day4-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-10</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day3-3/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-09</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day3-2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-09</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day3-1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-09</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day2/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-08</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/day1/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-03-07</lastmod>
+        </url>
+    
+    
+        <url>
+            <loc>http://localhost:4000/authors/mranderson/</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+    
+</urlset>

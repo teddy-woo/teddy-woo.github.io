@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>DevOps&#91;Day12-4&#93; / [HTTP] | Teddy-woo's DevOps Challenge!</title>
+    <meta name="description" content="02. HTTP 헤더">
+    
+        <meta name="keywords" content="HTTP, Header, Cookie, 개발환경, Runtime, DevOps BootCamp">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DevOps&#91;Day12-4&#93; / [HTTP] | Teddy-woo's DevOps Challenge!">
+    <meta name="twitter:description" content="02. HTTP 헤더">
+
+    
+        <meta property="twitter:image" content="http://localhost:4000/net.png">
+    
+    
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://localhost:4000/day12-4/">
+    <meta property="og:title" content="DevOps&#91;Day12-4&#93; / [HTTP] | Teddy-woo's DevOps Challenge!">
+    <meta property="og:image" content="/net.png">
+    <meta property="og:description" content="02. HTTP 헤더">
+    <meta property="og:site_name" content="도현's Blog | 도현's 데브옵스 도전기!">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="Teddy-woo's DevOps Challenge!">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="http://localhost:4000/day12-4/">
+    <link rel="alternate" type="application/rss+xml" title="도현's Blog | 도현's 데브옵스 도전기!" href="http://localhost:4000/feed.xml" />
+
+    <!-- Include extra styles -->
+    
+
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+                Teddy-woo's DevOps Challenge! <span class="version">v3.1.2</span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/feed.xml">Feed</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2023-03-22T09:00:00+09:00">
+                            
+
+
+March 22, 2023
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>3 min to read</span>
+                </p>
+                <h1 class="post-title">DevOps&#91;Day12-4&#93; / [HTTP]</h1>
+                <p class="post-subtitle">02. HTTP 헤더</p>
+
+                
+                    <img src="/net.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <h2 id="-학습-목표"><strong># 학습 목표</strong></h2>
+
+<ul>
+  <li>HTTP 헤더의 역할에 대해 이해할 수 있다.
+    <ul>
+      <li>표현, 콘텐츠 협상 등 다양한 헤더의 역할에 대해 알 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-학습-내용"><strong># 학습 내용</strong></h2>
+
+<h3 id="1-http-주요-헤더"><strong>1. HTTP 주요 헤더</strong></h3>
+
+<p><img src="https://blog.kakaocdn.net/dn/bCqwll/btr45jPEwr4/jpSjIPI1zcknMVeRgQUlZk/img.png" alt="https://blog.kakaocdn.net/dn/bCqwll/btr45jPEwr4/jpSjIPI1zcknMVeRgQUlZk/img.png" /></p>
+
+<p>출처 : 코드스테이츠 데브옵스 부트캠프 과정</p>
+
+<ul>
+  <li>
+    <p><strong>요청에서 사용되는 헤더</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/bqBKtP/btr5dAwbBuJ/cC4V6eylgTsVqdvROSANuk/img.png" alt="https://blog.kakaocdn.net/dn/bqBKtP/btr5dAwbBuJ/cC4V6eylgTsVqdvROSANuk/img.png" /></p>
+
+    <ul>
+      <li>
+        <p><strong>요청 메세지 예시</strong> GET /hello.htm HTTP/1.1User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)Host: <a href="http://www.tutorialspoint.com/">www.tutorialspoint.com</a>Accept-Language: en-usAccept-Encoding: gzip, deflateConnection: Keep-Alive</p>
+
+        <hr />
+      </li>
+      <li>
+        <p><strong>요청 헤더</strong></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>헤더명</th>
+              <th>개요</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>From</td>
+              <td>유저 에이전트의 이메일 정보</td>
+              <td>일반적으로 잘 사용하지 않음검색 엔진에서 주로 사용요청에서 사용</td>
+            </tr>
+            <tr>
+              <td>Referer</td>
+              <td>이전 웹 페이지 주소</td>
+              <td>현재 요청된 페이지의 이전 웹 페이지 주소A → B로 이동하는 경우 B를 요청할 때 Referer: A 를 포함해서 요청Referer 를 사용하면 유입경로 수집 가능요청에서 사용referer는 단어 referrer의 오탈자이지만 스펙으로 굳어짐</td>
+            </tr>
+            <tr>
+              <td>User-Agent</td>
+              <td>유저 에이전트 애플리케이션 정보</td>
+              <td>클라이언트의 애플리케이션 정보(웹 브라우저 정보, 등등)통계 정보어떤 종류의 브라우저에서 장애가 발생하는지 파악 가능요청에서 사용</td>
+            </tr>
+            <tr>
+              <td>Host</td>
+              <td>요청한 호스트 정보(도메인)</td>
+              <td>요청에서 사용필수 헤더하나의 서버가 여러 도메인을 처리해야 할 때 호스트 정보를 명시하기 위해 사용하나의 IP 주소에 여러 도메인이 적용되어 있을 때 호스트 정보를 명시하기 위해 사용</td>
+            </tr>
+            <tr>
+              <td>Origin</td>
+              <td>서버로 POST 요청을 보낼 때, 요청을 시작한 주소를 나타냄</td>
+              <td>여기서 요청을 보낸 주소와 받는 주소가 다르면 CORS 에러가 발생응답 헤더의 Access-Control-Allow-Origin와 관련</td>
+            </tr>
+            <tr>
+              <td>Authorization</td>
+              <td>인증 토큰(e.g. JWT)을 서버로 보낼 때 사용하는 헤더</td>
+              <td>“토큰의 종류(e.g. Basic) + 실제 토큰 문자”를 전송 (ex) Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>응답에서 사용되는 헤더</strong></p>
+
+    <p><img src="https://blog.kakaocdn.net/dn/mv80S/btr5flyj8Fr/n95boEaRKLoyVQSAsuH2rK/img.png" alt="https://blog.kakaocdn.net/dn/mv80S/btr5flyj8Fr/n95boEaRKLoyVQSAsuH2rK/img.png" /></p>
+
+    <ul>
+      <li>
+        <p><strong>응답 메세지 예시</strong>HTTP/1.1 200 OKDate: Mon, 27 Jul 2009 12:28:53 GMTServer: Apache/2.2.14 (Win32)Last-Modified: Wed, 22 Jul 2009 19:15:56 GMTContent-Length: 88Content-Type: text/htmlConnection: Closed</p>
+
+        <hr />
+      </li>
+      <li>
+        <p><strong>응답 헤더</strong></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>헤더명</th>
+              <th>개요</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Server</td>
+              <td>요청을 처리하는 ORIGIN 서버의 소프트웨어 정보</td>
+              <td>응답에서 사용(ex) Server: Apache/2.2.22 (Debian)</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>메시지가 발생한 날짜와 시간</td>
+              <td>응답에서 사용(ex) Date: Tue, 15 Nov 1994 08:12:31 GMT</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>페이지 리다이렉션</td>
+              <td>웹 브라우저는 3xx 응답의 결과에 Location 헤더가 있으면, Location 위치로 리다이렉트(자동 이동)201(Created): Location 값은 요청에 의해 생성된 리소스 URI3xx(Redirection): Location 값은 요청을 자동으로 리다렉션하기 위한 대상 리소스를 가리킴</td>
+            </tr>
+            <tr>
+              <td>Allow</td>
+              <td>허용 가능한 HTTP 메서드</td>
+              <td>405(Method Not Allowed)에서 응답에 포함(ex) Allow: GET, HEAD, PUT</td>
+            </tr>
+            <tr>
+              <td>Retry-After</td>
+              <td>유저 에이전트가 다음 요청을 하기까지 기다려야 하는 시간</td>
+              <td>503(Service Unavailable): 서비스가 언제까지 불능인지 알려줄 수 있음(ex) Retry-After: Fri, 31 Dec 2020 23:59:59 GMT(날짜 표기)(ex) Retry-After: 120(초 단위 표기)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-표현-헤더"><strong>2. 표현 헤더</strong></h3>
+
+<ul>
+  <li><strong>헤더의 구분</strong></li>
+</ul>
+
+<p><img src="https://blog.kakaocdn.net/dn/Jg8L8/btr5ibBW8S7/npNbRwolCor6eyZerHROWk/img.png" alt="https://blog.kakaocdn.net/dn/Jg8L8/btr5ibBW8S7/npNbRwolCor6eyZerHROWk/img.png" /></p>
+
+<p><img src="https://blog.kakaocdn.net/dn/pkfOM/btr5dfeOnNv/7p9rpncWaFaDYQRPxQdg01/img.png" alt="https://blog.kakaocdn.net/dn/pkfOM/btr5dfeOnNv/7p9rpncWaFaDYQRPxQdg01/img.png" /></p>
+
+<p>출처 : 코드스테이츠 데브옵스 과정</p>
+
+<p>| 종류 | 설명 |
+| — | — |
+| General headers | - 메시지 전체에 적용되는 헤더</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>body를 통해 전송되는 데이터와는 관련 없음</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>Request / Response headers</td>
+          <td>- request : fetch를 통해 가져올 리소스나 클라이언트 자체에 대한 자세한 정보를 포함하는 헤더로 요청 구체화, 컨텍스트 제공, 조건에 따른 제약 추가 등 가능</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>response : 위치 또는 서버 자체에 대한 정보(이름, 버전 등)와 같이 응답에 대한 부가적인 정보를 갖는 헤더로 Vary, Accept-Ranges와 같이 상태 줄에 넣기에는 공간이 부족했던 추가 정보를 제공</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>Representation headers (Entity headers)</td>
+          <td>- body에 담긴 리소스 정보(컨텐츠 길이, MIME TYPE 등)을 포함</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>HTTP 헤더와 바디</strong>
+    <ul>
+      <li><strong>HTTP 헤더</strong>
+        <ul>
+          <li>형식 : <field-name>:<field-value> (대소문자 구분 없음)</field-value></field-name></li>
+          <li>용도 : HTTP 전송에 필요한 모든 부가 정보 담기 위해 사용</li>
+        </ul>
+      </li>
+      <li><strong>HTTP 바디</strong>
+        <ul>
+          <li>용도 : 메시지 본문(페이로드)로 표현 데이터를 전달</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>표현 헤더</strong>
+    <ul>
+      <li><strong>개요</strong>
+        <ul>
+          <li>표현 데이터를 해석할 수 있는 정보(데이터 유형, 길이, 압축 정보 등)를 제공</li>
+          <li>요청, 응답 헤더에서 모두 사용</li>
+        </ul>
+      </li>
+      <li><strong>대표적인 표현 헤더</strong>
+        <ul>
+          <li>
+            <p><strong>Content-Type : 표현 데이터의 형식 설명</strong></p>
+
+            <p><img src="https://blog.kakaocdn.net/dn/cItFDR/btr5fON1xAf/hAKYgAsec9Kb6LsfclTSzK/img.png" alt="https://blog.kakaocdn.net/dn/cItFDR/btr5fON1xAf/hAKYgAsec9Kb6LsfclTSzK/img.png" /></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Content-Encoding : 표현 데이터 인코딩</strong></p>
+
+        <p><img src="https://blog.kakaocdn.net/dn/qDoZS/btr5e6BnAP6/EYXJrLk56PmOKpO88Q4aQ1/img.png" alt="https://blog.kakaocdn.net/dn/qDoZS/btr5e6BnAP6/EYXJrLk56PmOKpO88Q4aQ1/img.png" /></p>
+      </li>
+      <li>
+        <p><strong>Content-Language : 표현 데이터의 자연 언어</strong></p>
+
+        <p><img src="https://blog.kakaocdn.net/dn/qU4SH/btr5epOuLkT/Ka8xBWt3BjoHiqxOukkkb1/img.png" alt="https://blog.kakaocdn.net/dn/qU4SH/btr5epOuLkT/Ka8xBWt3BjoHiqxOukkkb1/img.png" /></p>
+      </li>
+      <li>
+        <p><strong>Content-Length : 표현 데이터의 길이</strong></p>
+
+        <p><img src="https://blog.kakaocdn.net/dn/cdHnvT/btr5dSDpoPA/wCHchuvy3YZcKvtCYljHPK/img.png" alt="https://blog.kakaocdn.net/dn/cdHnvT/btr5dSDpoPA/wCHchuvy3YZcKvtCYljHPK/img.png" /></p>
+      </li>
+      <li>Transfer-Encoding: 전송 시 어떤 인코딩 방법을 사용할 것인가를 명시(현재는 Transfer-Encoding보다는 Content-Encoding을 사용하며, Transfer-Encoding을 사용하는 경우 chunked의 방식으로 사용)</li>
+      <li>chunked 방식의 인코딩은 많은 양의 데이터를 분할하여 보내기 때문에 전체 데이터의 크기를 알 수 없기 때문에 표현 데이터의 길이를 명시해야 하는 Content-Length 헤더와 함께 사용할 수 없음</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-콘텐츠-협상-헤더"><strong>3. 콘텐츠 협상 헤더</strong></h3>
+
+<ul>
+  <li><strong>콘텐츠 협상</strong>
+    <ul>
+      <li><strong>개요</strong>
+        <ul>
+          <li>클라이언트가 선호하는 표현 요청</li>
+          <li>협상 헤더는 요청 시에만 사용</li>
+        </ul>
+      </li>
+      <li><strong>헤더 종류</strong>
+        <ul>
+          <li>Accept : 클라이언트가 선호하는 미디어 타입 전달</li>
+          <li>Accept-Charset : 클라이언트가 선호하는 문자 인코딩</li>
+          <li>Accept-Encoding : 클라이언트가 선호하는 압축 인코딩</li>
+          <li>Accept-Language : 클라이언트가 선호하는 자연 언어</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>예시</strong></p>
+
+        <p><img src="https://blog.kakaocdn.net/dn/cx5utq/btr5nGBDKHY/cKScqaxtKjdEeI8PpoMti0/img.png" alt="https://blog.kakaocdn.net/dn/cx5utq/btr5nGBDKHY/cKScqaxtKjdEeI8PpoMti0/img.png" /></p>
+
+        <p><img src="https://blog.kakaocdn.net/dn/cbRsSN/btr5dpapdX9/LksvBOsy9v6TybaqhSXOlk/img.png" alt="https://blog.kakaocdn.net/dn/cbRsSN/btr5dpapdX9/LksvBOsy9v6TybaqhSXOlk/img.png" /></p>
+      </li>
+      <li>협상과 우선 순위
+        <ul>
+          <li>Quality Values(q) 값을 사용하여 해결</li>
+          <li>q는 0~1 사이의 값으로 클수록 높은 순위</li>
+          <li>생략하는 경우 1</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 예시</span>
+GET /event
+Accept-Language:ko-KR,ko<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,en-US<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.7
+
+1. ko-KR<span class="p">;</span><span class="o">(</span><span class="nv">q</span><span class="o">=</span>1이 생략된 것<span class="o">)</span>
+2. ko<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9
+3. en-US<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8
+4. en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.7
+</code></pre></div></div>
+
+<p><img src="https://blog.kakaocdn.net/dn/Ho9i3/btr49S5xcN7/Wax0kBkox467Lkb9juK8v1/img.png" alt="https://blog.kakaocdn.net/dn/Ho9i3/btr49S5xcN7/Wax0kBkox467Lkb9juK8v1/img.png" /></p>
+
+<blockquote>
+  <p>사진 출처 : 코드스테이츠 데브옵스 부트캠프 과정</p>
+
+</blockquote>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/day27-3/">
+                                    
+                                        <img src="/docker.png">
+                                    
+                                    <h3>DevOps&#91;Day27-3&#93; / [Docker]</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/day12-1/">
+                                    
+                                        <img src="/node.png">
+                                    
+                                    <h3>DevOps&#91;Day12-1&#93; / [(사전준비) 개발 환경 구축]</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/day28-5/">
+                                    
+                                        <img src="/docker.png">
+                                    
+                                    <h3>DevOps&#91;Day28-5&#93; / [Docker]</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="3">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/day12-5/" class="post-preview">
+        <div class="image">
+            
+                <img src="/net.png">
+            
+        </div>
+        <h3 class="title">DevOps&#91;Day12-5&#93; / [HTTP]</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;02. HTTP 헤더&quot;%20http://localhost:4000/day12-4/%20via%20&#64;&hashtags=HTTP,Header,Cookie,개발환경,Runtime,DevOps BootCamp"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/day12-4/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+</section>
+
+        
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'teddynote';
+        var disqus_title = '';
+        var disqus_url = '/day12-4/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+    <p>
+      
+        <a href="https://github.com/teddy-woo" title="Github">
+          <svg><use xlink:href="#icon-github"></use></svg>
+        </a>
+      
+      
+      
+      
+      
+      
+    </p>
+
+    <ul>
+  
+    
+      <li>
+        <a href="http://localhost:4000/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/contact">Contact</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="http://localhost:4000/feed.xml">Feed</a>
+      </li>
+    
+  
+</ul>
+
+
+    <p>
+      <span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="https://rossener.com" target="_blank" class="creator">Thiago Rossener</a>
+    </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Teddy-woo's DevOps Challenge!",
+  "description": "도현's 데브옵스 도전기! is made by Teddy-woo.",
+  "url": "http://localhost:4000/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/teddy-woo"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YQQ2NQ44TG"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQQ2NQ44TG');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "DevOps&#91;Day12-4&#93; / [HTTP]",
+            "headline": "02. HTTP 헤더",
+            "description": "02. HTTP 헤더",
+            "image": "/net.png",
+            "url": "http://localhost:4000/day12-4/",
+            "articleBody": "# 학습 목표
+
+
+  HTTP 헤더의 역할에 대해 이해할 수 있다.
+    
+      표현, 콘텐츠 협상 등 다양한 헤더의 역할에 대해 알 수 있다.
+    
+  
+
+
+
+
+# 학습 내용
+
+1. HTTP 주요 헤더
+
+
+
+출처 : 코드스테이츠 데브옵스 부트캠프 과정
+
+
+  
+    요청에서 사용되는 헤더
+
+    
+
+    
+      
+        요청 메세지 예시 GET /hello.htm HTTP/1.1User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)Host: www.tutorialspoint.comAccept-Language: en-usAccept-Encoding: gzip, deflateConnection: Keep-Alive
+
+        
+      
+      
+        요청 헤더
+
+        
+          
+            
+              헤더명
+              개요
+              설명
+            
+          
+          
+            
+              From
+              유저 에이전트의 이메일 정보
+              일반적으로 잘 사용하지 않음검색 엔진에서 주로 사용요청에서 사용
+            
+            
+              Referer
+              이전 웹 페이지 주소
+              현재 요청된 페이지의 이전 웹 페이지 주소A → B로 이동하는 경우 B를 요청할 때 Referer: A 를 포함해서 요청Referer 를 사용하면 유입경로 수집 가능요청에서 사용referer는 단어 referrer의 오탈자이지만 스펙으로 굳어짐
+            
+            
+              User-Agent
+              유저 에이전트 애플리케이션 정보
+              클라이언트의 애플리케이션 정보(웹 브라우저 정보, 등등)통계 정보어떤 종류의 브라우저에서 장애가 발생하는지 파악 가능요청에서 사용
+            
+            
+              Host
+              요청한 호스트 정보(도메인)
+              요청에서 사용필수 헤더하나의 서버가 여러 도메인을 처리해야 할 때 호스트 정보를 명시하기 위해 사용하나의 IP 주소에 여러 도메인이 적용되어 있을 때 호스트 정보를 명시하기 위해 사용
+            
+            
+              Origin
+              서버로 POST 요청을 보낼 때, 요청을 시작한 주소를 나타냄
+              여기서 요청을 보낸 주소와 받는 주소가 다르면 CORS 에러가 발생응답 헤더의 Access-Control-Allow-Origin와 관련
+            
+            
+              Authorization
+              인증 토큰(e.g. JWT)을 서버로 보낼 때 사용하는 헤더
+              “토큰의 종류(e.g. Basic) + 실제 토큰 문자”를 전송 (ex) Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+            
+          
+        
+      
+    
+  
+  
+    응답에서 사용되는 헤더
+
+    
+
+    
+      
+        응답 메세지 예시HTTP/1.1 200 OKDate: Mon, 27 Jul 2009 12:28:53 GMTServer: Apache/2.2.14 (Win32)Last-Modified: Wed, 22 Jul 2009 19:15:56 GMTContent-Length: 88Content-Type: text/htmlConnection: Closed
+
+        
+      
+      
+        응답 헤더
+
+        
+          
+            
+              헤더명
+              개요
+              설명
+            
+          
+          
+            
+              Server
+              요청을 처리하는 ORIGIN 서버의 소프트웨어 정보
+              응답에서 사용(ex) Server: Apache/2.2.22 (Debian)
+            
+            
+              Date
+              메시지가 발생한 날짜와 시간
+              응답에서 사용(ex) Date: Tue, 15 Nov 1994 08:12:31 GMT
+            
+            
+              Location
+              페이지 리다이렉션
+              웹 브라우저는 3xx 응답의 결과에 Location 헤더가 있으면, Location 위치로 리다이렉트(자동 이동)201(Created): Location 값은 요청에 의해 생성된 리소스 URI3xx(Redirection): Location 값은 요청을 자동으로 리다렉션하기 위한 대상 리소스를 가리킴
+            
+            
+              Allow
+              허용 가능한 HTTP 메서드
+              405(Method Not Allowed)에서 응답에 포함(ex) Allow: GET, HEAD, PUT
+            
+            
+              Retry-After
+              유저 에이전트가 다음 요청을 하기까지 기다려야 하는 시간
+              503(Service Unavailable): 서비스가 언제까지 불능인지 알려줄 수 있음(ex) Retry-After: Fri, 31 Dec 2020 23:59:59 GMT(날짜 표기)(ex) Retry-After: 120(초 단위 표기)
+            
+          
+        
+      
+    
+  
+
+
+2. 표현 헤더
+
+
+  헤더의 구분
+
+
+
+
+
+
+출처 : 코드스테이츠 데브옵스 과정
+
+| 종류 | 설명 |
+| — | — |
+| General headers | - 메시지 전체에 적용되는 헤더
+
+  
+    
+      
+        
+          body를 통해 전송되는 데이터와는 관련 없음
+           
+           
+        
+        
+           
+          Request / Response headers
+          - request : fetch를 통해 가져올 리소스나 클라이언트 자체에 대한 자세한 정보를 포함하는 헤더로 요청 구체화, 컨텍스트 제공, 조건에 따른 제약 추가 등 가능
+        
+      
+    
+  
+  
+    
+      
+        
+          response : 위치 또는 서버 자체에 대한 정보(이름, 버전 등)와 같이 응답에 대한 부가적인 정보를 갖는 헤더로 Vary, Accept-Ranges와 같이 상태 줄에 넣기에는 공간이 부족했던 추가 정보를 제공
+           
+           
+        
+        
+           
+          Representation headers (Entity headers)
+          - body에 담긴 리소스 정보(컨텐츠 길이, MIME TYPE 등)을 포함
+        
+      
+    
+  
+  HTTP 헤더와 바디
+    
+      HTTP 헤더
+        
+          형식 : : (대소문자 구분 없음)
+          용도 : HTTP 전송에 필요한 모든 부가 정보 담기 위해 사용
+        
+      
+      HTTP 바디
+        
+          용도 : 메시지 본문(페이로드)로 표현 데이터를 전달
+        
+      
+    
+  
+  표현 헤더
+    
+      개요
+        
+          표현 데이터를 해석할 수 있는 정보(데이터 유형, 길이, 압축 정보 등)를 제공
+          요청, 응답 헤더에서 모두 사용
+        
+      
+      대표적인 표현 헤더
+        
+          
+            Content-Type : 표현 데이터의 형식 설명
+
+            
+          
+        
+      
+      
+        Content-Encoding : 표현 데이터 인코딩
+
+        
+      
+      
+        Content-Language : 표현 데이터의 자연 언어
+
+        
+      
+      
+        Content-Length : 표현 데이터의 길이
+
+        
+      
+      Transfer-Encoding: 전송 시 어떤 인코딩 방법을 사용할 것인가를 명시(현재는 Transfer-Encoding보다는 Content-Encoding을 사용하며, Transfer-Encoding을 사용하는 경우 chunked의 방식으로 사용)
+      chunked 방식의 인코딩은 많은 양의 데이터를 분할하여 보내기 때문에 전체 데이터의 크기를 알 수 없기 때문에 표현 데이터의 길이를 명시해야 하는 Content-Length 헤더와 함께 사용할 수 없음
+    
+  
+
+
+3. 콘텐츠 협상 헤더
+
+
+  콘텐츠 협상
+    
+      개요
+        
+          클라이언트가 선호하는 표현 요청
+          협상 헤더는 요청 시에만 사용
+        
+      
+      헤더 종류
+        
+          Accept : 클라이언트가 선호하는 미디어 타입 전달
+          Accept-Charset : 클라이언트가 선호하는 문자 인코딩
+          Accept-Encoding : 클라이언트가 선호하는 압축 인코딩
+          Accept-Language : 클라이언트가 선호하는 자연 언어
+        
+      
+      
+        예시
+
+        
+
+        
+      
+      협상과 우선 순위
+        
+          Quality Values(q) 값을 사용하여 해결
+          q는 0~1 사이의 값으로 클수록 높은 순위
+          생략하는 경우 1
+        
+      
+    
+  
+
+
+# 예시
+GET /event
+Accept-Language:ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+
+1. ko-KR;(q=1이 생략된 것)
+2. ko;q=0.9
+3. en-US;q=0.8
+4. en;q=0.7
+
+
+
+
+
+  사진 출처 : 코드스테이츠 데브옵스 부트캠프 과정
+
+
+",
+            "wordcount": "672",
+            "inLanguage": "ko",
+            "dateCreated": "2023-03-22/",
+            "datePublished": "2023-03-22/",
+            "dateModified": "2023-03-22/",
+            "author": {
+                "@type": "Person",
+                "name": "Mr. Anderson",
+                
+                "image": "/assets/img/uploads/profile.png",
+                
+                "jobTitle": "The One",
+                "url": "http://localhost:4000/authors/mranderson/",
+                "sameAs": [
+                    "https://github.com/github_username","https://www.facebook.com/facebook_username","https://twitter.com/twitter_username","https://medium.com/@medium_username","https://www.instagram.com/instagram_username","https://www.linkedin.com/in/linkedin_username"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Teddy-woo's DevOps Challenge!",
+                "url": "http://localhost:4000/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://localhost:4000/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "HTTP",
+            "articleSection": "HTTP",
+            "keywords": ["HTTP","Header","Cookie","개발환경","Runtime","DevOps BootCamp"]
+        }
+        </script>
+    </body>
+</html>

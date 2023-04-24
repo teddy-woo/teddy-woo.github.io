@@ -3,9 +3,121 @@
   
   
     {
+      "title"    : "DevOps&amp;#91;Day34&amp;#93; / [지속적 통합]",
+      "tags"     : "AWS, 아마존 웹 서비스, 자동화, 지속적 통합, ECS, and DevOps BootCamp",
+      "categories" : "지속적 통합",
+      "url"      : "/day34/",
+      "date"     : "04/21/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day33&amp;#93; / [지속적 통합]",
+      "tags"     : "Github, Github Action, 자동화, 지속적 통합, and DevOps BootCamp",
+      "categories" : "지속적 통합",
+      "url"      : "/day33/",
+      "date"     : "04/20/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day32-2&amp;#93; / [Docker]",
+      "tags"     : "docker, Dockerfile, Compose, and DevOps BootCamp",
+      "categories" : "Docker",
+      "url"      : "/day32-2/",
+      "date"     : "04/19/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day32-1&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, AIM, Identity and Access Management, 접근 권한 관리 서비스, Root 계정, 최고 관리자, 엑세스 권한, 자격증명, 역할, 검증, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day32-1/",
+      "date"     : "04/19/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day33-1&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, S3, Front-end, EC2, RDS, DB, Back-end, Node, 보안그룹, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day31-3/",
+      "date"     : "04/18/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day31-2&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, CDN, HTTPS, Certificate Manager, Cloudfront, Load Balancer, Route53, DNS, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day31-2/",
+      "date"     : "04/18/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day31-1&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, 오토 스케일링 (Auto Scaling), 스케일 업(Scale Up), 스케일 아웃(Scale Out), 스케일 인(Scale In), 오토 스케일링 그룹(Groups), and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day31-1/",
+      "date"     : "04/18/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day30-에러 해결 (2)&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, ec2, npm, and DevOps BootCamp",
+      "categories" : "트러블 슈팅",
+      "url"      : "/day30-4/",
+      "date"     : "04/17/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day30-에러 해결 (1)&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, node, npm, and DevOps BootCamp",
+      "categories" : "트러블 슈팅",
+      "url"      : "/day30-3/",
+      "date"     : "04/17/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day30-2&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, NACL, Network Access Control List, 네트워크 ACL, 방화벽, Security Group, 보안그룹, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day30-2/",
+      "date"     : "04/17/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day30-1&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, VPN, VPC, Virtual Private Cloud, 가상상설망, 네트워크, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day30-1/",
+      "date"     : "04/17/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day29-4&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, RDS, database, 데이터베이스, RDBMS, mysql, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day29-4/",
+      "date"     : "04/14/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day29-3&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, EC2, 스토리지, S3, 버킷, bucket, EBS, EFS, 객체 스토리지, 블록 스토리지, 파일 스토리지, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day29-3/",
+      "date"     : "04/14/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day29-2&amp;#93; / [아마존 웹 서비스(AWS)]",
+      "tags"     : "아마존 웹 서비스, AWS, EC2, Instances, 인스턴스, and DevOps BootCamp",
+      "categories" : "아마존 웹 서비스(AWS)",
+      "url"      : "/day29-2/",
+      "date"     : "04/14/2023"
+    } ,
+  
+    {
       "title"    : "DevOps&amp;#91;Day29-1&amp;#93; / [아마존 웹 서비스(AWS)]",
       "tags"     : "아마존 웹 서비스, AWS, EC2, and DevOps BootCamp",
-      "categories" : "Docker",
+      "categories" : "아마존 웹 서비스(AWS)",
       "url"      : "/day29-1/",
       "date"     : "04/14/2023"
     } ,

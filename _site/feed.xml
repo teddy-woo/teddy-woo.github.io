@@ -5,9 +5,369 @@
     <description>도현&apos;s 데브옵스 도전기! is made by Teddy-woo.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Apr 2023 22:40:15 +0900</pubDate>
-    <lastBuildDate>Sat, 22 Apr 2023 22:40:15 +0900</lastBuildDate>
+    <pubDate>Sun, 23 Apr 2023 05:04:04 +0900</pubDate>
+    <lastBuildDate>Sun, 23 Apr 2023 05:04:04 +0900</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>DevOps&amp;#91;Day34&amp;#93; / [지속적 통합]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/7c11f49e-0750-404a-af4d-49d7b9d5e24b/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;로드 밸런서의 대상그룹을 생성해준다. 다음과 같이 설정해준다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/3e1aeb05-1b34-4745-85f9-19c7f834f6d3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/d883f193-2bbb-4daa-8654-62e7bc52cf0e/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;include as pending below를 하지않고 다음으로 넘어간다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/c5a03834-d05a-4953-a4ae-753ff87c3e4a/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Application Load Balancer를 생성한다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/642cfc46-5282-4b39-8b20-093b2bfd3243/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;로드밸런서 세팅은 다음과같이 한다. Listeners and routing에서 target group은 위에서 만든 target group을 선택한다. Listeners and routing 에서 HTTP 3333포트를 추가한다. 보안 그룹은 기본으로하면 모두 닫혀있기 때문에 다른 보안그룹을 선택해야한다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/cc35ccee-8d19-4b91-ba7c-c51ecfb6ea68/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/2e29a095-e316-42f9-9f74-9a63d722ae89/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/0964d3df-ff7f-423e-9748-8d17275e60c2/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/9f988b52-4c0d-4d79-9831-8ce30472ac0c/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;ECS -&amp;gt; 작업정의 -&amp;gt; 새 작업 정의...</description>
+        <pubDate>Fri, 21 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day34/</link>
+        <guid isPermaLink="true">http://localhost:4000/day34/</guid>
+        
+        <category>AWS</category>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>자동화</category>
+        
+        <category>지속적 통합</category>
+        
+        <category>ECS</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>지속적 통합</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day33&amp;#93; / [지속적 통합]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/cbf90eca-d4d5-4794-a242-893a3386a946/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;github-action이란&quot;&gt;Github Action이란?&lt;/h2&gt; &lt;p&gt;Github Action은 github에서 공식적으로 제공하는 CI/CD 툴, 다시 말해 개발의 work flow를 자동화할 수 있게 도와주는 툴이다.&lt;/p&gt; &lt;h3 id=&quot;cicd란&quot;&gt;CI/CD란?&lt;/h3&gt; &lt;p&gt;CI는 Continuous Integration(지속적 통합), CD는 Continuous Delivery(지속적 전달)의 줄임말이다.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;CI : 테스트, 빌드, Dockerizing, 저장소에 전달하는 것까지 프로덕션 환경으로 서비스를 배포할 수 있도록 준비하는 프로세스 CD : 저장소로 전달된 프로덕션 서비스를 실제 사용자들에게 배포하는 프로세스 작업한 소스 코드를 빌드하고, 저장소에 전달 후 배포까지 하는 과정을 통상적으로 CI/CD라고 부른다.&lt;/p&gt; &lt;/blockquote&gt; &lt;h3 id=&quot;github-action의-코어-개념&quot;&gt;Github Action의 코어 개념&lt;/h3&gt; &lt;h4 id=&quot;--workflow&quot;&gt;- Workflow&lt;/h4&gt; &lt;p&gt;자동화된 전체 프로세스. 하나 이상의 Job으로 구성되고, Event에 의해 예약되거나 트리거될 수 있는 자동화된 절차를 말한다....</description>
+        <pubDate>Thu, 20 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day33/</link>
+        <guid isPermaLink="true">http://localhost:4000/day33/</guid>
+        
+        <category>Github</category>
+        
+        <category>Github Action</category>
+        
+        <category>자동화</category>
+        
+        <category>지속적 통합</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>지속적 통합</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day32-2&amp;#93; / [Docker]</title>
+        <description>&lt;h1 id=&quot;도커-컴포즈란&quot;&gt;도커 컴포즈란?&lt;/h1&gt; &lt;p&gt;도커 컴포즈는 단일 서버에서 여러개의 컨테이너를 하나의 서비스로 정의해 컨테이너의 묶음으로 관리할 수 있는 작업 환경을 제공하는 관리 도구입니다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/6c4b965e-76a4-4237-b2a0-a11cffd33400/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;도커-컴포즈를-사용하는-이유&quot;&gt;도커 컴포즈를 사용하는 이유&lt;/h3&gt; &lt;p&gt;여러 개의 컨테이너가 하나의 어플리케이션으로 동작할 때 도커 컴포즈를 사용하지 않는다면, 이를 테스트하려면 각 컨테이너를 하나씩 생성해야 합니다. 예를 들면, 웹 어플리케이션을 테스트하려면 웹 서버 컨테이너, 데이터베이스 컨테이너 두 개의 컨테이너를 각각 생성해야 합니다.&lt;/p&gt; &lt;p&gt;즉, 아래와 같이 두개의 run 명령어를 입력해야합니다.&lt;/p&gt; &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; wordpress_db &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; mysql:8 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8080:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--link&lt;/span&gt; wordpress_db:mysql...</description>
+        <pubDate>Wed, 19 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day32-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day32-2/</guid>
+        
+        <category>docker</category>
+        
+        <category>Dockerfile</category>
+        
+        <category>Compose</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>Docker</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day32-1&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h1 id=&quot;iam-identity-and-access-management-란&quot;&gt;IAM (Identity and Access Management) 란?&lt;/h1&gt; &lt;p&gt;IAM은 사용자의 접근 권한을 관리 하는 서비스 이다.&lt;/p&gt; &lt;p&gt;IAM을 통해서 회사 내 AWS를 사용하는 사람들에게 부서 마달 사용자별로 AWS에서 제공하는 서비스들, 서비스에 생성된 자원 등에 대해 세분된 권한을 지정할 수 있다.&lt;/p&gt; &lt;p&gt;예를 들어 개발부서 그룹은 EC2와 S3 서비스에 대한 엑세스 권한을 주고, DB관리 부서 그룹은 RDS 엑세스 권한을 준다던지 세부 설정이 가능하다.&lt;/p&gt; &lt;p&gt;따라서 대부분의 사용자 권한 관리 서비스와 마찬가지로, 최고 관리자가 Root 계정을 관리하고 그밖의 사용자들은 각자 계정을 발급받아 제한된 권한을 갖고 AWS를 이용하게 된다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/3fa24ed6-cc3e-4b1d-86e5-6e9d890b9a84/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;IAM은 AWS 서비스에 대한 엑세스 권한 설정 뿐만 아니라, 언제 어디서 누가 무엇을 어떻게...</description>
+        <pubDate>Wed, 19 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day32-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day32-1/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>AIM</category>
+        
+        <category>Identity and Access Management</category>
+        
+        <category>접근 권한 관리 서비스</category>
+        
+        <category>Root 계정</category>
+        
+        <category>최고 관리자</category>
+        
+        <category>엑세스 권한</category>
+        
+        <category>자격증명</category>
+        
+        <category>역할</category>
+        
+        <category>검증</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day33-1&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/bcc4d455-3078-4612-aa60-595649bf40f2/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;S3 를 통해 Front-end 사이트를 얻어오고, EC2 와 RDS를 통해 백엔드, DB 서버를 만들어 보았다.&lt;/p&gt; &lt;h3 id=&quot;만든-순서는-크게-다음과-같다&quot;&gt;만든 순서는 크게 다음과 같다.&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;프론트 초기 세팅 &lt;ul&gt; &lt;li&gt;리액트를 빌드한다.&lt;/li&gt; &lt;li&gt;S3 에 버킷을 생성&lt;/li&gt; &lt;li&gt;빌드 결과물을 버킷에 넣는다.&lt;/li&gt; &lt;li&gt;액세스 전부 허용, 정적 호스팅을 허용&lt;/li&gt; &lt;li&gt;정책을 설정하여 객체에 GET 이 가능하도록 한다.&lt;/li&gt; &lt;li&gt;프론트 사이트가 보여지는 지 확인한다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;백엔드 초기 세팅 &lt;ul&gt; &lt;li&gt;보안 그룹을 생성한다.&lt;/li&gt; &lt;li&gt;EC2를 생성한다.&lt;/li&gt; &lt;li&gt;EC2에 노드 서버를 넣고 실행한다.&lt;/li&gt; &lt;li&gt;백엔드 서버에 접속이 되는 지 확인한다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;프론트엔드를 백엔드 서버와 연결한다. &lt;ul&gt; &lt;li&gt;RDS 와 백엔드를 연동한다.&lt;/li&gt; &lt;li&gt;RDS 생성&lt;/li&gt; &lt;li&gt;RDS에 대해 보안그룹의 인바운드를 설정한다. 백엔드 서버(EC2)는...</description>
+        <pubDate>Tue, 18 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day31-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day31-3/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>S3</category>
+        
+        <category>Front-end</category>
+        
+        <category>EC2</category>
+        
+        <category>RDS</category>
+        
+        <category>DB</category>
+        
+        <category>Back-end</category>
+        
+        <category>Node</category>
+        
+        <category>보안그룹</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day31-2&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;도메인-연결과-cdn-및-https-적용&quot;&gt;도메인 연결과 CDN 및 HTTPS 적용&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/699c9738-63bb-4ee1-bc8f-b89644819076/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;1-certificate-manager를-통한-도메인-인증서-발급&quot;&gt;1. Certificate Manager를 통한 도메인 인증서 발급&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;구매한 도메인을 기준으로 인증서를 발급 받습니다. &lt;ul&gt; &lt;li&gt;인증서는 프론트엔드 Cloudfront 사용 리전인 us-east-1과 백엔드 Load Balancer 사용리전인 ap-northeast-2에서 발급 받아야 합니다.&lt;/li&gt; &lt;li&gt;발급 시, DNS 검증 가이드로 레퍼런스를 참고하세요.&lt;/li&gt; &lt;li&gt;이후에 DNS 공급자로 Route53을 이용합니다. Route53에 레코드 생성과정을 반드시 거쳐야합니다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;인증까지 최소 30분의 시간이 소요될 수 있습니다.&lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;도메인-구매&quot;&gt;도메인 구매&lt;/h4&gt; &lt;blockquote&gt; &lt;p&gt;Route53의 도메인 -&amp;gt; 등록된 도메인 -&amp;gt; 도메인 등록 으로 들어가서 도메인을 구매한다. &lt;strong&gt;도메인 이름과 S3버킷의 이름을 맞춰줘야함으로 S3버킷도 도메인이름으로 생성해줘야한다!!&lt;/strong&gt; 맞추지 않았을 때 에러가 발생한다&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/5c051722-7346-4d53-a9dd-7a66abc82b62/image.png&quot;...</description>
+        <pubDate>Tue, 18 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day31-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day31-2/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>CDN</category>
+        
+        <category>HTTPS</category>
+        
+        <category>Certificate Manager</category>
+        
+        <category>Cloudfront</category>
+        
+        <category>Load Balancer</category>
+        
+        <category>Route53</category>
+        
+        <category>DNS</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day31-1&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h1 id=&quot;오토-스케일링-auto-scaling&quot;&gt;오토 스케일링 (Auto Scaling)&lt;/h1&gt; &lt;p&gt;클라우드 컴퓨팅의 대표적인 장점으로는 &lt;strong&gt;필요에 따라 서비스를 빠르게 확장하거나 축소&lt;/strong&gt;할 수 있는 유연성을 들 수 있다.&lt;/p&gt; &lt;p&gt;그중, 오토스케일링(Auto Scaling)은 클라우드의 유연성을 돋보이게 하는 핵심기술로 CPU, 메모리, 디스크, 네트워크 트래픽과 같은 시스템 자원들의 메트릭(Metric) 값을 모니터링하여 &lt;strong&gt;서버 사이즈를 자동으로 조절&lt;/strong&gt; 하는 서비스를 말한다.&lt;/p&gt; &lt;p&gt;이를 통해 사용자는 예상치 못한 서비스 부하에 효과적으로 대응하고, 최대한 저렴한 비용으로 안정적이고 예측 가능한 성능을 유지 할수 있다.&lt;/p&gt; &lt;h2 id=&quot;스케일링-이란&quot;&gt;스케일링 이란?&lt;/h2&gt; &lt;p&gt;오토스케일링(Auto Scaling)에 대해 배우기 앞서 스케일링(Scaling)이 정확히 무엇을 의미하는지 간단하게 짚고 넘어가도록 하자.&lt;/p&gt; &lt;p&gt;스케일링 이란 &lt;strong&gt;인스턴스 혹은 컴퓨팅 파워를 늘리는 것&lt;/strong&gt;을 말한다.&lt;/p&gt; &lt;p&gt;스케일링의 방법에는 대표적으로 2가지가 있다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/59953ad6-8ce3-4bf0-815b-6e0bc9d30bbb/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;...</description>
+        <pubDate>Tue, 18 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day31-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day31-1/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>오토 스케일링 (Auto Scaling)</category>
+        
+        <category>스케일 업(Scale Up)</category>
+        
+        <category>스케일 아웃(Scale Out)</category>
+        
+        <category>스케일 인(Scale In)</category>
+        
+        <category>오토 스케일링 그룹(Groups)</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day30-에러 해결 (2)&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/f5639010-9cd0-4b52-967b-d050a301bacc/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;aws EC2로 인스턴스를 열고 해당 인스턴스에서 npm start를 하였으나 해당 오류가 발생하였다.&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;에러-원인&quot;&gt;에러 원인&lt;/h2&gt; &lt;p&gt;해석해보면 80번 포트에 대한 접근권한이 없다는 의미이다. 검색을 통해 알아본 에러의 원인은 리눅스에서 별도로 1024 이상의 포트를 쓸경우에는 root권한이 필요하지 않으나, 1024이하의 well known port를 사용하려면 root 권한이 필요했다. 내가 생성한 인스턴스의 OS는 Ubuntu였기 때문에 root권한을 주거나 다른 포트로 변경 해줘야했다.&lt;/p&gt; &lt;h2 id=&quot;에러-해결&quot;&gt;에러 해결&lt;/h2&gt; &lt;h3 id=&quot;방법1&quot;&gt;방법1&lt;/h3&gt; &lt;p&gt;해당 폴더와 해당 폴더에 있는 모든 파일의 소유를 root 계정으로 바꿔주고 루트로 접속해서 실행하면된다.&lt;/p&gt; &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// ex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo chown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; root:root nestSetting/ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span...</description>
+        <pubDate>Mon, 17 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day30-4/</link>
+        <guid isPermaLink="true">http://localhost:4000/day30-4/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>ec2</category>
+        
+        <category>npm</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>트러블 슈팅</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day30-에러 해결 (1)&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/0760354e-aeae-463d-a7b0-fe8b524acbe4/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;aws 배포를 공부해보기 위해 파일을 받아서 npm start나 npm build를 해봤으나 해당 오류가 발생 하였다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;해결 방법 찾아보았을 때 node버전이 높아서 나는 문제라 16버전으로 내리면 된다라는 사실을 알았다.&lt;/li&gt; &lt;/ul&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;해결&quot;&gt;해결&lt;/h2&gt; &lt;p&gt;node 버전을 낮추려다가 캐시삭제와 n플러그인 설치 등이 대부분 리눅스 환경에서 알려주고 있어서 window로 실습을 하던 나에게 번거롭게 느껴져 다른 방법을 찾던중에 package.json의 script를 수정하여 간단하게 해결할 수 있는 방법을 찾았다.&lt;/p&gt; &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;scripts&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;start&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;react-scripts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;start&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;build&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;react-scripts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;build&quot;&lt;/span&gt;&lt;span...</description>
+        <pubDate>Mon, 17 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day30-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day30-3/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>node</category>
+        
+        <category>npm</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>트러블 슈팅</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day30-2&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;네트워크-acl-nacl-network-access-control-list&quot;&gt;네트워크 ACL, NACL (Network Access Control List)&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;네트워크 ACL(액세스 제어 목록)은 1개 이상의 서브넷 내부와 외부의 트래픽을 제어하기 위한 방확벽 역할을 하는 VPC를 위한 선택적 보안 계층입니다&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;nacl-특징&quot;&gt;NACL 특징&lt;/h3&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;보안 그룹처럼 방화벽 역할을 담당&lt;/p&gt; &lt;/li&gt; &lt;li&gt;서브넷 단위 &lt;ul&gt; &lt;li&gt;인스턴스 단위로 제어 불가능&lt;/li&gt; &lt;li&gt;다양한 서브넷에 연동 가능 (1:N)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;포트 및 아이피를 직접 Deny 가능 &lt;ul&gt; &lt;li&gt;외부 공격을 받는 상황 등 특정 아이피를 블록하고 싶을 때 사용&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;Stateless&lt;/li&gt; &lt;li&gt;들어오는 트래픽과 나가는 트래픽을 구분하지 않음 &lt;ul&gt; &lt;li&gt;즉 일반적으로 Outbound에 Ephemeral Port(임시 포트) 범위를 열어 주어야 정상적으로 통신 가능 &lt;h3 id=&quot;nacl-규칙&quot;&gt;NACL 규칙&lt;/h3&gt; &lt;/li&gt; &lt;/ul&gt;...</description>
+        <pubDate>Mon, 17 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day30-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day30-2/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>NACL</category>
+        
+        <category>Network Access Control List</category>
+        
+        <category>네트워크 ACL</category>
+        
+        <category>방화벽</category>
+        
+        <category>Security Group</category>
+        
+        <category>보안그룹</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day30-1&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;vpn&quot;&gt;VPN&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/e04f57dc-05ec-46f1-85df-862734006236/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;VPN은 한국어로 “가상사설망”이라합니다. 앞에 “가상”이라는 단어에서 알 수 있듯 실제 사설망이 아닌 가상의 사설망입니다. 만약 위 그림과같이 회사의 네트워크가 구성되어있고 보안상의 이유로 직원간 네트워크를 분리하고싶다면 기존 인터넷선 선공사도 다시해야하고 건물의 내부선을 다 뜯어고쳐야하며 다시 전용선을 깔아주어야합니다. &lt;strong&gt;이를위해 가상의 망 VPN을 사용하게됩니다.&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/4e0c17b2-2ab7-4ac3-b5a1-129e67beac64/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;VPN은 네트워크A와 네트워크B가 실제로 같은 네트워크상에 있지만 논리적으로 다른네트워크인것처럼 동작합니다. 이를 우리는 ‘가상사설망’이라고합니다.&lt;/p&gt; &lt;h2 id=&quot;vpcvirtual-private-cloud&quot;&gt;VPC(Virtual Private Cloud)&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/af87f573-d5dc-4386-ad3b-f0af1ee57410/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;VPC가 없다면 EC2 인스턴스들이 서로 거미줄처럼 연결되고 인터넷과 연결됩니다. 이런 구조는 시스템의 복잡도를 엄청나게 끌어올릴뿐만 아니라 하나의 인스턴스만 추가되도 모든 인스턴스를 수정해야하는 불편함이 생깁니다. 마치 인터넷 전용선을 다시까는것과...</description>
+        <pubDate>Mon, 17 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day30-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day30-1/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>VPN</category>
+        
+        <category>VPC</category>
+        
+        <category>Virtual Private Cloud</category>
+        
+        <category>가상상설망</category>
+        
+        <category>네트워크</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day29-4&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;rds-architecture&quot;&gt;RDS Architecture&lt;/h2&gt; &lt;h3 id=&quot;관계형-데이터베이스의-개요&quot;&gt;관계형 데이터베이스의 개요&lt;/h3&gt; &lt;p&gt;데이터베이스 관리 시스템, 즉 DBMS는 데이터 저장, 조직화, 인출과 관련된 제반 업무를 관장하는 소프트웨어입니다. 그 중 관계형 데이터베이스에서 정보는 열과 행으로 이뤄진 테이블에 저장되고, 테이블에 저장된 데이터는 공통 키 또는 공통 컨셉에 따라 서로 관계를 유지하며, 테이블에서 데이터를 인출할 때 이와 같은 관계성을 이용한다는 측면에서 관계형 데이터베이스라는 이름이 붙었습니다.&lt;/p&gt; &lt;h3 id=&quot;amazon-rds의-개요&quot;&gt;Amazon RDS의 개요&lt;/h3&gt; &lt;p&gt;AWS는 관계형 데이터베이스 호스팅 및 관리 서비스인 Amazon Relational Database Service(RDS)를 제공하며, 다음과 같은 RDBMS 엔진을 사용할 수 있습니다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Aurora MySQL&lt;/li&gt; &lt;li&gt;Aurora PostgreSQL&lt;/li&gt; &lt;li&gt;Oracle -SQL Server&lt;/li&gt; &lt;li&gt;MySQL&lt;/li&gt; &lt;li&gt;PostgreSQL&lt;/li&gt; &lt;li&gt;MariaDB&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Amazon RDS를 본격적으로 소개하기 전 데이터베이스 호스팅 방식을 알아보겠습니다....</description>
+        <pubDate>Fri, 14 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day29-4/</link>
+        <guid isPermaLink="true">http://localhost:4000/day29-4/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>RDS</category>
+        
+        <category>database</category>
+        
+        <category>데이터베이스</category>
+        
+        <category>RDBMS</category>
+        
+        <category>mysql</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day29-3&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;1-블록-스토리지&quot;&gt;1. 블록 스토리지&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/f033dc6f-cd53-4550-973d-94235084954e/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;블록 스토리지는 데이터를 일정한 크기의 블록으로 저장하는 방식입니다. 블록은 파일 보다는 작은 단위로서 조각으로 나누어 저장&lt;/p&gt; &lt;p&gt;나누어진 각각의 블록은 고유한 주소를 가지고 있습니다. 이 주소를 통하여 재구성하여 데이터를 불러올 수 있습니다.&lt;/p&gt; &lt;p&gt;SAN(Storage Area Network) 또는 가상머신의 디스크로 사용하며, 정형화된 데이터를 빠르게 처리하는 용도로 많이 사용됩니다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/66d4b9b3-5369-4163-94f0-5b6da2055fc3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;블록 스토리지는 주차장에 비유됩니다. 주차장의 한 구획이 블록으로 비유되어 특정 공간에 차를 주차하듯이 정해진 블록에 데이터를 저장합니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;h3 id=&quot;장점&quot;&gt;장점&lt;/h3&gt; &lt;p&gt;블록 스토리지에서는 고유 주소가 있어 파일 스토리지와 달리 계층 구조도 필요없고, 경로도 하나만 있는 것이 아니라 다양하게 가지고 있습니다. 그만큼 데이터를 신속하게...</description>
+        <pubDate>Fri, 14 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day29-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/day29-3/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>EC2</category>
+        
+        <category>스토리지</category>
+        
+        <category>S3</category>
+        
+        <category>버킷</category>
+        
+        <category>bucket</category>
+        
+        <category>EBS</category>
+        
+        <category>EFS</category>
+        
+        <category>객체 스토리지</category>
+        
+        <category>블록 스토리지</category>
+        
+        <category>파일 스토리지</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day29-2&amp;#93; / [아마존 웹 서비스(AWS)]</title>
+        <description>&lt;h2 id=&quot;인스턴스instances&quot;&gt;인스턴스(Instances)&lt;/h2&gt; &lt;p&gt;가상 컴퓨팅 환경으로, 하나의 가상 컴퓨터(서버)라고 생각하면 됩니다. 인스턴스에서 실행하려는 애플리케이션 또는 소프트웨어에 필요한 메모리 양과 컴퓨팅 파워를 기준으로 인스턴스 유형을 선택합니다.&lt;/p&gt; &lt;h3 id=&quot;amazon-machine-imageami&quot;&gt;Amazon Machine Image(AMI)&lt;/h3&gt; &lt;p&gt;클라우드에서 실행되는 서버에 대한 모든 소프트웨어 환경 설정 정보를 포함한 기본 설계도 또는 청사진과 같습니다. AMI에는 운영체제, 애플리케이션 서버 그리고 그 위에서 실행되는 애플리케이션 등에 대한 세부 내용을 모두 담고 있습니다. AMI로 서버 또는 인스턴스를 론칭하면 모든 요소가 상속되어 만들어 집니다. 사용자는 AMI를 통해 자신이 원하는 수만큼 인스턴스를 생성할 수 있습니다.&lt;/p&gt; &lt;h3 id=&quot;인스턴스-유형&quot;&gt;인스턴스 유형&lt;/h3&gt; &lt;p&gt;인스턴스를 시작할 때 지정하는 인스턴스 유형에 따라 인스턴스에 사용되는 호스트 컴퓨터의 하드웨어가 결정됩니다. 각 인스턴스 유형은 서로 다른...</description>
+        <pubDate>Fri, 14 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day29-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day29-2/</guid>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>AWS</category>
+        
+        <category>EC2</category>
+        
+        <category>Instances</category>
+        
+        <category>인스턴스</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>아마존 웹 서비스(AWS)</category>
+      </item>
     
       <item>
         <title>DevOps&amp;#91;Day29-1&amp;#93; / [아마존 웹 서비스(AWS)]</title>
@@ -24,7 +384,7 @@
         
         <category>DevOps BootCamp</category>
         
-        <category>Docker</category>
+        <category>아마존 웹 서비스(AWS)</category>
       </item>
     
       <item>
@@ -307,412 +667,6 @@
         <category>DevOps BootCamp</category>
         
         <category>네트워크 기초</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day24-1&amp;#93; / [네트워크 기초]</title>
-        <description>&lt;h2 id=&quot;chapter-아키텍처를-구성하는-요소들--proxy&quot;&gt;[Chapter] 아키텍처를 구성하는 요소들 : Proxy&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;원 서버를 대리하여 통신하며 캐시, 로브밸런서, 보안 등 중계 역할을 하는 서버&lt;/li&gt; &lt;li&gt;중간에 위치하고 있기 때문에 클라이언트는 프록시 서버를 서버로 인식하고 서버는 클라이언트로 인식&lt;/li&gt; &lt;li&gt;보안, 안정성, 서비스 성능 개선하는 데 사용&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/7b71ab32-f7be-47e0-ac79-dcce07e0ce95/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;foward-proxy&quot;&gt;Foward Proxy&lt;/h1&gt; &lt;hr /&gt; &lt;ul&gt; &lt;li&gt;일반적인 프록시 서버&lt;/li&gt; &lt;li&gt;클라이언트-서버 구조에서 클라이언트 쪽을 대리&lt;/li&gt; &lt;li&gt;클라이언트에서 서버로 리소스를 요청할 때 프록시 서버를 거쳐서 요청&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;foward-proxy-특징&quot;&gt;Foward Proxy 특징&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;프라이버시 강화 &lt;ul&gt; &lt;li&gt;웹 서버에서 클라이언트의 IP를 숨기는 데 사용&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;암호화 &lt;ul&gt; &lt;li&gt;웹 사이트에 대한 SSL과 같은 암호화 구현&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;압축 &lt;ul&gt; &lt;li&gt;네트워크 대역폭을...</description>
-        <pubDate>Fri, 07 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day24-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/day24-1/</guid>
-        
-        <category>네트워크</category>
-        
-        <category>Proxy</category>
-        
-        <category>HTTPS</category>
-        
-        <category>HTTP</category>
-        
-        <category>아키텍쳐</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>네트워크 기초</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day23 발표자료(2)&amp;#93; / [네트워크 기초]</title>
-        <description>&lt;h1 id=&quot;http-버전별-특징과-차이점을-설명하세요&quot;&gt;HTTP 버전별 특징과 차이점을 설명하세요.&lt;/h1&gt; &lt;h2 id=&quot;http09&quot;&gt;HTTP/0.9:&lt;/h2&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;1991년에 출시된 HTTP의 첫 번째 버전입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;클라이언트가 서버에서 HTML 문서를 검색할 수 있게 해주는 매우 간단한 프로토콜이었습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;헤더를 지원하지 않아 요청이나 응답에 메타데이터나 추가 정보를 포함할 방법이 없었습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;1996년에 HTTP/1.0으로 대체되었습니다.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;http10&quot;&gt;HTTP/1.0:&lt;/h2&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;1996년에 출시된 HTTP/1.0은 헤더를 지원하는 최초의 버전입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;또한 캐싱 지원, 단일 연결을 통해 여러 요청을 보내는 기능, 요청 결과를 나타내는 상태 코드 사용 등 여러 가지 새로운 기능을 도입했습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;그러나 여전히 각 요청이 서버에 대한 새로운 연결을 열어야 한다는 사실과 같은 몇 가지...</description>
-        <pubDate>Thu, 06 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day23-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/day23-2/</guid>
-        
-        <category>네트워크</category>
-        
-        <category>HTTPS</category>
-        
-        <category>HTTP</category>
-        
-        <category>HTTP/0.9</category>
-        
-        <category>HTTP/1.0</category>
-        
-        <category>HTTP/1.1</category>
-        
-        <category>HTTP/2</category>
-        
-        <category>HTTP/3</category>
-        
-        <category>Header</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>발표자료</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>네트워크 기초</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day23 발표자료(1)&amp;#93; / [네트워크 기초]</title>
-        <description>&lt;h1 id=&quot;소켓-및-포트의-특성&quot;&gt;소켓 및 포트의 특성:&lt;/h1&gt; &lt;p&gt;소켓과 포트는 모두 네트워킹 영역에서 중요한 구성 요소입니다. 네트워크를 통해 컴퓨터 간의 통신을 용이하게 하기 위해 함께 작동합니다. 다음은 소켓 및 포트의 주요 특성 중 일부입니다.&lt;/p&gt; &lt;h1 id=&quot;소켓&quot;&gt;소켓:&lt;/h1&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;소켓은 네트워크에서 실행되는 두 프로그램 간의 양방향 통신 링크의 끝점(엔드포인트)입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;IP 주소와 포트 번호의 고유한 조합으로 식별됩니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;소켓은 연결 지향적이거나 비연결적일 수 있습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;연결 지향 소켓은 두 끝점 간에 안정적이고 순서가 있으며 오류가 확인된 연결을 제공합니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;비연결적인 소켓은 덜 안정적이지만 끝점(엔드포인트) 간에 메시지를 교환하는 더 간단한 방법을 제공합니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;소켓은 응용 프로그램에서 네트워크를 통해 데이터를 보내고...</description>
-        <pubDate>Thu, 06 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day23-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/day23-1/</guid>
-        
-        <category>네트워크</category>
-        
-        <category>소켓</category>
-        
-        <category>포트</category>
-        
-        <category>HTTPS</category>
-        
-        <category>HTTP</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>발표자료</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>네트워크 기초</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day22&amp;#93; / [회고. 프로젝트1]</title>
-        <description>&lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;Start&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt; 먼저 요구사항에 맞는 ERD 제작과 API 문서 작성으로 시작되었다.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;요구사항&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;ul&gt; &lt;li&gt;[✔] 사용자는 모든 상품을 조회할 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 특정 분류의 상품을 조회할 수 있다. (상품분류, 브랜드명, 가격, 상품명)&lt;/li&gt; &lt;li&gt;[✔] 사용자의 타입이 판매자인 경우 자신의 상품을 등록할 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 상품을 장바구니에 담을 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 자신의 장바구니를 조회할 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 자신의 장바구니에 있는 상품의 수량을 변경시킬 수 있다.&lt;/li&gt; &lt;li&gt;[✔] 사용자는 상품을 자신의 장바구니에서 제외할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;hr /&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;TABLE&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;a href=&quot;https://dbdiagram.io/d/642a34ae5758ac5f172625c3&quot;&gt;&amp;gt;&amp;gt; ERD Link «&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;strong&gt;필요한 테이블은 users, items, cart 세 가지 테이블입니다.&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;users 테이블&lt;/strong&gt;은 프라이머리 키로 지정한 고유한 user_id 그리고&lt;br /&gt; username과...</description>
-        <pubDate>Wed, 05 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day22/</link>
-        <guid isPermaLink="true">http://localhost:4000/day22/</guid>
-        
-        <category>데이터베이스</category>
-        
-        <category>프로젝트1</category>
-        
-        <category>쇼핑몰</category>
-        
-        <category>RDBMS</category>
-        
-        <category>NoSql</category>
-        
-        <category>HTTPS</category>
-        
-        <category>HTTP</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>회고</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>프로젝트 회고</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day18&amp;#93; / [데이터베이스]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;데이터 파이프라인의 필요성을 이해할 수 있다. &lt;ul&gt; &lt;li&gt;OLTP와 OLAP의 차이를 이해할 수 있다.&lt;/li&gt; &lt;li&gt;ETL 과정을 설명할 수 있다.&lt;/li&gt; &lt;li&gt;MLOps와 DevOps의 차이를 이해할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다. &lt;ul&gt; &lt;li&gt;간단한 수준의 SQL문을 사용할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-데이터파이프라인과oltpvsolap&quot;&gt;1. 데이터 파이프라인과 OLTP vs. OLAP&lt;/h1&gt; &lt;h1 id=&quot;데이터파이프라인&quot;&gt;데이터 파이프라인&lt;/h1&gt; &lt;p&gt;개념&lt;/p&gt; &lt;ul&gt; &lt;li&gt;다양한 데이터 소스로부터 원시 데이터를 수집해 분석을 위해 데이터 웨어하우스와 같은 별도데이터 저장소로 이전하는 과정&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;목적&lt;/p&gt; &lt;p&gt;1) 다양한 경로로 수집되는 데이터를 DW(Data Warehouse)에 적재한 후 적재한 데이터를 바탕으로 효과적으로 분석하기 용이하게 만들기 위해서&lt;/p&gt; &lt;p&gt;2) MLOps를 실천하기 위해 사전에 준비되어야할...</description>
-        <pubDate>Thu, 30 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day18/</link>
-        <guid isPermaLink="true">http://localhost:4000/day18/</guid>
-        
-        <category>데이터베이스</category>
-        
-        <category>파이프라인</category>
-        
-        <category>RDBMS</category>
-        
-        <category>NoSql</category>
-        
-        <category>OLTP</category>
-        
-        <category>OLAP</category>
-        
-        <category>배치작업</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>데이터베이스</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day17 발표자료(2)&amp;#93; / [데이터베이스]</title>
-        <description>&lt;h2 id=&quot;주제-2-배치-작업의-예로는-어떤-것들이-있나요-거래트랜잭션-리포트-요금-계산은-배치-작업의-대표적인-예입니다-이-키워드를-사용해-배치-작업을-설명해보세요&quot;&gt;[주제 2] 배치 작업의 예로는 어떤 것들이 있나요? 거래(트랜잭션), 리포트, 요금 계산은 배치 작업의 대표적인 예입니다. 이 키워드를 사용해 배치 작업을 설명해보세요.&lt;/h2&gt; &lt;p&gt;배치 작업은 일반적으로 사용자 상호 작용 없이 대량의 데이터에 대해 일련의 작업을 수행하는 자동화된 컴퓨터 프로그램입니다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;거래(트랜잭션): 배치 처리는 일반적으로 신용 카드 처리와 같이 대량의 거래가 단일 배치 실행으로 처리되는 거래에 사용됩니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;리포트: 일괄 처리는 여러 소스의 데이터를 수집하고 분석해야 하는 재무제표 또는 판매 보고서와 같은 보고서를 생성하는 데 사용됩니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;요금 계산: 배치 처리는 일정 기간 동안 데이터를 수집한 다음 단일 배치 실행으로 처리하는 월별 공과금 청구서와 같은 청구서를 생성하는 데...</description>
-        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day17-4/</link>
-        <guid isPermaLink="true">http://localhost:4000/day17-4/</guid>
-        
-        <category>데이터베이스</category>
-        
-        <category>RDBMS</category>
-        
-        <category>NoSql</category>
-        
-        <category>OLTP</category>
-        
-        <category>OLAP</category>
-        
-        <category>배치작업</category>
-        
-        <category>발표자료</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>데이터베이스</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day17 발표자료(1)&amp;#93; / [데이터베이스]</title>
-        <description>&lt;h3 id=&quot;주제-1-rdbms에서-스키마-디자인-중-필드값으로-배열을-넣어야-하는-경우가-발생했습니다-선배-개발자에게-물어보니-이-경우에는-정규화가-필요하다고-조언해줍니다-유어클래스의-user-테이블-사례를-통해-어떻게-테이블을-정규화할지-고민해보세요&quot;&gt;[주제 1] RDBMS에서 스키마 디자인 중 필드값으로 배열을 넣어야 하는 경우가 발생했습니다. 선배 개발자에게 물어보니, 이 경우에는 정규화가 필요하다고 조언해줍니다. 유어클래스의 user 테이블 사례를 통해 어떻게 테이블을 정규화할지 고민해보세요.&lt;/h3&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/a2da9161-4f0a-4a36-ad2f-af8e533e9642/image.png&quot; alt=&quot;주제 1&quot; /&gt;&lt;/p&gt; &lt;p&gt;위 테이블은 제1정규화(1NF)를 위반하고 있습니다. 이 경우 정규화를 수행하여 효율적인 데이터 저장 및 검색을 위해 새로운 테이블을 만들어 배열을 나타내야 합니다.&lt;/p&gt; &lt;h3 id=&quot;hobbies-필드가-배열-형태이므로-별도의-테이블user--hobby로-분리하여-다음과-같이-변경합니다&quot;&gt;hobbies 필드가 배열 형태이므로, 별도의 테이블(user / hobby)로 분리하여 다음과 같이 변경합니다.&lt;/h3&gt; &lt;hr /&gt; &lt;p&gt;*User 테이블: &lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/a92489ac-4c62-4ebb-abdb-e99fa2f62e70/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;center&gt;||&lt;/center&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/9dc5b341-6acc-4641-b2a0-206598b52df0/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;Hobby 테이블: &lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/6776b8c3-0304-49e2-9d7a-e77551c392d3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;center&gt;||&lt;/center&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/5d4a589a-c7a5-443b-958f-0eb978b050aa/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;UserHobby 테이블: &lt;img...</description>
-        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day17-3/</link>
-        <guid isPermaLink="true">http://localhost:4000/day17-3/</guid>
-        
-        <category>데이터베이스</category>
-        
-        <category>RDBMS</category>
-        
-        <category>NoSql</category>
-        
-        <category>OLTP</category>
-        
-        <category>OLAP</category>
-        
-        <category>스키마</category>
-        
-        <category>필드</category>
-        
-        <category>정규화</category>
-        
-        <category>발표자료</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>데이터베이스</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day17-2&amp;#93; / [데이터베이스]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;RDBMS와 NoSQL의 차이와 각각의 장단점을 이해할 수 있다.&lt;/li&gt; &lt;li&gt;충분한 가용성이 확보되지 않은 다양한 문제 상황을 이해하고, 상황에 따른 솔루션이 무엇인지 이해할 수 있다. &lt;ul&gt; &lt;li&gt;다음 용어에 대한 간단한 정의를 내릴 수 있다: 인덱싱, 레플리카, 파티셔닝, 캐싱, 배치 작업, 스트림 처리&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;이벤트 기반 아키텍처를 설명할 수 있다.&lt;/li&gt; &lt;li&gt;RDBMS에서 테이블을 만들 때 스키마(필드) 디자인을 할 수 있다.&lt;/li&gt; &lt;li&gt;데이터 파이프라인의 필요성을 이해할 수 있다. &lt;ul&gt; &lt;li&gt;OLTP와 OLAP의 차이를 이해할 수 있다.&lt;/li&gt; &lt;li&gt;ETL 과정을 설명할 수 있다.&lt;/li&gt; &lt;li&gt;MLOps와 DevOps의 차이를 이해할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다. &lt;ul&gt;...</description>
-        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day17-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/day17-2/</guid>
-        
-        <category>데이터베이스</category>
-        
-        <category>RDBMS</category>
-        
-        <category>NoSql</category>
-        
-        <category>OLTP</category>
-        
-        <category>OLAP</category>
-        
-        <category>스키마</category>
-        
-        <category>필드</category>
-        
-        <category>정규화</category>
-        
-        <category>배치작업</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>데이터베이스</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day17-1&amp;#93; / [데이터베이스]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;RDBMS와 NoSQL의 차이와 각각의 장단점을 이해할 수 있다.&lt;/li&gt; &lt;li&gt;충분한 가용성이 확보되지 않은 다양한 문제 상황을 이해하고, 상황에 따른 솔루션이 무엇인지 이해할 수 있다. &lt;ul&gt; &lt;li&gt;다음 용어에 대한 간단한 정의를 내릴 수 있다: 인덱싱, 레플리카, 파티셔닝, 캐싱, 배치 작업, 스트림 처리&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;이벤트 기반 아키텍처를 설명할 수 있다.&lt;/li&gt; &lt;li&gt;RDBMS에서 테이블을 만들 때 스키마(필드) 디자인을 할 수 있다.&lt;/li&gt; &lt;li&gt;데이터 파이프라인의 필요성을 이해할 수 있다. &lt;ul&gt; &lt;li&gt;OLTP와 OLAP의 차이를 이해할 수 있다.&lt;/li&gt; &lt;li&gt;ETL 과정을 설명할 수 있다.&lt;/li&gt; &lt;li&gt;MLOps와 DevOps의 차이를 이해할 수 있다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;리눅스 명령과 프로그래밍 언어를 이용해 간단한 데이터 파이프라인을 구현할 수 있다. &lt;ul&gt;...</description>
-        <pubDate>Wed, 29 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day17-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/day17-1/</guid>
-        
-        <category>데이터베이스</category>
-        
-        <category>RDBMS</category>
-        
-        <category>NoSql</category>
-        
-        <category>OLTP</category>
-        
-        <category>OLAP</category>
-        
-        <category>스키마</category>
-        
-        <category>필드</category>
-        
-        <category>정규화</category>
-        
-        <category>배치작업</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>데이터베이스</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day15&amp;#93; / [WAS와 Web Server]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;HTTP 기반의 서버를 생성하는 소프트웨어인 nginx를 사용하여, 웹 서버(Web Server)를 생성하여 정적 웹페이지 호스팅을 따라 해보세요.&lt;/li&gt; &lt;li&gt;다음과 같은 구조 중에서, 정적 웹페이지 호스팅의 경우에는 HTML, CSS등의 정적 파일만 전달하면 되기 때문에, 보다 단순한 구조인 Client - Web Server의 구조를 가집니다.&lt;/li&gt; &lt;li&gt;nginx 샘플 정적 파일을 호스팅 하는 과정을 따라해보며, 환경 설정 파일을 작성하는 방법과 지시어에 대해서 학습하세요.&lt;/li&gt; &lt;/ul&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-cors-개념&quot;&gt;1. CORS 개념&lt;/h1&gt; &lt;h1 id=&quot;1-cors&quot;&gt;1) CORS&lt;/h1&gt; &lt;p&gt;cross origin resource sharing&lt;/p&gt; &lt;ul&gt; &lt;li&gt;웹 어플리케이션에서 다른 도메인 간에 자원을 공유하기 위한 보안 메커니즘&lt;/li&gt; &lt;li&gt;기본적으로 브라우저는...</description>
-        <pubDate>Mon, 27 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day15/</link>
-        <guid isPermaLink="true">http://localhost:4000/day15/</guid>
-        
-        <category>nginx</category>
-        
-        <category>CozStory</category>
-        
-        <category>Cors</category>
-        
-        <category>호스팅</category>
-        
-        <category>WAS</category>
-        
-        <category>Web Server</category>
-        
-        <category>Web Application Server</category>
-        
-        <category>2-Tier</category>
-        
-        <category>3-Tier</category>
-        
-        <category>동적 웹사이트</category>
-        
-        <category>정적 웹사이트</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>WAS와 Web Server</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day14-3&amp;#93; / [WAS와 Web Server]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;HTTP 기반의 서버를 생성하는 소프트웨어인 nginx를 사용하여, 웹 서버(Web Server)를 생성하여 정적 웹페이지 호스팅을 따라 해보세요.&lt;/li&gt; &lt;li&gt;다음과 같은 구조 중에서, 정적 웹페이지 호스팅의 경우에는 HTML, CSS등의 정적 파일만 전달하면 되기 때문에, 보다 단순한 구조인 Client - Web Server의 구조를 가집니다.&lt;/li&gt; &lt;li&gt;nginx 샘플 정적 파일을 호스팅 하는 과정을 따라해보며, 환경 설정 파일을 작성하는 방법과 지시어에 대해서 학습하세요.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/bvl4zy/btr5BMJCE9E/ysMsM34RtSQ0i0mmQL0ig0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/bvl4zy/btr5BMJCE9E/ysMsM34RtSQ0i0mmQL0ig0/img.png&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-nginx-web-server-hands-on&quot;&gt;1. nginx Web Server Hands-on&lt;/h1&gt; &lt;h1 id=&quot;1-nginx-설치&quot;&gt;1) nginx 설치&lt;/h1&gt; &lt;p&gt;&lt;a href=&quot;https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source&quot;&gt;nginx 설치 레퍼런스&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://formulae.brew.sh/formula/nginx&quot;&gt;homebrew를 이용한 Mac용 nginx 설치...</description>
-        <pubDate>Fri, 24 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day14-3/</link>
-        <guid isPermaLink="true">http://localhost:4000/day14-3/</guid>
-        
-        <category>nginx</category>
-        
-        <category>호스팅</category>
-        
-        <category>WAS</category>
-        
-        <category>Web Server</category>
-        
-        <category>Web Application Server</category>
-        
-        <category>2-Tier</category>
-        
-        <category>3-Tier</category>
-        
-        <category>동적 웹사이트</category>
-        
-        <category>정적 웹사이트</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>WAS와 Web Server</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day14-2&amp;#93; / [WAS와 Web Server]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;서버의 종류와 역할에 대해서 이해합니다.&lt;/li&gt; &lt;li&gt;웹서버와 웹 애플리케이션 서버의 차이점을 이해합니다.&lt;/li&gt; &lt;li&gt;정적, 동적이라는 단어를 이해하고, 정적 웹 사이트와 동적 웹 사이트의 차이점을 학습합니다.&lt;/li&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;nginx를 이용해 정적 웹사이트를 제공하고, Mini WAS를 개발하면서 위의 그림에서 2와 5번에 해당하는 구조를 이해합니다.&lt;/li&gt; &lt;li&gt;express, fastify를 통해 API 서버를 만들면서 WAS의 구조와 해당 서버에 대한 모듈을 이해합니다.&lt;/li&gt; &lt;li&gt;웹 서버와 WAS의 전체적인 구조를 이해하고, 기본적인 CRUD가 있는 블로그 서버를 개발하며, 전체 아키텍처를 이해합니다.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/LyBv1/btr5AO2bf03/Yxni8xdGjdNJRXTsHALOe0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/LyBv1/btr5AO2bf03/Yxni8xdGjdNJRXTsHALOe0/img.png&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1-정적웹사이트vs동적웹사이트&quot;&gt;&lt;strong&gt;1. 정적 웹사이트 vs. 동적 웹사이트&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;정적 웹사이트와 동적 웹사이트&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;정적 웹사이트: HTML 파일(코드) 자체로 배포되는 사이트 (CSR, Client Side Rendering)&lt;/li&gt; &lt;li&gt;동적 웹사이트: 서버에 의해 HTML 파일이 동적으로 생성되는 사이트 (SSR, Server Side Rendering)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;...</description>
-        <pubDate>Fri, 24 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day14-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/day14-2/</guid>
-        
-        <category>WAS</category>
-        
-        <category>Web Server</category>
-        
-        <category>Web Application Server</category>
-        
-        <category>2-Tier</category>
-        
-        <category>3-Tier</category>
-        
-        <category>동적 웹사이트</category>
-        
-        <category>정적 웹사이트</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>WAS와 Web Server</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day14-1&amp;#93; / [WAS와 Web Server]</title>
-        <description>&lt;h1 id=&quot;-학습-목표&quot;&gt;&lt;strong&gt;# 학습 목표&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;서버의 종류와 역할에 대해서 이해합니다.&lt;/li&gt; &lt;li&gt;웹서버와 웹 애플리케이션 서버의 차이점을 이해합니다.&lt;/li&gt; &lt;li&gt;정적, 동적이라는 단어를 이해하고, 정적 웹 사이트와 동적 웹 사이트의 차이점을 학습합니다.&lt;/li&gt; &lt;li&gt;nginx를 통해 정적 웹 사이트, 정적 콘텐츠를 이해합니다.&lt;/li&gt; &lt;li&gt;nginx를 이용해 정적 웹사이트를 제공하고, Mini WAS를 개발하면서 위의 그림에서 2와 5번에 해당하는 구조를 이해합니다.&lt;/li&gt; &lt;li&gt;express, fastify를 통해 API 서버를 만들면서 WAS의 구조와 해당 서버에 대한 모듈을 이해합니다.웹 서버와 WAS의 전체적인 구조를 이해하고, 기본적인 CRUD가 있는 블로그 서버를 개발하며, 전체 아키텍처를 이해합니다.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/yg413/btr5zQ6320F/EjuKDeNL1ZwKjkId8r4GT1/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/yg413/btr5zQ6320F/EjuKDeNL1ZwKjkId8r4GT1/img.png&quot; /&gt;&lt;/p&gt; &lt;hr /&gt; &lt;h1 id=&quot;-학습-내용&quot;&gt;&lt;strong&gt;# 학습 내용&lt;/strong&gt;&lt;/h1&gt; &lt;h1 id=&quot;1서버&quot;&gt;&lt;strong&gt;1. 서버&lt;/strong&gt;&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;서버&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;개요&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;컴퓨터의 역할을 의미&lt;/li&gt; &lt;li&gt;사용자의 요청을 받고, 이에 따른 응답과 데이터를 보내주는 역할을 수행함&lt;/li&gt; &lt;li&gt;서비스를 제공하는 컴퓨터 내의 프로그램을 의미하 프로그램(소프트웨어)이 실행되는 컴퓨터(하드웨어) 역시 서버라고 불림&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;strong&gt;구성&lt;/strong&gt;...</description>
-        <pubDate>Fri, 24 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day14-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/day14-1/</guid>
-        
-        <category>WAS</category>
-        
-        <category>Web Server</category>
-        
-        <category>Web Application Server</category>
-        
-        <category>3-Tier</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>WAS와 Web Server</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day13 발표준비&amp;#93; / [HTTP]</title>
-        <description>&lt;h1 id=&quot;rest-api-모범-사례를-연구해서-제출하세요&quot;&gt;REST API 모범 사례를 연구해서 제출하세요.&lt;/h1&gt; &lt;h2 id=&quot;조회&quot;&gt;조회&lt;/h2&gt; &lt;h4 id=&quot;1-특정-블로그-게시물에-대한-댓글-검색&quot;&gt;1. 특정 블로그 게시물에 대한 댓글 검색:&lt;/h4&gt; &lt;ul&gt; &lt;li&gt;GET HTTP 메서드를 사용하여 특정 블로그 게시물에 대한 댓글을 검색합니다.&lt;/li&gt; &lt;li&gt;“/posts/{postID}/comments”와 같은 “/comments” 엔드포인트를 포함하는 URL을 사용합니다.&lt;/li&gt; &lt;li&gt;댓글 ID, 작성자, 날짜 및 콘텐츠와 같은 메타데이터를 포함하여 댓글을 JSON 형식으로 반환합니다. &lt;h2 id=&quot;기타&quot;&gt;기타&lt;/h2&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;1-블로그-게시물-좋아요-누르기&quot;&gt;1. 블로그 게시물 좋아요 누르기:&lt;/h4&gt; &lt;ul&gt; &lt;li&gt;POST HTTP 메서드를 사용하여 블로그 게시물에 좋아요 기능을 작동합니다.&lt;/li&gt; &lt;li&gt;“/posts/{postID}/like”와 같은 “/like” 엔드포인트를 포함하는 URL을 사용합니다.&lt;/li&gt; &lt;li&gt;권한 부여를 사용하여 인증된 사용자만 게시물에 좋아요를 표시할 수 있도록 합니다.&lt;/li&gt; &lt;li&gt;새로운 좋아요 수를 포함하여 게시물에 좋아요가 표시되었음을 나타내는 응답을 반환합니다.&lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;2-블로그-게시물과-좋아요-취소하기&quot;&gt;2. 블로그...</description>
-        <pubDate>Thu, 23 Mar 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day13-3/</link>
-        <guid isPermaLink="true">http://localhost:4000/day13-3/</guid>
-        
-        <category>HTTP</category>
-        
-        <category>HTTPS</category>
-        
-        <category>CRUD</category>
-        
-        <category>REST API</category>
-        
-        <category>Create</category>
-        
-        <category>Post</category>
-        
-        <category>Read</category>
-        
-        <category>Get</category>
-        
-        <category>Update</category>
-        
-        <category>Put</category>
-        
-        <category>Delete</category>
-        
-        <category>개발환경</category>
-        
-        <category>JavaScript</category>
-        
-        <category>발표자료</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>HTTP</category>
       </item>
     
   </channel>

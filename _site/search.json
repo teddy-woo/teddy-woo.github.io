@@ -3,10 +3,50 @@
   
   
     {
-      "title"    : "DevOps&amp;#91;Day34&amp;#93; / [지속적 통합]",
+      "title"    : "DevOps&amp;#91;Day36-2&amp;#93; / [배포 자동화]",
+      "tags"     : "AWS, 아마존 웹 서비스, 자동화, 배포 자동화, 파이프라인, 서버, 환경 변수, and DevOps BootCamp",
+      "categories" : "배포 자동화",
+      "url"      : "/day36-2/",
+      "date"     : "04/25/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day36-1&amp;#93; / [배포 자동화]",
+      "tags"     : "AWS, 아마존 웹 서비스, 자동화, 배포 자동화, 파이프라인, 클라이언트, 환경 변수, and DevOps BootCamp",
+      "categories" : "배포 자동화",
+      "url"      : "/day36-1/",
+      "date"     : "04/25/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day35&amp;#93; / [배포 자동화]",
+      "tags"     : "AWS, 아마존 웹 서비스, 자동화, 배포 자동화, 파이프라인, 서버, and DevOps BootCamp",
+      "categories" : "배포 자동화",
+      "url"      : "/day35-2/",
+      "date"     : "04/24/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day35&amp;#93; / [배포 자동화]",
+      "tags"     : "AWS, 아마존 웹 서비스, 자동화, 배포 자동화, 파이프라인, 클라이언트, and DevOps BootCamp",
+      "categories" : "배포 자동화",
+      "url"      : "/day35-1/",
+      "date"     : "04/24/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day34-2&amp;#93; / [코드로부터 환경 변수 분리]",
+      "tags"     : "git, github, 자동화, 지속적 통합, 환경변수 분리, git action, and DevOps BootCamp",
+      "categories" : "지속적 통합",
+      "url"      : "/day34-2/",
+      "date"     : "04/21/2023"
+    } ,
+  
+    {
+      "title"    : "DevOps&amp;#91;Day34-1&amp;#93; / [지속적 통합]",
       "tags"     : "AWS, 아마존 웹 서비스, 자동화, 지속적 통합, ECS, and DevOps BootCamp",
       "categories" : "지속적 통합",
-      "url"      : "/day34/",
+      "url"      : "/day34-1/",
       "date"     : "04/21/2023"
     } ,
   

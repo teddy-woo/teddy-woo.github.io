@@ -5,16 +5,140 @@
     <description>도현&apos;s 데브옵스 도전기! is made by Teddy-woo.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Apr 2023 05:04:04 +0900</pubDate>
-    <lastBuildDate>Sun, 23 Apr 2023 05:04:04 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Apr 2023 17:55:33 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Apr 2023 17:55:33 +0900</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
-        <title>DevOps&amp;#91;Day34&amp;#93; / [지속적 통합]</title>
+        <title>DevOps&amp;#91;Day36-2&amp;#93; / [배포 자동화]</title>
+        <description>&lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;환경 변수를 AWS System Manager Parameter Store에서 설정할 것이기 때문에 AWS CLI를 먼저 EC2 instance에 설치해야 한다. 밑에 명령어를 차례대로 입력&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/quCpo/btscyYWQXbO/LxFcp3TAJ0kcyxMLlTZyx1/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/quCpo/btscyYWQXbO/LxFcp3TAJ0kcyxMLlTZyx1/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/c2dKMz/btscoE6zhFc/YtDNkCmub6fGwo9dwVDCl1/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/c2dKMz/btscoE6zhFc/YtDNkCmub6fGwo9dwVDCl1/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/btAm31/btscfDfZnIM/lxkfC4njXXCVxdtAVFXAmK/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/btAm31/btscfDfZnIM/lxkfC4njXXCVxdtAVFXAmK/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;AWS CLI를 다운로드 하기 위한 명령어&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/Bs8T6/btscoE6zlvX/1KWbQNLk1cmSbSjZDClU81/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/Bs8T6/btscoE6zlvX/1KWbQNLk1cmSbSjZDClU81/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;AWS 버전을 확인&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;이렇게 되면 aws CLI는 설치가 완료된 것이다&lt;/p&gt; &lt;/blockquote&gt; &lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;RDS 생성&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;blockquote&gt; &lt;p&gt;검색 창에 RDS 입력 후 데이터베이스 생성을 클릭&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/2IeE7/btscyGWle6G/lFwk4BBcuzzJDYMKLyr5e0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/2IeE7/btscyGWle6G/lFwk4BBcuzzJDYMKLyr5e0/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;엔진 옵션에 원하는 데이터베이스 소프트웨어를 선택&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/ci7Yym/btscwnpAuul/a5hKRQQ2DX7ro0lckYQEHK/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/ci7Yym/btscwnpAuul/a5hKRQQ2DX7ro0lckYQEHK/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;탬플릿은 사용 용도에 따라 선택하면 되는데, 비용이 제일...</description>
+        <pubDate>Tue, 25 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day36-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day36-2/</guid>
+        
+        <category>AWS</category>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>자동화</category>
+        
+        <category>배포 자동화</category>
+        
+        <category>파이프라인</category>
+        
+        <category>서버</category>
+        
+        <category>환경 변수</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>배포 자동화</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day36-1&amp;#93; / [배포 자동화]</title>
+        <description>&lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;AWS 검색창에 CodeBuild를 검색하여 클릭&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/YnJ2h/btscFEwBMEd/zcbK0HxKw3NwM0fJt6KqBk/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/YnJ2h/btscFEwBMEd/zcbK0HxKw3NwM0fJt6KqBk/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;원하는 빌드 프로젝트 선택 후 오른쪽 상단에 편집 -&amp;gt; 환경 클릭&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/b5eIMX/btscyYo2c6z/qtKgoW52Atb6raBuxspFOK/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/b5eIMX/btscyYo2c6z/qtKgoW52Atb6raBuxspFOK/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;밑으로 스크롤을 쭉 내려 추가 구성을 클릭&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/bGWNbh/btsczK5egx9/BJ19U4DeAI10uuw6f1Frk0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/bGWNbh/btsczK5egx9/BJ19U4DeAI10uuw6f1Frk0/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;추가 구성을 클릭하면 새로 선택지가 나옴, 스크롤을 내려 환경 변수에 환경 변수 이름과 서버의 주소를 넣음 -&amp;gt; 환경 업데이트 클릭&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/d8pleY/btscBDELWdL/3nY0GggzwCbxTI8Oe4AyM1/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/d8pleY/btscBDELWdL/3nY0GggzwCbxTI8Oe4AyM1/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;ol&gt; &lt;li&gt;파이프라인에 변경사항 릴리스를 클릭&lt;/li&gt; &lt;/ol&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/bIlzST/btscAq6Eqn0/95XKFBLiVCThYqrO4GzEgK/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/bIlzST/btscAq6Eqn0/95XKFBLiVCThYqrO4GzEgK/img.png&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;결과&lt;/p&gt; &lt;h3 id=&quot;-이렇게-나온다면-클라이언트와-서버의-연결이-성공한-것이다-&quot;&gt;&lt;strong&gt;&lt;em&gt;&amp;gt; 이렇게 나온다면 클라이언트와 서버의 연결이 성공한 것이다 &amp;lt;&lt;/em&gt;&lt;/strong&gt;&lt;/h3&gt; &lt;/blockquote&gt;...</description>
+        <pubDate>Tue, 25 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day36-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day36-1/</guid>
+        
+        <category>AWS</category>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>자동화</category>
+        
+        <category>배포 자동화</category>
+        
+        <category>파이프라인</category>
+        
+        <category>클라이언트</category>
+        
+        <category>환경 변수</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>배포 자동화</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day35&amp;#93; / [배포 자동화]</title>
+        <description>&lt;h2 id=&quot;-1-검색-창에-ec2를-검색하여-들어간-후-ec2를-생성&quot;&gt;&lt;strong&gt;* 1. 검색 창에 EC2를 검색하여 들어간 후 EC2를 생성&lt;/strong&gt;*&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;&amp;gt; 작업 -&amp;gt; 보안 -&amp;gt; IAM 역할 수정 클릭&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;IAM 역할 수정하는 이유:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt; &amp;gt; 인스턴스가 다른 AWS 서비스와 통신할 때, 접근 권한을 주기 위함&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/cz46Fn/btscmL5hkw7/DTk4c8DtXFfjJRAa5xcIMk/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/cz46Fn/btscmL5hkw7/DTk4c8DtXFfjJRAa5xcIMk/img.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;2-새-iam-역할-생성-클릭&quot;&gt;&lt;strong&gt;&lt;em&gt;2. 새 IAM 역할 생성 클릭&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/blVPOq/btscxnvjLTN/XU69ln8rlOAmBKeRGrMItk/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/blVPOq/btscxnvjLTN/XU69ln8rlOAmBKeRGrMItk/img.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;3-역할-만들기-클릭&quot;&gt;&lt;strong&gt;&lt;em&gt;3. 역할 만들기 클릭&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/bq00GC/btscwouKtbo/11QCQoRmIu3ykSKCSQezlK/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/bq00GC/btscwouKtbo/11QCQoRmIu3ykSKCSQezlK/img.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;4-aws-deploy를-이용하여-ec2에-작업할-것이므로-aws-서비스-선택&quot;&gt;&lt;strong&gt;&lt;em&gt;4. AWS Deploy를 이용하여 EC2에 작업할 것이므로 AWS 서비스 선택&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;&amp;gt; EC2 선택&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/BvqHX/btscxbhsDvT/ixOgneGYKQSK0rCT2Phcpk/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/BvqHX/btscxbhsDvT/ixOgneGYKQSK0rCT2Phcpk/img.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;5-codedeploy가-s3에-있는-코드를-사용할-것이므로-amazons3-fullacess-선택&quot;&gt;&lt;strong&gt;&lt;em&gt;5. CodeDeploy가 S3에 있는 코드를 사용할 것이므로 ‘AmazonS3 FullAcess’ 선택&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/bq1wJi/btscjj2ekQi/H2zRbenUktD48eNcdcNbKK/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/bq1wJi/btscjj2ekQi/H2zRbenUktD48eNcdcNbKK/img.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;6-ec2에-agent를-설치하기-위해-선택&quot;&gt;&lt;strong&gt;&lt;em&gt;6. EC2에 Agent를 설치하기 위해 선택&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;&lt;img...</description>
+        <pubDate>Mon, 24 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day35-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day35-2/</guid>
+        
+        <category>AWS</category>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>자동화</category>
+        
+        <category>배포 자동화</category>
+        
+        <category>파이프라인</category>
+        
+        <category>서버</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>배포 자동화</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day35&amp;#93; / [배포 자동화]</title>
+        <description>&lt;h2 id=&quot;배포-자동화&quot;&gt;&lt;em&gt;배포 자동화&lt;/em&gt;&lt;/h2&gt; &lt;p&gt;&lt;em&gt;&amp;gt; 한 번의 클릭 혹은 명령어 입력을 통해 전체 배포 과정을 자동으로 진행하는 것&lt;/em&gt;&lt;/p&gt; &lt;h2 id=&quot;이유&quot;&gt;&lt;em&gt;이유:&lt;/em&gt;&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;em&gt;수동적이고 반복적인 배포 과정을 자동화함으로써 시간이 절약&lt;/em&gt;&lt;/li&gt; &lt;li&gt;&lt;em&gt;휴먼 에러(Human Error)를 방지&lt;/em&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;배포-자동화-파이프라인&quot;&gt;&lt;em&gt;배포 자동화 파이프라인&lt;/em&gt;&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/zOtrO/btsb6Y4Mb6z/EHAyV5KxXZLYPcVFKW3801/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/zOtrO/btsb6Y4Mb6z/EHAyV5KxXZLYPcVFKW3801/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;파이프라인의 기본단계와 수행 작업&lt;/p&gt; &lt;p&gt;&lt;em&gt;배포에서 파이프라인(Pipeline) : 용어는 소스 코드의 관리부터 실제 서비스로의 배포 과정을 연결하는 구조를 뜻함&lt;/em&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;em&gt;&lt;strong&gt;Source 단계&lt;/strong&gt;: Source 단계에서는 원격 저장소에 관리되고 있는 소스 코드에 변경 사항이 일어날 경우, 이를 감지하고 다음 단계로 전달하는 작업을 수행&lt;/em&gt;&lt;/li&gt; &lt;li&gt;&lt;em&gt;&lt;strong&gt;Build 단계&lt;/strong&gt;: Build 단계에서는 Source 단계에서 전달받은 코드를 컴파일, 빌드, 테스트하여 가공, Build 단계를 거쳐 생성된 결과물을 다음 단계로 전달하는 작업을...</description>
+        <pubDate>Mon, 24 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day35-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day35-1/</guid>
+        
+        <category>AWS</category>
+        
+        <category>아마존 웹 서비스</category>
+        
+        <category>자동화</category>
+        
+        <category>배포 자동화</category>
+        
+        <category>파이프라인</category>
+        
+        <category>클라이언트</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>배포 자동화</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day34-2&amp;#93; / [코드로부터 환경 변수 분리]</title>
+        <description>&lt;h3 id=&quot;1-ci-상에서-주어진-dockerfile을-이용해-docker-이미지를-빌드하기&quot;&gt;&lt;strong&gt;&lt;em&gt;1. CI 상에서 주어진 Dockerfile을 이용해 Docker 이미지를 빌드하기&lt;/em&gt;&lt;/strong&gt;&lt;/h3&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;1. yaml 파일 작성&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/do9aSL/btsbFH26B74/iW9WC8Mc2Ng9SkaKxta1A0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/do9aSL/btsbFH26B74/iW9WC8Mc2Ng9SkaKxta1A0/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;on :&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;release 할 때마다 workflow 실행&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;step:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;uses: actions/checkout@v3 - github 레파지토리에 있는 파일 확인, 최신 버전&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;uses: docker/login-action@~ - Docker Hub에 로그인&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;with: - ‘username’, ‘password’는 환경 변수 / Docker Hub 아이디와 패스워드를 통해 로그인&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;username: $&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;password: $&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;► github 레파지토리 세팅에서 secret 탭에 환경 변수를 설정해 주어야 한다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;secrets 설정하는 방법&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;1. 설정할 레파지토리 클릭 -&amp;gt; 밑에 settings 클릭&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://blog.kakaocdn.net/dn/6QN6M/btsbDt5A0Co/JlW89mdR1tyLWwzOFGR3J0/img.png&quot; alt=&quot;https://blog.kakaocdn.net/dn/6QN6M/btsbDt5A0Co/JlW89mdR1tyLWwzOFGR3J0/img.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;2. ’Secrets and variables’ 클릭 -&amp;gt; Actions 클릭 -&amp;gt; new repository secret 클릭&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img...</description>
+        <pubDate>Fri, 21 Apr 2023 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/day34-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/day34-2/</guid>
+        
+        <category>git</category>
+        
+        <category>github</category>
+        
+        <category>자동화</category>
+        
+        <category>지속적 통합</category>
+        
+        <category>환경변수 분리</category>
+        
+        <category>git action</category>
+        
+        <category>DevOps BootCamp</category>
+        
+        <category>지속적 통합</category>
+      </item>
+    
+      <item>
+        <title>DevOps&amp;#91;Day34-1&amp;#93; / [지속적 통합]</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/7c11f49e-0750-404a-af4d-49d7b9d5e24b/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;로드 밸런서의 대상그룹을 생성해준다. 다음과 같이 설정해준다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/3e1aeb05-1b34-4745-85f9-19c7f834f6d3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/d883f193-2bbb-4daa-8654-62e7bc52cf0e/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;include as pending below를 하지않고 다음으로 넘어간다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/c5a03834-d05a-4953-a4ae-753ff87c3e4a/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Application Load Balancer를 생성한다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/642cfc46-5282-4b39-8b20-093b2bfd3243/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;로드밸런서 세팅은 다음과같이 한다. Listeners and routing에서 target group은 위에서 만든 target group을 선택한다. Listeners and routing 에서 HTTP 3333포트를 추가한다. 보안 그룹은 기본으로하면 모두 닫혀있기 때문에 다른 보안그룹을 선택해야한다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/cc35ccee-8d19-4b91-ba7c-c51ecfb6ea68/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/2e29a095-e316-42f9-9f74-9a63d722ae89/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/0964d3df-ff7f-423e-9748-8d17275e60c2/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/9f988b52-4c0d-4d79-9831-8ce30472ac0c/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;ECS -&amp;gt; 작업정의 -&amp;gt; 새 작업 정의...</description>
         <pubDate>Fri, 21 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day34/</link>
-        <guid isPermaLink="true">http://localhost:4000/day34/</guid>
+        <link>http://localhost:4000/day34-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/day34-1/</guid>
         
         <category>AWS</category>
         
@@ -561,112 +685,6 @@
         <category>DevOps BootCamp</category>
         
         <category>Docker</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day26-2&amp;#93; / [YAML과 JSON]</title>
-        <description>&lt;h1 id=&quot;대표적인-데이터-교환-포맷-json&quot;&gt;대표적인 데이터 교환 포맷 JSON&lt;/h1&gt; &lt;h2 id=&quot;json의-탄생-배경&quot;&gt;JSON의 탄생 배경&lt;/h2&gt; &lt;p&gt;JSON은 JavaScript Object Notation의 줄임말로, 데이터 교환을 위해 만들어진 객체 형태의 포맷입니다. 네트워크를 통해, 어떤 객체 내용을 다른 프로그램에게 전송한다고 가정하겠습니다. 이 객체 내용을 일종의 메신저 혹은 채팅 프로그램에서 쓰는 하나의 메시지라고 한다면, 다음 객체를 어떻게 전송할 수 있을까요?&lt;/p&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;sender:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;김코딩&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;receiver:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;박해커&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;message:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;해커야 오늘 저녁 같이 먹을래?&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;createdAt:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;2021-01-12 10:10:10&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;메시지 객체가 전송 가능하려면, 메시지를 보내는 발신자와 메시지를 받는 수신자가 같은 프로그램을...</description>
-        <pubDate>Tue, 11 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day26-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/day26-2/</guid>
-        
-        <category>yaml</category>
-        
-        <category>json</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>YAML과 JSON</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day26-1&amp;#93; / [YAML과 JSON]</title>
-        <description>&lt;h1 id=&quot;yaml-yaml-aint-markup-language&quot;&gt;YAML: YAML Ain’t Markup Language&lt;/h1&gt; &lt;p&gt;YAML은 구조를 가진 데이터 표현 양식의 한 종류입니다. 데이터는 다양한 형태로 표현될 수 있는데 일반적으로 사용하는 JSON이나 XML도 표현 양식의 한 종류입니다. 이렇게 데이터를 형식에 맞춰 사용하는 이유는 데이터를 전달 주고 받을 때 서로 쉽게 이해하게 하기 위해서 입니다.&lt;/p&gt; &lt;p&gt;YAML은 최근 들어 많이 활용되고 있는 데이터 형식이며, 사람이 읽고 이해하기 쉬운 형태를 가지고 있습니다. DevOps 직군에서는 다양한 설정 파일들을 YAML 형식으로 작성하는 경우가 많습니다. 이때 파일 확장자는 .yml 또는 .yaml 을 사용합니다.&lt;/p&gt; &lt;h2 id=&quot;yaml-문법&quot;&gt;YAML 문법&lt;/h2&gt; &lt;h3 id=&quot;1-데이터-정의&quot;&gt;1. 데이터 정의&lt;/h3&gt; &lt;p&gt;YAML은 기본적으로 데이터를 정의 할 때, key: value 형태로 데이터를 정의합니다. 이때 콜론 : 뒤에는...</description>
-        <pubDate>Tue, 11 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day26-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/day26-1/</guid>
-        
-        <category>yaml</category>
-        
-        <category>json</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>YAML과 JSON</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day25&amp;#93; / [웹 서버 프로그램]</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/80c4d30e-3bf1-4f5d-a3ca-18bc4baee551/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;apache-http-server&quot;&gt;Apache HTTP Server&lt;/h2&gt; &lt;p&gt;Apache는 Apache Software Foundation에서 만든 웹 서버 프로그램이다. 거의 모든 OS에서 실행되고, 다른 유명한 소프트웨어 프로젝트와의 문서화가 잘 되어있고 통합 지원 등의 이점이 있습니다.&lt;/p&gt; &lt;h2 id=&quot;주요-특징&quot;&gt;주요 특징&lt;/h2&gt; &lt;p&gt;동적 컨텐츠 처리&lt;/p&gt; &lt;p&gt;다양한 모듈&lt;/p&gt; &lt;p&gt;스레드 / 프로세스 기반 구조 &lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/ecf41a0a-61bb-4ad1-8959-aabe07e8ad80/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Apache는 클라이언트 요청당 하나의 스레드가 처리하는 구조입니다.&lt;/li&gt; &lt;li&gt;사용자가 많으면 스레드 생성, 메모리 및 CPU 낭비가 심합니다.&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;mpm-multi-process-module&quot;&gt;MPM (Multi-Process Module)&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;MPM은 크게 두 가지 방식이 있습니다. PreFork 방식 / Worker 방식&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/arnold_99/post/6df9748c-0fea-4b9f-9d13-ed6b59a22916/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;prefork-mpm-다중-프로세스&quot;&gt;PreFork MPM (다중 프로세스)&lt;/h3&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Client 요청에 대해 Apache 자식...</description>
-        <pubDate>Mon, 10 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day25/</link>
-        <guid isPermaLink="true">http://localhost:4000/day25/</guid>
-        
-        <category>네트워크</category>
-        
-        <category>HTTP</category>
-        
-        <category>Apache</category>
-        
-        <category>Nginx</category>
-        
-        <category>웹 호스팅</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>웹 서버 프로그램</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day24 발표자료&amp;#93; / [네트워크 기초]</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dnehgus6975/post/c452944e-394b-4f9e-83f0-f7b86530aec7/image.jpg&quot; alt=&quot;발료자료-1&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;다음의-헤더를-보고-유추할-수-있는-내용을-모두-작성하세요&quot;&gt;다음의 헤더를 보고 유추할 수 있는 내용을 모두 작성하세요.&lt;/h1&gt; &lt;h2 id=&quot;response-header&quot;&gt;Response header&lt;/h2&gt; &lt;ul&gt; &lt;li&gt; &lt;h3 id=&quot;http11-200-ok-server-nginx&quot;&gt;HTTP/1.1 200 OK Server: nginx&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;응답은 HTTP/1.1 응답이며, 상태 코드는 200 OK 입니다. 응답을 보내는 서버는 nginx를 실행하고 있습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;date-tue-06-dec-2022-044109-gmt&quot;&gt;Date: Tue, 06 Dec 2022 04:41:09 GMT&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;응답은 Tue, 06 Dec 2022 04:41:09 GMT 에 생성되었습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;content-type-texthtml-charsetutf-8&quot;&gt;Content-Type: text/html; charset=utf-8&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;응답의 내용은 text/html 형식이며, utf-8로 인코딩되어 있습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;transfer-encoding-chunked&quot;&gt;Transfer-Encoding: chunked&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;chunked 전송 인코딩을 사용하여 보내집니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt; &lt;li&gt; &lt;h3 id=&quot;connection-keep-alive&quot;&gt;Connection: keep-alive&lt;/h3&gt; &lt;blockquote&gt; &lt;p&gt;연결은 keep-alive되어 있습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;/li&gt;...</description>
-        <pubDate>Fri, 07 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day24-3/</link>
-        <guid isPermaLink="true">http://localhost:4000/day24-3/</guid>
-        
-        <category>네트워크</category>
-        
-        <category>HTTPS</category>
-        
-        <category>HTTP</category>
-        
-        <category>Header</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>발표자료</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>네트워크 기초</category>
-      </item>
-    
-      <item>
-        <title>DevOps&amp;#91;Day24-2&amp;#93; / [네트워크 기초]</title>
-        <description>&lt;h2 id=&quot;chapter-아키텍처를-구성하는-요소들--load-balancer&quot;&gt;[Chapter] 아키텍처를 구성하는 요소들 : Load Balancer&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;단일 서버로 구성할 경우 해당 서버에 장애가 발생했을 때 정상적인 서비스 제공 불가능&lt;/li&gt; &lt;li&gt;가용성을 높이기 위하여 두 대 이상의 서버로 구성하는 경우가 있는데 IP가 다르기 때문에 사용자가 서비스를 호출할 때 어떤 IP로 서비스를 요청할 지 결정해야 함&lt;/li&gt; &lt;li&gt;로드밸런서에는 동일한 서비스를 제공하는 다수의 서버가 등록되고 사용자로부터 서비스 요청이 오면 로드밸런서가 받아 사용자별로 다수의 서버에 요청을 분산시켜 부하를 분산&lt;/li&gt; &lt;li&gt;사용자는 개별 IP를 통해 각 서버로 접근&lt;/li&gt; &lt;li&gt;로드밸런서는 서비스가 가능한 서버로만 사용자 요청을 분산하므로 서버에서 장애가 발생하더라도 다른 서버에서 서비스 제공 가능&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;계층별-load-balancer&quot;&gt;계층별 Load Balancer&lt;/h1&gt; &lt;h2 id=&quot;l4-load-balancer&quot;&gt;L4 Load Balancer&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;OSI 4계층&lt;/li&gt;...</description>
-        <pubDate>Fri, 07 Apr 2023 09:00:00 +0900</pubDate>
-        <link>http://localhost:4000/day24-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/day24-2/</guid>
-        
-        <category>네트워크</category>
-        
-        <category>Proxy</category>
-        
-        <category>Load Balancer</category>
-        
-        <category>HTTPS</category>
-        
-        <category>HTTP</category>
-        
-        <category>아키텍쳐</category>
-        
-        <category>POSTMAN</category>
-        
-        <category>DevOps BootCamp</category>
-        
-        <category>네트워크 기초</category>
       </item>
     
   </channel>

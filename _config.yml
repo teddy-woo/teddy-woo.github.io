@@ -47,6 +47,8 @@ menu:
     url: /category/지속적%20통합/
   - title: 17. 배포 자동화
     url: /category/배포%20자동화/
+  - title: feed
+    url: /category/feed.xml/
 email: dnehgus6975@gmail.com
 # See: https://disqus.com/
 disqus_username: teddynote

@@ -13,39 +13,41 @@ show_hero: true
 menu:
   - title: Home
     url: /
-  - title: 1. 개발 프로세스와 DEVOPS 업무
+  - title: 1. Sprint
+    url: /category/Sprint/
+  - title: 2. 개발 프로세스와 DEVOPS 업무
     url: /category/개발%20프로세스와%20DEVOPS%20업무/
-  - title: 2. 리눅스 운영체제
+  - title: 3. 리눅스 운영체제
     url: /category/리눅스%20운영체제
-  - title: 3. 웹서비스 개발 기초
+  - title: 4. 웹서비스 개발 기초
     url: /category/웹서비스%20개발%20기초/
-  - title: 4. GIT과 버전 관리 시스템
+  - title: 5. GIT과 버전 관리 시스템
     url: /category/GIT과%20버전%20관리%20시스템/
-  - title: 5. (사전준비) 개발 환경 구축
+  - title: 6. (사전준비) 개발 환경 구축
     url: /category/(사전준비)%20개발%20환경%20구축/
-  - title: 6. HTTP
+  - title: 7. HTTP
     url: /category/HTTP/
-  - title: 7. WAS와 WEB SERVER
+  - title: 8. WAS와 WEB SERVER
     url: /category/WAS와%20WEB%20SERVER/
-  - title: 8. 데이터베이스
+  - title: 9. 데이터베이스
     url: /category/데이터베이스/
-  - title: 9. 프로젝트 회고
+  - title: 10. 프로젝트 회고
     url: /category/프로젝트%20회고/  
-  - title: 10. 네트워크 기초
+  - title: 11. 네트워크 기초
     url: /category/네트워크%20기초/
-  - title: 11. 웹 서버 프로그램
+  - title: 12. 웹 서버 프로그램
     url: /category/웹%20서버%20프로그램/
-  - title: 12. YAML과 JSON
+  - title: 13. YAML과 JSON
     url: /category/YAML과%20JSON/
-  - title: 13. 트러블 슈팅
+  - title: 14. 트러블 슈팅
     url: /category/트러블%20슈팅/
-  - title: 14. 아마존 웹 서비스(AWS)
+  - title: 15. 아마존 웹 서비스(AWS)
     url: /category/아마존%20웹%20서비스(AWS)/
-  - title: 15. DOCKER(도커)
+  - title: 16. DOCKER(도커)
     url: /category/Docker/
-  - title: 16. 지속적 통합
+  - title: 17. 지속적 통합
     url: /category/지속적%20통합/
-  - title: 17. 배포 자동화
+  - title: 18. 배포 자동화
     url: /category/배포%20자동화/
   - title: feed
     url: /category/feed.xml/

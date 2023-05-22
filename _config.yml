@@ -49,6 +49,14 @@ menu:
     url: /category/지속적%20통합/
   - title: 18. 배포 자동화
     url: /category/배포%20자동화/
+  - title: 19. 마이크로서비스(MSA)
+    url: /category/마이크로서비스(MSA)/
+  - title: 20. 마이크로서비스 작성
+    url: /category/마이크로서비스%20작성/
+  - title: 21. Infrastructure as Code(IaC)
+    url: /category/Infrastructure%20as%20Code(IaC)/
+  - title: 22. 컨테이너 오케스트레이션
+    url: /category/컨테이너%20오케스트레이션)/
   - title: feed
     url: /category/feed.xml/
 email: dnehgus6975@gmail.com

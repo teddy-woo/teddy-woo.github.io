@@ -13,6 +13,8 @@ show_hero: true
 menu:
   - title: Home
     url: /
+  - title: 0. Javascript
+    url: /category/Javascript/
   - title: 1. Sprint
     url: /category/Sprint/
   - title: 2. 프로젝트 회고
